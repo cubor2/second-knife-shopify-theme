@@ -1,0 +1,566 @@
+/* Second Knife Components - Minimal Design System */
+
+/* ========================================
+   SECOND KNIFE OVERRIDES - UNIFORMISATION
+   ======================================== */
+
+/* Tous les séparateurs horizontaux en noir uniforme */
+.header-wrapper--border-bottom {
+  border-bottom: var(--sk-border) !important;
+}
+
+.utility-bar--bottom-border,
+.utility-bar--bottom-border-social-only {
+  border-bottom: var(--sk-border) !important;
+}
+
+/* Override tous les séparateurs Dawn en gris */
+.footer,
+.footer__content-top,
+.accordion__title,
+.accordion__content,
+.cart-item,
+.cart-drawer__item,
+.predictive-search__item,
+.predictive-search__heading,
+.pickup-availability__list,
+.facets__item,
+.mega-menu__content,
+.quick-order-list__table,
+.menu-drawer__menu-item,
+.search-modal__content {
+  border-color: var(--sk-color-black) !important;
+}
+
+/* Séparateurs spécifiques */
+[style*="rgba(var(--color-foreground), 0.08)"],
+[style*="border-bottom: 0.1rem solid rgba(var(--color-foreground), 0.08)"],
+[style*="border-top: 0.1rem solid rgba(var(--color-foreground), 0.08)"] {
+  border-color: var(--sk-color-black) !important;
+}
+
+/* Overrides spécifiques pour tous les éléments avec bordures grises Dawn */
+
+.accordion summary {
+  border-bottom: var(--sk-border) !important;
+}
+
+.cart-item:not(:last-child),
+.cart-drawer__item:not(:last-child) {
+  border-bottom: var(--sk-border) !important;
+}
+
+.predictive-search__item,
+.predictive-search__heading {
+  border-bottom: var(--sk-border) !important;
+}
+
+.pickup-availability__information li:not(:last-child) {
+  border-bottom: var(--sk-border) !important;
+}
+
+.pickup-availability__information li:first-child {
+  border-top: var(--sk-border) !important;
+}
+
+.facets__summary {
+  border-bottom: var(--sk-border) !important;
+}
+
+.facets__item {
+  border-top: var(--sk-border) !important;
+}
+
+.quick-order-list__table thead {
+  border-bottom: var(--sk-border) !important;
+}
+
+.quick-order-list__item {
+  border-bottom: var(--sk-border) !important;
+}
+
+.search-modal__content {
+  border-bottom: var(--sk-border) !important;
+}
+
+.menu-drawer__submenu-item {
+  border-bottom: var(--sk-border) !important;
+}
+
+/* Autres éléments avec bordures */
+.component-search .search__input {
+  border: var(--sk-border) !important;
+}
+
+.slideshow__controls .slider-button {
+  border: var(--sk-border) !important;
+}
+
+.slideshow__slide .banner__content {
+  border: var(--sk-border) !important;
+}
+
+.customer table th,
+.customer table td {
+  border: var(--sk-border) !important;
+}
+
+.customer table thead th {
+  border-bottom: var(--sk-border) !important;
+}
+
+.customer .customer__order-number::before {
+  border-top: var(--sk-border) !important;
+}
+
+/* ========================================
+   LOGO SECOND KNIFE - NOIR AVEC HOVER GRIS
+   ======================================== */
+.header__heading-link .h2 {
+  color: var(--sk-color-black) !important;
+  transition: color var(--sk-transition-normal);
+}
+
+.header__heading-link:hover .h2 {
+  color: var(--sk-color-gray-600) !important;
+}
+
+.header__heading-logo {
+  filter: brightness(0) !important;
+  transition: filter var(--sk-transition-normal);
+}
+
+.header__heading-link:hover .header__heading-logo {
+  filter: brightness(0) contrast(0.6) !important;
+}
+
+/* ========================================
+   TYPOGRAPHIE SECOND KNIFE - CHARTE STRICTE
+   ======================================== */
+
+/* TITRES H2 - FIGTREE BOLD 1.8REM (18px) */
+.rich-text__heading,
+.collection-list-title,
+.title.inline-richtext,
+.banner__heading,
+.image-with-text__heading,
+.multicolumn-list__title,
+.newsletter .inline-richtext,
+.collapsible-content__heading,
+.related-products__heading,
+h1.title.title--primary,
+h2.title.inline-richtext,
+.footer-block__heading,
+h2,
+.h2 {
+  font-family: var(--sk-font-heading-family) !important;
+  font-weight: 700 !important;
+  font-size: calc(var(--font-heading-scale) * 1.8rem) !important;
+  color: var(--sk-color-black) !important;
+  letter-spacing: var(--sk-letter-spacing-tight) !important;
+  line-height: var(--sk-line-height-tight) !important;
+  margin-bottom: var(--sk-space-md) !important;
+}
+
+/* TEXTES CONTENU - WORK SANS 1.4REM (14px) */
+.rich-text__text,
+.rich-text__text p,
+.rich-text__text .rte,
+.rich-text__caption,
+.image-with-text__text,
+.image-with-text__text p,
+.collection__description,
+.collection__description p,
+.footer-block__details-content,
+.footer-block__details-content p,
+.card__content,
+.card__content p,
+.card__content .rte,
+.banner .rte,
+.banner .rte p,
+.product__description,
+.product__description p,
+.subtitle,
+.rte p,
+p {
+  font-family: var(--sk-font-body-family) !important;
+  font-size: 1.4rem !important;
+  font-weight: 400 !important;
+  line-height: 1.6 !important;
+  color: var(--sk-color-black) !important;
+  margin-bottom: var(--sk-space-sm) !important;
+}
+
+/* Liens dans les textes */
+.rich-text a,
+.collection__description a,
+.footer-block__details-content a,
+.card__content a,
+.rte a {
+  color: var(--sk-color-black) !important;
+  text-decoration: underline !important;
+  transition: var(--sk-transition-normal);
+}
+
+.rich-text a:hover,
+.collection__description a:hover,
+.footer-block__details-content a:hover,
+.card__content a:hover,
+.rte a:hover {
+  color: var(--sk-color-gray-600) !important;
+}
+
+/* Responsive - mobile plus petit */
+@media (max-width: 749px) {
+  .rich-text__text,
+  .rich-text__text p,
+  .image-with-text__text,
+  .collection__description,
+  .footer-block__details-content,
+  .card__content,
+  .subtitle,
+  .rte p,
+  p {
+    font-size: 1.3rem !important;
+    margin-bottom: var(--sk-space-xs) !important;
+  }
+
+  .rich-text__caption,
+  .banner .rte p {
+    font-size: 1.2rem !important;
+  }
+}
+
+/* ========================================
+   LAYOUT COMPONENTS - SYSTÈME UNIFORME
+   ======================================== */
+.sk-container {
+  max-width: var(--page-width);
+  margin: 0 auto;
+  padding: 0 var(--sk-container-padding);
+}
+
+.sk-section {
+  padding: var(--sk-section-padding-y) 0;
+}
+
+.sk-section--lg {
+  padding: var(--sk-section-padding-y-lg) 0;
+}
+
+.sk-section + .sk-section {
+  margin-top: var(--sk-space-lg);
+}
+
+/* ========================================
+   GRID SYSTEM - ESPACEMENT COHÉRENT
+   ======================================== */
+.sk-grid {
+  display: grid;
+  gap: var(--sk-grid-gap);
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.sk-grid--2 {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.sk-grid--3 {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.sk-grid--4 {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+@media (min-width: 750px) {
+  .sk-grid--2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .sk-grid--3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .sk-grid--4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Card Components - Bestmade Style */
+.sk-card {
+  border: var(--sk-border);
+  background: var(--sk-color-white);
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.2s ease;
+}
+
+.sk-card__media {
+  position: relative;
+  border-bottom: var(--sk-border);
+  overflow: hidden;
+}
+
+.sk-card__media img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.sk-card__content {
+  padding: var(--sk-card-padding);
+  text-align: center;
+}
+
+.sk-card__title {
+  margin: 0 0 var(--sk-space-sm) 0;
+}
+
+.sk-card__subtitle {
+  margin: 0 0 var(--sk-space-xs) 0;
+  color: var(--sk-color-gray-600);
+}
+
+.sk-card__text {
+  margin: 0;
+  color: var(--sk-color-gray-700);
+}
+
+/* ========================================
+   BUTTON COMPONENTS - SYSTÈME COHÉRENT
+   ======================================== */
+.sk-button {
+  display: inline-block;
+  padding: var(--sk-space-sm) var(--sk-space-md);
+  border: var(--sk-border);
+  background: transparent;
+  color: var(--sk-color-black);
+  text-decoration: none;
+  text-align: center;
+  transition: var(--sk-transition-normal);
+  cursor: pointer;
+  font-family: 'Work Sans', var(--font-body-family), sans-serif;
+  font-weight: 500;
+  font-size: var(--sk-text-sm);
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.sk-button:hover {
+  background: var(--sk-color-black);
+  color: var(--sk-color-white);
+  text-decoration: none;
+}
+
+.sk-button--primary {
+  background: var(--sk-color-black);
+  color: var(--sk-color-white);
+}
+
+.sk-button--primary:hover {
+  background: transparent;
+  color: var(--sk-color-black);
+}
+
+.sk-button--full {
+  width: 100%;
+}
+
+.sk-button--large {
+  padding: var(--sk-space-md) var(--sk-space-lg);
+  font-size: var(--sk-text-base);
+}
+
+/* ========================================
+   HERO COMPONENTS - SECTION PRINCIPALE
+   ======================================== */
+.sk-hero {
+  text-align: center;
+  padding: var(--sk-section-padding-y-lg) 0;
+  border-bottom: var(--sk-border);
+}
+
+.sk-hero__content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.sk-hero__title {
+  margin: 0 0 var(--sk-space-md) 0;
+}
+
+.sk-hero__subtitle {
+  margin: 0 0 var(--sk-space-lg) 0;
+  color: var(--sk-color-gray-600);
+}
+
+.sk-hero__actions {
+  display: flex;
+  gap: var(--sk-space-md);
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/* Navigation Components */
+.sk-nav {
+  display: flex;
+  gap: var(--sk-spacing-md);
+  align-items: center;
+}
+
+.sk-nav__item {
+  color: var(--sk-color-black);
+  text-decoration: none;
+  transition: color 0.2s ease;
+  font-weight: 500;
+}
+
+.sk-nav__item:hover {
+  color: var(--sk-color-gray-600);
+  text-decoration: none;
+}
+
+.sk-nav__item--active {
+  border-bottom: var(--sk-border);
+  padding-bottom: 2px;
+}
+
+/* Form Components */
+.sk-field {
+  position: relative;
+  margin-bottom: var(--sk-spacing-md);
+}
+
+.sk-field__input {
+  width: 100%;
+  padding: var(--sk-spacing-sm) var(--sk-spacing-md);
+  border: var(--sk-border);
+  background: transparent;
+  font-family: 'Work Sans', var(--font-body-family), sans-serif;
+  font-size: 1rem;
+  transition: border-color 0.2s ease;
+}
+
+.sk-field__input:focus {
+  outline: none;
+  border-color: var(--sk-color-black);
+}
+
+.sk-field__label {
+  display: block;
+  margin-bottom: var(--sk-spacing-xs);
+  font-weight: 500;
+  color: var(--sk-color-black);
+}
+
+/* Utility Classes */
+.sk-center {
+  text-align: center;
+}
+
+.sk-border {
+  border: var(--sk-border);
+}
+
+.sk-border-top {
+  border-top: var(--sk-border);
+}
+
+.sk-border-bottom {
+  border-bottom: var(--sk-border);
+}
+
+.sk-border-left {
+  border-left: var(--sk-border);
+}
+
+.sk-border-right {
+  border-right: var(--sk-border);
+}
+
+/* Spacing Utilities */
+.sk-mb-0 { margin-bottom: 0; }
+.sk-mb-xs { margin-bottom: var(--sk-spacing-xs); }
+.sk-mb-sm { margin-bottom: var(--sk-spacing-sm); }
+.sk-mb-md { margin-bottom: var(--sk-spacing-md); }
+.sk-mb-lg { margin-bottom: var(--sk-spacing-lg); }
+.sk-mb-xl { margin-bottom: var(--sk-spacing-xl); }
+
+.sk-mt-0 { margin-top: 0; }
+.sk-mt-xs { margin-top: var(--sk-spacing-xs); }
+.sk-mt-sm { margin-top: var(--sk-spacing-sm); }
+.sk-mt-md { margin-top: var(--sk-spacing-md); }
+.sk-mt-lg { margin-top: var(--sk-spacing-lg); }
+.sk-mt-xl { margin-top: var(--sk-spacing-xl); }
+
+/* Animation Enhancement when enabled */
+body[data-sk-animations="true"] .sk-card:hover {
+  transform: translateY(-2px);
+}
+
+body[data-sk-animations="true"] .sk-card:hover .sk-card__media img {
+  transform: scale(1.02);
+}
+
+body[data-sk-animations="true"] .sk-button {
+  transition: all 0.2s ease;
+}
+
+/* ========================================
+   RESPONSIVE - MOBILE OPTIMIZATION
+   ======================================== */
+@media (max-width: 749px) {
+  .sk-container {
+    padding: 0 var(--sk-container-padding);
+  }
+  
+  .sk-section {
+    padding: var(--sk-section-padding-y) 0;
+  }
+  
+  .sk-hero {
+    padding: var(--sk-section-padding-y-lg) 0;
+  }
+  
+  .sk-hero__actions {
+    flex-direction: column;
+    align-items: center;
+    gap: var(--sk-space-sm);
+  }
+  
+  .sk-button {
+    min-width: 200px;
+  }
+  
+  .sk-nav {
+    flex-direction: column;
+    gap: var(--sk-space-sm);
+  }
+}
+
+/* ========================================
+   BLOCS COLLÉS - EXPLORE COLLECTION & OUR STORY
+   ======================================== */
+
+/* Supprimer l'espacement entre les sections adjacentes avec fond */
+.shopify-section + .shopify-section {
+  margin-top: 0 !important;
+}
+
+.section + .section {
+  margin-top: 0 !important;
+}
+
+/* Coller spécifiquement les blocs de contenu */
+.color-scheme-2 + .color-scheme-1,
+.color-scheme-1 + .color-scheme-2,
+.gradient + .gradient,
+.color-scheme-accent-1 + .color-scheme-accent-2,
+.background-secondary + .section,
+.section + .background-secondary {
+  margin-top: 0 !important;
+  border-top: none !important;
+} 

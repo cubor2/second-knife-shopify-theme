@@ -1,0 +1,284 @@
+{{ 'section-main-page.css' | asset_url | stylesheet_tag }}
+
+<div class="section page-design-system">
+  <div class="page-width page-width--narrow">
+    <!-- Header -->
+    <header class="page-header text-center">
+      <h1 class="main-page-title page-title h0">{{ page.title | escape }}</h1>
+      <div class="rte">
+        <p>Documentation complète du Design System Second Knife</p>
+      </div>
+    </header>
+
+    <!-- Typography Section -->
+    <section class="design-section" style="margin: 48px 0; padding: 24px; border: var(--sk-border);">
+      <h2 class="h2">Typographie</h2>
+
+      <div style="margin: 24px 0;">
+        <h3 style="font-family: var(--sk-font-heading-family); font-weight: 700; margin-bottom: 12px;">
+          Titres - Figtree Bold
+        </h3>
+
+        <div style="margin: 24px 0; padding: 12px; background: #fafafa;">
+          <h1 class="h1" style="margin: 12px 0;">H1 - Titre Principal (Figtree Bold)</h1>
+          <h2 class="h2" style="margin: 12px 0;">H2 - Titre Section (Figtree Bold 1.8rem)</h2>
+          <h3 class="h3" style="margin: 12px 0;">H3 - Sous-titre (Figtree Bold)</h3>
+        </div>
+      </div>
+
+      <div style="margin: 24px 0;">
+        <h3 style="font-family: var(--sk-font-heading-family); font-weight: 700; margin-bottom: 12px;">
+          Textes - Work Sans
+        </h3>
+
+        <div style="margin: 24px 0; padding: 12px; background: #fafafa;">
+          <p style="font-size: 1.4rem; font-family: var(--sk-font-body-family);">Texte principal - Work Sans 1.4rem</p>
+          <p style="font-size: 1.3rem; font-family: var(--sk-font-body-family);">Texte mobile - Work Sans 1.3rem</p>
+          <p class="subtitle">Subtitle - Work Sans</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Buttons Section -->
+    <section class="design-section" style="margin: 48px 0; padding: 24px; border: var(--sk-border);">
+      <h2 class="h2">Boutons</h2>
+
+      <div style="margin: 24px 0; display: flex; gap: 12px; flex-wrap: wrap;">
+        <button class="sk-button">Bouton Standard</button>
+        <button class="sk-button sk-button--primary">Bouton Primary</button>
+        <button class="sk-button sk-button--large">Bouton Large</button>
+        <button class="sk-button sk-button--full" style="max-width: 300px;">Bouton Full Width</button>
+      </div>
+
+      <div style="margin: 12px 0; font-size: 1.2rem; color: #666;">
+        <p>• Standard: transparent avec bordure, hover noir</p>
+        <p>• Primary: fond noir, hover transparent</p>
+        <p>• Large: padding augmenté</p>
+        <p>• Full: largeur 100%</p>
+      </div>
+    </section>
+
+    <!-- Cards Section -->
+    <section class="design-section" style="margin: 48px 0; padding: 24px; border: var(--sk-border);">
+      <h2 class="h2">Cartes</h2>
+
+      <div class="sk-grid sk-grid--3" style="margin: 24px 0;">
+        <div class="sk-card">
+          <div class="sk-card__media">
+            <img src="https://via.placeholder.com/300x300/f4f4f5/999?text=Image" alt="Exemple" loading="lazy">
+          </div>
+          <div class="sk-card__content">
+            <h3 class="sk-card__title">Titre Carte</h3>
+            <p class="sk-card__subtitle">Sous-titre</p>
+            <p class="sk-card__text">Description du produit ou contenu de la carte.</p>
+          </div>
+        </div>
+
+        <div class="sk-card">
+          <div class="sk-card__media">
+            <img src="https://via.placeholder.com/300x300/f4f4f5/999?text=Image" alt="Exemple" loading="lazy">
+          </div>
+          <div class="sk-card__content">
+            <h3 class="sk-card__title">Autre Carte</h3>
+            <p class="sk-card__subtitle">Prix</p>
+            <p class="sk-card__text">Autre exemple de contenu.</p>
+          </div>
+        </div>
+
+        <div class="sk-card">
+          <div class="sk-card__media">
+            <img src="https://via.placeholder.com/300x300/f4f4f5/999?text=Image" alt="Exemple" loading="lazy">
+          </div>
+          <div class="sk-card__content">
+            <h3 class="sk-card__title">Troisième</h3>
+            <p class="sk-card__subtitle">Exemple</p>
+            <p class="sk-card__text">Contenu de démonstration.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Colors Section -->
+    <section class="design-section" style="margin: 48px 0; padding: 24px; border: var(--sk-border);">
+      <h2 class="h2">Palette Couleurs</h2>
+
+      <div style="margin: 24px 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px;">
+        <div style="padding: 24px; background: #ffffff; border: var(--sk-border); text-align: center;">
+          <strong>Blanc</strong><br>
+          <code>#ffffff</code>
+        </div>
+        <div style="padding: 24px; background: #121212; color: white; border: var(--sk-border); text-align: center;">
+          <strong>Noir</strong><br>
+          <code>#121212</code>
+        </div>
+        <div style="padding: 24px; background: #fafafa; border: var(--sk-border); text-align: center;">
+          <strong>Gris 50</strong><br>
+          <code>#fafafa</code>
+        </div>
+        <div style="padding: 24px; background: #52525b; color: white; border: var(--sk-border); text-align: center;">
+          <strong>Gris 600</strong><br>
+          <code>#52525b</code>
+        </div>
+      </div>
+    </section>
+
+    <!-- Spacing Section -->
+    <section class="design-section" style="margin: 48px 0; padding: 24px; border: var(--sk-border);">
+      <h2 class="h2">Espacement</h2>
+
+      <div style="margin: 24px 0;">
+        <h3 style="font-family: var(--sk-font-heading-family); font-weight: 700; margin-bottom: 12px;">
+          Base Unit: 24px (multiples de 8)
+        </h3>
+
+        <div style="margin: 24px 0;">
+          <div style="background: #f4f4f5; margin-bottom: 6px; padding: 6px; border-left: 4px solid #121212;">
+            XS: 6px (base × 0.25)
+          </div>
+          <div style="background: #f4f4f5; margin-bottom: 12px; padding: 12px; border-left: 4px solid #121212;">
+            SM: 12px (base × 0.5)
+          </div>
+          <div style="background: #f4f4f5; margin-bottom: 24px; padding: 24px; border-left: 4px solid #121212;">
+            MD: 24px (base × 1) ← BASE
+          </div>
+          <div style="background: #f4f4f5; margin-bottom: 36px; padding: 36px; border-left: 4px solid #121212;">
+            LG: 36px (base × 1.5)
+          </div>
+          <div style="background: #f4f4f5; margin-bottom: 48px; padding: 48px; border-left: 4px solid #121212;">
+            XL: 48px (base × 2)
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Borders Section -->
+    <section class="design-section" style="margin: 48px 0; padding: 24px; border: var(--sk-border);">
+      <h2 class="h2">Bordures</h2>
+
+      <div style="margin: 24px 0;">
+        <div style="margin: 12px 0; padding: 12px; border: var(--sk-border);">Bordure standard: 1px solid #121212</div>
+        <div style="margin: 12px 0; padding: 12px; border-top: var(--sk-border);">Bordure top uniquement</div>
+        <div style="margin: 12px 0; padding: 12px; border-bottom: var(--sk-border);">Bordure bottom uniquement</div>
+      </div>
+    </section>
+
+    <!-- Grid Section -->
+    <section class="design-section" style="margin: 48px 0; padding: 24px; border: var(--sk-border);">
+      <h2 class="h2">Système de Grille</h2>
+
+      <div style="margin: 24px 0;">
+        <h3 style="font-family: var(--sk-font-heading-family); font-weight: 700; margin-bottom: 12px;">
+          Grille 2 colonnes
+        </h3>
+        <div class="sk-grid sk-grid--2" style="margin: 12px 0;">
+          <div style="padding: 12px; background: #f4f4f5; border: var(--sk-border); text-align: center;">Colonne 1</div>
+          <div style="padding: 12px; background: #f4f4f5; border: var(--sk-border); text-align: center;">Colonne 2</div>
+        </div>
+      </div>
+
+      <div style="margin: 24px 0;">
+        <h3 style="font-family: var(--sk-font-heading-family); font-weight: 700; margin-bottom: 12px;">
+          Grille 3 colonnes
+        </h3>
+        <div class="sk-grid sk-grid--3" style="margin: 12px 0;">
+          <div style="padding: 12px; background: #f4f4f5; border: var(--sk-border); text-align: center;">Col 1</div>
+          <div style="padding: 12px; background: #f4f4f5; border: var(--sk-border); text-align: center;">Col 2</div>
+          <div style="padding: 12px; background: #f4f4f5; border: var(--sk-border); text-align: center;">Col 3</div>
+        </div>
+      </div>
+
+      <div style="margin: 24px 0;">
+        <h3 style="font-family: var(--sk-font-heading-family); font-weight: 700; margin-bottom: 12px;">
+          Grille 4 colonnes
+        </h3>
+        <div class="sk-grid sk-grid--4" style="margin: 12px 0;">
+          <div style="padding: 12px; background: #f4f4f5; border: var(--sk-border); text-align: center;">1</div>
+          <div style="padding: 12px; background: #f4f4f5; border: var(--sk-border); text-align: center;">2</div>
+          <div style="padding: 12px; background: #f4f4f5; border: var(--sk-border); text-align: center;">3</div>
+          <div style="padding: 12px; background: #f4f4f5; border: var(--sk-border); text-align: center;">4</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Forms Section -->
+    <section class="design-section" style="margin: 48px 0; padding: 24px; border: var(--sk-border);">
+      <h2 class="h2">Formulaires</h2>
+
+      <div style="margin: 24px 0; max-width: 400px;">
+        <div class="sk-field">
+          <label class="sk-field__label">Nom</label>
+          <input type="text" class="sk-field__input" placeholder="Votre nom">
+        </div>
+
+        <div class="sk-field">
+          <label class="sk-field__label">Email</label>
+          <input type="email" class="sk-field__input" placeholder="votre@email.com">
+        </div>
+
+        <div class="sk-field">
+          <label class="sk-field__label">Message</label>
+          <textarea class="sk-field__input" rows="4" placeholder="Votre message"></textarea>
+        </div>
+
+        <button class="sk-button sk-button--primary">Envoyer</button>
+      </div>
+    </section>
+
+    <!-- Usage Guidelines -->
+    <section class="design-section" style="margin: 48px 0; padding: 24px; border: var(--sk-border);">
+      <h2 class="h2">Règles d'Usage</h2>
+
+      <div class="rte">
+        <h3>Cohérence</h3>
+        <ul>
+          <li>Toujours utiliser les multiples de 8 pour l'espacement</li>
+          <li>Bordures toujours identiques (1px solid #121212)</li>
+          <li>Figtree Bold pour tous les titres</li>
+          <li>Work Sans pour tous les textes</li>
+        </ul>
+
+        <h3>Responsive</h3>
+        <ul>
+          <li>Mobile: espacement réduit de moitié</li>
+          <li>Grilles adaptatives selon la taille</li>
+          <li>Typographie plus petite sur mobile</li>
+        </ul>
+
+        <h3>Accessibilité</h3>
+        <ul>
+          <li>Contraste suffisant (noir sur blanc)</li>
+          <li>Tailles de touch targets minimum 44px</li>
+          <li>Navigation au clavier possible</li>
+        </ul>
+      </div>
+    </section>
+  </div>
+</div>
+
+<style>
+  .page-design-system .design-section {
+    border-radius: 0;
+  }
+
+  .page-design-system code {
+    background: #f4f4f5;
+    padding: 2px 6px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9em;
+  }
+
+  .page-design-system .sk-grid {
+    gap: var(--sk-space-md);
+  }
+
+  @media (max-width: 749px) {
+    .page-design-system .sk-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .page-design-system .design-section {
+      margin: 24px 0;
+      padding: 12px;
+    }
+  }
+</style>

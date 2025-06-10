@@ -1,10 +1,11 @@
 {{ 'section-main-page.css' | asset_url | stylesheet_tag }}
+{{ 'section-contact-form.css' | asset_url | stylesheet_tag }}
 
 <div class="section page-design-system">
   <div class="page-width page-width--narrow">
     <!-- Header -->
     <header class="page-header text-center">
-      <h1 class="main-page-title page-title h0">{{ page.title | escape }}</h1>
+      <h1 class="h1">{{ page.title | escape }}</h1>
       <div class="rte">
         <p>Documentation complète du Design System Second Knife</p>
       </div>
@@ -65,7 +66,13 @@
       <div class="sk-grid sk-grid--3" style="margin: 24px 0;">
         <div class="sk-card">
           <div class="sk-card__media">
-            <img src="https://via.placeholder.com/300x300/f4f4f5/999?text=Image" alt="Exemple" loading="lazy">
+            <img
+              src="https://via.placeholder.com/300x300/f4f4f5/999?text=Image"
+              alt="Exemple"
+              loading="lazy"
+              width="300"
+              height="300"
+            >
           </div>
           <div class="sk-card__content">
             <h3 class="sk-card__title">Titre Carte</h3>
@@ -76,7 +83,13 @@
 
         <div class="sk-card">
           <div class="sk-card__media">
-            <img src="https://via.placeholder.com/300x300/f4f4f5/999?text=Image" alt="Exemple" loading="lazy">
+            <img
+              src="https://via.placeholder.com/300x300/f4f4f5/999?text=Image"
+              alt="Exemple"
+              loading="lazy"
+              width="300"
+              height="300"
+            >
           </div>
           <div class="sk-card__content">
             <h3 class="sk-card__title">Autre Carte</h3>
@@ -87,7 +100,13 @@
 
         <div class="sk-card">
           <div class="sk-card__media">
-            <img src="https://via.placeholder.com/300x300/f4f4f5/999?text=Image" alt="Exemple" loading="lazy">
+            <img
+              src="https://via.placeholder.com/300x300/f4f4f5/999?text=Image"
+              alt="Exemple"
+              loading="lazy"
+              width="300"
+              height="300"
+            >
           </div>
           <div class="sk-card__content">
             <h3 class="sk-card__title">Troisième</h3>
@@ -204,23 +223,121 @@
     <section class="design-section" style="margin: 48px 0; padding: 24px; border: var(--sk-border);">
       <h2 class="h2">Formulaires</h2>
 
-      <div style="margin: 24px 0; max-width: 400px;">
-        <div class="sk-field">
-          <label class="sk-field__label">Nom</label>
-          <input type="text" class="sk-field__input" placeholder="Votre nom">
-        </div>
+      <div style="margin: 24px 0; padding: 16px; background: #fafafa; border: var(--sk-border);">
+        <h3 style="font-family: var(--sk-font-heading-family); font-weight: 700; margin-bottom: 8px; color: #e11d48;">
+          ⚠️ Important : Utilisation des classes Dawn
+        </h3>
+        <p style="font-size: 1.2rem; margin: 0; line-height: 1.5;">
+          Les formulaires utilisent les <strong>classes Dawn natives</strong> (<code>.field</code>,
+          <code>.field__input</code>, <code>.field__label</code>) et non les classes SK (<code>.sk-field</code>). Ceci
+          assure la compatibilité avec tous les formulaires Shopify (contact, newsletter, compte client, etc.) et
+          maintient les comportements JavaScript intégrés.
+        </p>
+      </div>
 
-        <div class="sk-field">
-          <label class="sk-field__label">Email</label>
-          <input type="email" class="sk-field__input" placeholder="votre@email.com">
+      <form class="contact" autocomplete="off" style="margin: 24px 0; max-width: 600px;">
+        <div class="contact__fields">
+          <div class="field">
+            <input class="field__input" type="text" id="DesignSystem-name" name="name" placeholder=" " value="John Doe">
+            <label class="field__label" for="DesignSystem-name">Nom</label>
+          </div>
+          <div class="field">
+            <input
+              class="field__input"
+              type="email"
+              id="DesignSystem-email"
+              name="email"
+              placeholder=" "
+              value="john@example.com"
+            >
+            <label class="field__label" for="DesignSystem-email">Email <span aria-hidden="true">*</span></label>
+          </div>
         </div>
-
-        <div class="sk-field">
-          <label class="sk-field__label">Message</label>
-          <textarea class="sk-field__input" rows="4" placeholder="Votre message"></textarea>
+        <div class="field">
+          <input
+            class="field__input"
+            type="tel"
+            id="DesignSystem-phone"
+            name="phone"
+            placeholder=" "
+            value="+33 6 12 34 56 78"
+          >
+          <label class="field__label" for="DesignSystem-phone">Téléphone</label>
         </div>
+        <div class="field">
+          <textarea
+            rows="6"
+            id="DesignSystem-message"
+            class="text-area field__input"
+            name="message"
+            placeholder=" ">Ceci est un exemple de message dans une textarea...</textarea>
+          <label class="form__label field__label" for="DesignSystem-message">Message</label>
+        </div>
+        <div class="contact__button">
+          <button type="button" class="button">Envoyer</button>
+        </div>
+      </form>
 
-        <button class="sk-button sk-button--primary">Envoyer</button>
+      <div style="margin: 24px 0 12px 0; padding-top: 24px; border-top: var(--sk-border);">
+        <h3 style="font-family: var(--sk-font-heading-family); font-weight: 700; margin-bottom: 12px;">
+          États des champs
+        </h3>
+        <form class="contact" autocomplete="off" style="max-width: 600px;">
+          <div class="field" style="margin-bottom: 12px;">
+            <input class="field__input" type="text" placeholder=" " id="DesignSystem-empty" name="empty">
+            <label class="field__label" for="DesignSystem-empty">Champ vide</label>
+          </div>
+          <div class="field" style="margin-bottom: 12px;">
+            <input
+              class="field__input"
+              type="text"
+              placeholder=" "
+              id="DesignSystem-filled"
+              name="filled"
+              value="Contenu du champ"
+            >
+            <label class="field__label" for="DesignSystem-filled">Champ rempli</label>
+          </div>
+          <div class="field field--with-error" style="margin-bottom: 12px;">
+            <input
+              class="field__input"
+              type="email"
+              placeholder=" "
+              id="DesignSystem-error"
+              name="error"
+              value="email-invalide"
+              aria-invalid="true"
+            >
+            <label class="field__label" for="DesignSystem-error">Email avec erreur</label>
+            <small class="contact__field-error">
+              <span class="form__message">
+                <span class="svg-wrapper">
+                  <svg width="13" height="13" viewBox="0 0 13 13">
+                    <circle cx="6.5" cy="6.50049" r="5.5" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="6.5" cy="6.5" r="1.5" fill="currentColor"/>
+                  </svg>
+                </span>
+                Email requis et doit être valide
+              </span>
+            </small>
+          </div>
+        </form>
+      </div>
+
+      <div style="margin: 24px 0 12px 0; padding-top: 24px; border-top: var(--sk-border);">
+        <h3 style="font-family: var(--sk-font-heading-family); font-weight: 700; margin-bottom: 12px;">
+          Classes CSS utilisées
+        </h3>
+        <div style="font-size: 1.2rem; color: #666; line-height: 1.6;">
+          <p><strong>Conteneur :</strong> <code>.contact__fields</code> (grille 2 colonnes sur desktop)</p>
+          <p>
+            <strong>Champ :</strong> <code>.field</code> avec <code>.field__input</code> et <code>.field__label</code>
+          </p>
+          <p><strong>Zone de texte :</strong> <code>.text-area.field__input</code></p>
+          <p><strong>Bouton :</strong> <code>.button</code> dans <code>.contact__button</code></p>
+          <p><strong>Espacement :</strong> 1.5rem mobile, 2rem desktop entre champs</p>
+          <p><strong>Espacement bouton :</strong> 3rem mobile, 4rem desktop</p>
+        </div>
       </div>
     </section>
 

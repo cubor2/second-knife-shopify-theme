@@ -17,14 +17,13 @@ product-info {
 
 .product__media-wrapper {
   padding-left: 0;
+  position: relative;
 }
 
 @media screen and (min-width: 750px) {
   .product__column-sticky {
     display: block;
-    position: sticky;
-    top: 3rem;
-    z-index: 2;
+    position: static;
   }
 
   .product--thumbnail .thumbnail-list {
@@ -52,11 +51,41 @@ product-info {
   }
 
   .product__media-container .slider-buttons {
-    display: none;
+    display: flex !important;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: calc(100% - 4rem);
+    z-index: 2;
+    pointer-events: none;
   }
 
   .product--right .product__media-wrapper {
     order: 2;
+  }
+
+  .product__media-container .slider-button {
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 100%;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    width: 44px;
+    height: 44px;
+    pointer-events: auto;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .product__media-container .slider-button:hover {
+    transform: scale(1.1);
+    background: white;
+  }
+
+  .product__media-container .slider-counter {
+    display: none;
   }
 }
 
@@ -249,6 +278,7 @@ a.product__text {
   word-break: break-word;
   margin-bottom: 1.5rem;
   text-align: center;
+  margin-top: 0;
 }
 
 .product__title > * {
@@ -414,6 +444,14 @@ a.product__text {
 
   .product__info-container > *:first-child {
     margin-top: 0;
+  }
+
+  .product__title {
+    margin-top: 2rem;
+  }
+
+  .product__info-container {
+    margin-top: 1.5rem;
   }
 }
 
@@ -1036,6 +1074,10 @@ a.product__text {
 }
 
 @media screen and (min-width: 750px) {
+  .product-accordions {
+    margin-top: 10rem;
+  }
+
   .product--stacked .thumbnail-list {
     display: none;
   }
@@ -1065,6 +1107,10 @@ a.product__text {
 }
 
 @media screen and (max-width: 749px) {
+  .product-accordions {
+    margin-top: 6rem;
+  }
+
   .product__media-item {
     display: flex;
     align-items: center;
@@ -1607,5 +1653,137 @@ a.product__text {
 
   .recipient-form > input[type='checkbox']:checked + label .icon-checkmark {
     border: none;
+  }
+}
+
+/* SK: Product Slideshow - Final Solution */
+.product--thumbnail .thumbnail-slider,
+.product--thumbnail_slider .thumbnail-slider {
+  position: absolute !important;
+  top: 0;
+  left: 0;
+  width: 0 !important;
+  height: 0 !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  overflow: hidden !important;
+  border: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+@media screen and (min-width: 750px) {
+  /* Force arrows to be visible on desktop */
+  .product__media-container .slider-buttons {
+    display: flex !important;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: calc(100% - 4rem); /* Add some padding */
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  /* Style the arrow buttons */
+  .product__media-container .slider-button {
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 100%;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    width: 44px;
+    height: 44px;
+    pointer-events: auto;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .product__media-container .slider-button:hover {
+    transform: scale(1.1);
+    background: white;
+  }
+
+  /* Hide the slide counter */
+  .product__media-container .slider-counter {
+    display: none;
+  }
+}
+
+/* ====== NOUVELLE SECTION ACCORDÉON PLEINE LARGEUR ====== */
+
+.product-accordions {
+  margin-top: 16rem;
+  clear: both;
+  position: relative;
+  z-index: 101;
+}
+
+.product-accordion-item {
+  border: 1px solid #000;
+  border-bottom: none;
+  background: white;
+}
+
+.product-accordion-item:last-child {
+  border-bottom: 1px solid #000;
+}
+
+.product-accordion-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem;
+  cursor: pointer;
+  list-style: none;
+  background: white;
+}
+
+.product-accordion-summary::-webkit-details-marker {
+  display: none;
+}
+
+.product-accordion-title {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.product-accordion-heading {
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin: 0;
+  color: #000;
+}
+
+.product-accordion-summary svg {
+  width: 1.2rem;
+  height: 1.2rem;
+  transition: transform 0.2s ease;
+  color: #000;
+}
+
+.product-accordion-item[open] .product-accordion-summary svg {
+  transform: rotate(180deg);
+}
+
+.product-accordion-content {
+  padding: 0 1.5rem 1.5rem 1.5rem;
+  font-size: 1.3rem;
+  line-height: 1.5;
+  color: #333;
+  background: white;
+}
+
+@media screen and (max-width: 749px) {
+  .product-accordions {
+    margin-top: 10rem;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .product-accordions {
+    margin-top: 18rem;
   }
 }

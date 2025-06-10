@@ -210,23 +210,7 @@
               {%- when 'custom_liquid' -%}
                 {{ block.settings.custom_liquid }}
               {%- when 'collapsible_tab' -%}
-                <div class="product__accordion accordion quick-add-hidden" {{ block.shopify_attributes }}>
-                  <details id="Details-{{ block.id }}-{{ section.id }}">
-                    <summary>
-                      <div class="summary__title">
-                        {% render 'icon-accordion', icon: block.settings.icon %}
-                        <h2 class="h4 accordion__title inline-richtext">
-                          {{ block.settings.heading | default: block.settings.page.title | escape }}
-                        </h2>
-                      </div>
-                      {{- 'icon-caret.svg' | inline_asset_content -}}
-                    </summary>
-                    <div class="accordion__content rte" id="ProductAccordion-{{ block.id }}-{{ section.id }}">
-                      {{ block.settings.content }}
-                      {{ block.settings.page.content }}
-                    </div>
-                  </details>
-                </div>
+                {%- comment -%} Accordéon déplacé en-dessous de la grille {%- endcomment -%}
               {%- when 'quantity_selector' -%}
                 <div
                   id="Quantity-Form-{{ section.id }}"
@@ -356,7 +340,10 @@
                                 </dt>
                                 <dd>
                                   <span class="price-per-item--current">
-                                    {{- 'products.product.volume_pricing.price_at_each_html' | t: price: variant_price -}}
+                                    {{-
+                                      'products.product.volume_pricing.price_at_each_html'
+                                      | t: price: variant_price
+                                    -}}
                                   </span>
                                 </dd>
                               </dl>
@@ -721,6 +708,31 @@
     <script type="application/ld+json">
       {{ product | structured_data }}
     </script>
+
+    {%- comment -%} Section accordéon pleine largeur en-dessous du produit {%- endcomment -%}
+    <div class="product-accordions">
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'collapsible_tab' -%}
+          <div class="product-accordion-item" {{ block.shopify_attributes }}>
+            <details id="Details-{{ block.id }}-{{ section.id }}">
+              <summary class="product-accordion-summary">
+                <div class="product-accordion-title">
+                  {% render 'icon-accordion', icon: block.settings.icon %}
+                  <h3 class="product-accordion-heading">
+                    {{ block.settings.heading | default: block.settings.page.title | escape }}
+                  </h3>
+                </div>
+                {{- 'icon-caret.svg' | inline_asset_content -}}
+              </summary>
+              <div class="product-accordion-content" id="ProductAccordion-{{ block.id }}-{{ section.id }}">
+                {{ block.settings.content }}
+                {{ block.settings.page.content }}
+              </div>
+            </details>
+          </div>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
   </div>
 </product-info>
 
@@ -1674,7 +1686,7 @@
         {
           "type": "header",
           "content": "t:sections.main-product.blocks.icon_with_text.settings.pairing_2.label"
-        },        
+        },
         {
           "type": "select",
           "id": "icon_2",
@@ -1874,7 +1886,7 @@
         {
           "type": "header",
           "content": "t:sections.main-product.blocks.icon_with_text.settings.pairing_3.label"
-        },        
+        },
         {
           "type": "select",
           "id": "icon_3",
@@ -2176,7 +2188,7 @@
       ],
       "default": "hide",
       "label": "t:sections.main-product.settings.mobile_thumbnails.label"
-    },    
+    },
     {
       "type": "select",
       "id": "media_position",

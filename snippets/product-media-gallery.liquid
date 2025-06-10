@@ -52,7 +52,7 @@
   data-desktop-layout="{{ section.settings.gallery_layout }}"
 >
   <div id="GalleryStatus-{{ section.id }}" class="visually-hidden" role="status"></div>
-  <slider-component id="GalleryViewer-{{ section.id }}" class="slider-mobile-gutter">
+  <slider-component id="GalleryViewer-{{ section.id }}" class="slider-mobile-gutter product-slideshow">
     <a class="skip-to-content-link button visually-hidden quick-add-hidden" href="#ProductInfo-{{ section.id }}">
       {{ 'accessibility.skip_to_product_info' | t }}
     </a>
@@ -125,7 +125,57 @@
         {%- endunless -%}
       {%- endfor -%}
     </ul>
-    <div class="slider-buttons quick-add-hidden{% if hide_mobile_slider %} small-hide{% endif %}">
+
+    <!-- Custom slideshow navigation arrows -->
+    {% if media_count > 1 %}
+      <div class="slideshow-controls">
+        <button
+          type="button"
+          class="slideshow-control slideshow-control--prev"
+          name="previous"
+          aria-label="{{ 'general.slider.previous_slide' | t }}"
+        >
+          <span class="visually-hidden">{{ 'general.slider.previous_slide' | t }}</span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+        </button>
+        <button
+          type="button"
+          class="slideshow-control slideshow-control--next"
+          name="next"
+          aria-label="{{ 'general.slider.next_slide' | t }}"
+        >
+          <span class="visually-hidden">{{ 'general.slider.next_slide' | t }}</span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </button>
+      </div>
+    {% endif %}
+
+    <!-- Original controls (hidden by default) -->
+    <div class="slider-buttons quick-add-hidden{% if hide_mobile_slider %} small-hide{% endif %} visually-hidden">
       <button
         type="button"
         class="slider-button slider-button--prev"
@@ -154,6 +204,16 @@
       </button>
     </div>
   </slider-component>
+
+  <!-- Nouvelle position du compteur complètement en dehors du slider -->
+  <div class="slideshow-counter-bottom">
+    <span class="slider-counter">
+      <span class="current-slide">1</span>
+      <span aria-hidden="true"> / </span>
+      <span class="total-slides">{{ media_count }}</span>
+    </span>
+  </div>
+
   {%- if first_3d_model -%}
     <button
       class="button button--full-width product__xr-button"
@@ -183,7 +243,7 @@
   -%}
     <slider-component
       id="GalleryThumbnails-{{ section.id }}"
-      class="thumbnail-slider slider-mobile-gutter quick-add-hidden{% unless section.settings.gallery_layout contains 'thumbnail' %} medium-hide large-up-hide{% endunless %}{% if section.settings.mobile_thumbnails != 'show' %} small-hide{% endif %}{% if media_count <= 3 %} thumbnail-slider--no-slide{% endif %}"
+      class="thumbnail-slider slider-mobile-gutter quick-add-hidden thumbnails-hidden{% unless section.settings.gallery_layout contains 'thumbnail' %} medium-hide large-up-hide{% endunless %}{% if section.settings.mobile_thumbnails != 'show' %} small-hide{% endif %}{% if media_count <= 3 %} thumbnail-slider--no-slide{% endif %}"
     >
       <button
         type="button"

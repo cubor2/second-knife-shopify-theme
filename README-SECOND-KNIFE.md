@@ -119,10 +119,43 @@ templates/
 2. Installez via Shopify CLI
 3. Activez le mode SK dans les paramètres
 
+### Commandes de Développement
+
+#### Démarrer le serveur local
+```powershell
+# Assurez-vous d'être dans le bon répertoire
+cd "D:\PROJETS\Cloud\Second Knife\Theme\dawn"
+
+# Lancer le serveur de développement
+shopify theme dev --store=second-knife.myshopify.com
+```
+
+> ⚠️ **Important** : 
+> - Il faut impérativement spécifier le paramètre `--store` pour éviter les erreurs d'autorisation
+> - En PowerShell, ne pas utiliser `&&` (syntaxe Unix), utiliser `;` ou des commandes séparées
+
+#### Accès aux URLs
+- **Local** : http://127.0.0.1:9292
+- **Prévisualisation** : Affichée dans le terminal au démarrage
+
+#### Autres commandes utiles
+```powershell
+# Informations du thème
+shopify theme info --store=second-knife.myshopify.com
+
+# Pousser les modifications
+shopify theme push --store=second-knife.myshopify.com
+
+# Tirer les modifications
+shopify theme pull --store=second-knife.myshopify.com
+
+# Arrêter le serveur (Ctrl+C dans le terminal)
+```
+
 ### Workflow
 1. Modifiez les fichiers CSS dans `assets/`
 2. Testez dans l'éditeur Shopify
-3. Synchronisez avec `shopify theme dev`
+3. Synchronisez avec `shopify theme dev --store=second-knife.myshopify.com`
 
 ## 📱 Responsive
 

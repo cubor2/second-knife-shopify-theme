@@ -1,18 +1,19 @@
-/* Custom Product Slideshow Styles */
+/* === Custom Product Slideshow Styles === */
 
+/* Conteneur principal du slideshow */
 .product-slideshow {
   position: relative;
-  margin-bottom: 40px; /* Espace en bas pour le compteur */
+  margin-bottom: 25px;
 }
 
-/* Conteneur principal des médias avec taille fixe */
+/* Conteneur des médias avec dimensions fixes */
 .product__media-list {
   position: relative;
-  min-height: 500px; /* Hauteur minimale fixe */
+  min-height: 500px;
   width: 100%;
 }
 
-/* Assure que chaque item média a les mêmes dimensions */
+/* Items média - positionnement absolu pour transitions fluides */
 .product__media-item {
   position: absolute;
   top: 0;
@@ -20,19 +21,41 @@
   width: 100%;
   height: 100%;
   display: none;
-  border: none !important; /* Suppression des bordures */
+  border: none !important;
 }
 
-/* Masquer complètement les miniatures secondaires */
+.product__media-item.is-active {
+  display: block !important;
+  cursor: zoom-in;
+}
+
+/* === Masquage des éléments redondants === */
+
+/* Masquer les miniatures */
 .product__media-gallery .thumbnails-hidden,
-#GalleryThumbnails-template--18881807442184__main-product {
+[id*="GalleryThumbnails"] {
   display: none !important;
 }
 
-/* Style pour les flèches de navigation du slideshow */
+/* Masquer les anciens compteurs */
+.slideshow-counter,
+.media-gallery .slideshow-counter,
+.slider-counter:not(.slideshow-counter-bottom .slider-counter) {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+
+/* Masquer les anciens boutons de navigation */
+.slider-buttons {
+  display: none !important;
+}
+
+/* === Contrôles de navigation === */
+
 .slideshow-controls {
   position: absolute;
-  top: 70%; /* Repositionné beaucoup plus bas */
+  top: calc(50% + 4rem);
   left: 0;
   right: 0;
   transform: translateY(-50%);
@@ -42,49 +65,13 @@
   z-index: 10;
   pointer-events: none;
   padding: 0 20px;
-  width: 100%;
 }
 
-/* SUPPRESSION TOTALE de l'ancien compteur */
-.slideshow-counter {
-  display: none !important;
-  opacity: 0 !important;
-  visibility: hidden !important;
-  pointer-events: none !important;
-}
-
-/* Nouveau compteur positionné en dessous de l'image */
-.slideshow-counter-bottom {
-  display: block !important;
-  position: absolute !important;
-  bottom: -38px !important; /* Position encore plus basse */
-  left: 0 !important;
-  right: 0 !important;
-  text-align: center !important;
-  z-index: 100 !important; /* Z-index élevé pour s'assurer qu'il est au-dessus */
-  width: 100% !important;
-  margin: 0 !important;
-  padding: 0 !important;
-}
-
-.slideshow-counter-bottom .slider-counter {
-  display: inline-block !important;
-  background: rgba(255, 255, 255, 0.9) !important;
-  border-radius: 20px !important;
-  padding: 0.3rem 0.8rem !important;
-  font-size: 0.9em !important;
-  margin: 0 auto !important;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1) !important;
-}
-
-/* Style des boutons de navigation */
-.slideshow-control,
-.slideshow-control--prev,
-.slideshow-control--next {
+.slideshow-control {
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.95);
   border: 1px solid rgba(0, 0, 0, 0.1);
   display: flex;
   align-items: center;
@@ -92,73 +79,109 @@
   cursor: pointer;
   pointer-events: auto;
   transition: all 0.2s ease;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-.slideshow-control:hover,
-.slideshow-control--prev:hover,
-.slideshow-control--next:hover {
+.slideshow-control:hover {
   background: rgba(255, 255, 255, 1);
   transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
-.slideshow-control svg,
-.slideshow-control--prev svg,
-.slideshow-control--next svg {
-  color: #000;
+.slideshow-control svg {
+  color: #333;
+  transition: color 0.2s ease;
 }
 
-/* Assurer que l'image principale est visible et a un curseur de zoom */
-.product__media-item.is-active {
-  display: block !important;
-  cursor: zoom-in;
+/* === Compteur en bas === */
+
+.slideshow-counter-bottom {
+  position: absolute !important;
+  bottom: calc(-40px - 4rem) !important;
+  left: 0 !important;
+  right: 0 !important;
+  text-align: center !important;
+  z-index: 100 !important;
+  width: 100% !important;
 }
 
-/* Supprimer toutes les bordures des médias */
+.slideshow-counter-bottom .slider-counter {
+  display: inline-block !important;
+  background: rgba(255, 255, 255, 0.95) !important;
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
+  border-radius: 20px !important;
+  padding: 8px 16px !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  color: #333 !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* === Nettoyage des bordures === */
+
 .product__media-item img,
 .global-media-settings,
 .product-media-modal__toggle,
-.global-media-settings--no-shadow,
 .product__media,
 .product__modal-opener {
   border: none !important;
   box-shadow: none !important;
 }
 
-/* Style pour s'assurer que le compteur est visible et à la bonne position */
+/* === Ajustements pour le conteneur parent === */
+
 media-gallery {
-  padding-bottom: 30px !important; /* Espace pour le compteur */
   position: relative !important;
+  padding-bottom: 30px !important;
 }
 
-/* Mobile specific styles */
+/* === Responsive === */
+
 @media screen and (max-width: 749px) {
+  .product__media-list {
+    min-height: 350px;
+    touch-action: pan-y;
+  }
+  
   .slideshow-controls {
     padding: 0 15px;
-    top: 70%; /* Maintenir la même position relative sur mobile */
   }
   
-  .slideshow-control,
-  .slideshow-control--prev,
-  .slideshow-control--next {
-    width: 36px;
-    height: 36px;
+  .slideshow-control {
+    width: 38px;
+    height: 38px;
   }
   
-  .slideshow-control svg,
-  .slideshow-control--prev svg,
-  .slideshow-control--next svg {
-    width: 20px;
-    height: 20px;
-  }
-  
-  /* Enable swipe on mobile */
-  .product__media-list {
-    touch-action: pan-y;
-    min-height: 350px; /* Hauteur minimale réduite sur mobile */
+  .slideshow-control svg {
+    width: 18px;
+    height: 18px;
   }
   
   .slideshow-counter-bottom {
-    bottom: -35px !important; /* Ajusté pour mobile */
+    bottom: calc(-35px - 4rem) !important;
+  }
+  
+  .slideshow-counter-bottom .slider-counter {
+    padding: 6px 12px !important;
+    font-size: 13px !important;
+  }
+  
+  /* Réduire encore plus l'espacement sur mobile */
+  .product-slideshow {
+    margin-bottom: 15px;
+  }
+  
+  media-gallery {
+    padding-bottom: 20px !important;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .product__media-list {
+    min-height: 550px;
+  }
+  
+  .slideshow-controls {
+    padding: 0 25px;
   }
 } 

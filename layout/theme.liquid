@@ -263,11 +263,10 @@
       {{ 'sk-components.css' | asset_url | stylesheet_tag }}
     {%- endif -%}
 
-    <!-- Custom Product Slideshow Stylesheet -->
-    {{ 'custom-product-slideshow.css' | asset_url | stylesheet_tag }}
-
-    <!-- Fix pour le compteur en bas -->
-    {{ 'custom-product-counter-fix.css' | asset_url | stylesheet_tag }}
+    {%- if template.name == 'product' -%}
+      <!-- Custom Product Slideshow Stylesheet -->
+      {{ 'custom-product-slideshow.css' | asset_url | stylesheet_tag }}
+    {%- endif -%}
 
     <link rel="stylesheet" href="{{ 'component-cart-items.css' | asset_url }}" media="print" onload="this.media='all'">
 
@@ -391,7 +390,9 @@
       <script src="{{ 'cart-drawer.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
 
-    <!-- Custom Product Slideshow Script -->
-    <script src="{{ 'custom-product-slideshow.js' | asset_url }}" defer="defer"></script>
+    {%- if template.name == 'product' -%}
+      <!-- Custom Product Slideshow Script -->
+      <script src="{{ 'custom-product-slideshow.js' | asset_url }}" defer="defer"></script>
+    {%- endif -%}
   </body>
 </html>

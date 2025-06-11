@@ -1684,7 +1684,6 @@ a.product__text {
     transform: translate(-50%, -50%);
     width: 100%;
     max-width: calc(100% - 4rem); /* Add some padding */
-    z-index: 2;
     pointer-events: none;
   }
 
@@ -1715,9 +1714,10 @@ a.product__text {
 
 .product-accordions {
   margin-top: 16rem;
+  margin-bottom: 6rem;
   clear: both;
   position: relative;
-  z-index: 101;
+  z-index: var(--z-base);
 }
 
 .product-accordion-item {
@@ -1779,11 +1779,13 @@ a.product__text {
 @media screen and (max-width: 749px) {
   .product-accordions {
     margin-top: 10rem;
+    margin-bottom: 4rem;
   }
 }
 
 @media screen and (min-width: 750px) {
   .product-accordions {
     margin-top: 18rem;
+    margin-bottom: 8rem;
   }
 }

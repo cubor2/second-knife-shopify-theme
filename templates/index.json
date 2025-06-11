@@ -18,7 +18,7 @@
         "button": {
           "type": "button",
           "settings": {
-            "button_label_1": "Explore Collection",
+            "button_label_1": "Explorer la collection",
             "button_link_1": "/collections/all",
             "button_style_secondary_1": false,
             "button_label_2": "Our Story",
@@ -42,7 +42,7 @@
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
-        "title": "Featured Products",
+        "title": "Produits vedettes",
         "heading_size": "h2",
         "collection": "all",
         "products_to_show": 9,
@@ -72,7 +72,7 @@
         "text": {
           "type": "text",
           "settings": {
-            "text": "<p>We believe in creating products that stand the test of time. Our minimal approach focuses on essential elements, removing the unnecessary to reveal what truly matters.</p>"
+            "text": "<p>Nous croyons à la création de produits qui résistent à l'épreuve du temps. Notre approche minimaliste se concentre sur les éléments essentiels, en supprimant l'inutile pour révéler ce qui compte vraiment.</p>"
           }
         }
       },
@@ -86,52 +86,11 @@
         "padding_top": 60,
         "padding_bottom": 60
       }
-    },
-    "collection_list": {
-      "type": "collection-list",
-      "blocks": {
-        "featured_collection_1": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": ""
-          }
-        },
-        "featured_collection_2": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": ""
-          }
-        },
-        "featured_collection_3": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": ""
-          }
-        }
-      },
-      "block_order": [
-        "featured_collection_1",
-        "featured_collection_2",
-        "featured_collection_3"
-      ],
-      "settings": {
-        "title": "Collections",
-        "heading_size": "h2",
-        "image_ratio": "square",
-        "columns_desktop": 3,
-        "color_scheme": "scheme-1",
-        "show_view_all": false,
-        "columns_mobile": "1",
-        "swipe_on_mobile": false,
-        "padding_top": 60,
-        "padding_bottom": 60
-      }
     }
   },
   "order": [
     "sk_hero",
     "featured_collection",
-    "rich_text",
-    "collection_list"
+    "rich_text"
   ]
 }

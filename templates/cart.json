@@ -39,7 +39,7 @@
       "settings": {
         "collection": "all",
         "products_to_show": 4,
-        "title": "Featured collection",
+        "title": "Collection recommandée",
         "heading_size": "h2",
         "columns_desktop": 4,
         "show_view_all": true,

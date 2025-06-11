@@ -145,15 +145,20 @@
 }
 
 .facet-filters__sort:focus-visible {
-  outline: 0.2rem solid rgba(var(--color-foreground), 0.5);
-  outline-offset: 1rem;
-  box-shadow: 0 0 0 1rem rgb(var(--color-background)), 0 0 0.2rem 1.2rem rgba(var(--color-foreground), 0.3);
+  outline: none;
+  outline-offset: 0;
+  box-shadow: none;
 }
 
 .facet-filters__sort.focused {
-  outline: 0.2rem solid rgba(var(--color-foreground), 0.5);
-  outline-offset: 1rem;
-  box-shadow: 0 0 0 1rem rgb(var(--color-background)), 0 0 0.2rem 1.2rem rgba(var(--color-foreground), 0.3);
+  outline: none;
+  outline-offset: 0;
+  box-shadow: none;
+}
+
+.facet-filters__sort:focus {
+  outline: none;
+  box-shadow: none;
 }
 
 .facets {
@@ -225,7 +230,7 @@
 }
 
 .facets__summary:hover .facets__summary-label {
-  text-decoration: underline;
+  text-decoration: none;
   text-underline-offset: 0.3rem;
 }
 
@@ -322,12 +327,23 @@
 .facets__item {
   display: flex;
   align-items: center;
+  border: none;
+}
+
+.facets__display .list-menu__item.facets__item {
+  border: none;
+}
+
+.facets__display .list-menu__item.facets__item label,
+.facets__display .list-menu__item.facets__item .facet-checkbox {
+  border-top: none;
+  border-bottom: none;
 }
 
 /* Hover/focus state */
 .facets-layout-list .facets__label:hover .facet-checkbox__text-label,
 .facets-layout-list input:focus ~ .facet-checkbox__text-label {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .facets-layout-grid > * {
@@ -448,6 +464,8 @@
   font-size: 1.4rem;
   display: flex;
   word-break: break-word;
+  border-top: none;
+  border-bottom: none;
 }
 
 /* Hover, active, and focus states */
@@ -455,6 +473,8 @@
 .facets__label.active,
 .facets__label:has(:focus-visible) {
   color: rgba(var(--color-foreground), 1);
+  border-top: none;
+  border-bottom: none;
 }
 
 /* Disabled state */
@@ -1097,15 +1117,11 @@ input.mobile-facets__checkbox {
 }
 
 .product-count {
-  align-self: center;
-  position: relative;
-  text-align: right;
+  display: none !important;
 }
 
 .product-count__text {
-  font-size: 1.4rem;
-  line-height: calc(1 + 0.5 / var(--font-body-scale));
-  margin: 0;
+  display: none !important;
 }
 
 #ProductCountDesktop.loading,
@@ -1254,4 +1270,16 @@ input.mobile-facets__checkbox {
   .facets-vertical .active-facets__button-remove {
     padding: 0 1rem 1rem;
   }
+}
+
+.product-count-vertical {
+  display: none !important;
+}
+
+.facets__form .product-count {
+  display: none !important;
+}
+
+.mobile-facets__count {
+  display: none !important;
 }

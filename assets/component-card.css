@@ -48,6 +48,16 @@
   border: var(--border-width) solid rgba(var(--color-foreground), var(--border-opacity));
 }
 
+/* Remove product card borders on homepage and collection pages */
+.contains-card--product .card--card,
+.contains-card--product .card--standard .card__inner,
+.product-grid-container .card--card,
+.product-grid-container .card--standard .card__inner,
+.product-grid .card--card,
+.product-grid .card--standard .card__inner {
+  border: none;
+}
+
 .card--card:after,
 .card--standard .card__inner:after {
   content: '';

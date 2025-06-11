@@ -126,8 +126,7 @@
       {%- endfor -%}
     </ul>
 
-    <!-- Custom slideshow navigation arrows -->
-    {% if media_count > 1 %}
+    {%- if media_count > 1 -%}
       <div class="slideshow-controls">
         <button
           type="button"
@@ -136,17 +135,7 @@
           aria-label="{{ 'general.slider.previous_slide' | t }}"
         >
           <span class="visually-hidden">{{ 'general.slider.previous_slide' | t }}</span>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <polyline points="15 18 9 12 15 6"></polyline>
           </svg>
         </button>
@@ -157,62 +146,23 @@
           aria-label="{{ 'general.slider.next_slide' | t }}"
         >
           <span class="visually-hidden">{{ 'general.slider.next_slide' | t }}</span>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <polyline points="9 18 15 12 9 6"></polyline>
           </svg>
         </button>
       </div>
-    {% endif %}
-
-    <!-- Original controls (hidden by default) -->
-    <div class="slider-buttons quick-add-hidden{% if hide_mobile_slider %} small-hide{% endif %} visually-hidden">
-      <button
-        type="button"
-        class="slider-button slider-button--prev"
-        name="previous"
-        aria-label="{{ 'general.slider.previous_slide' | t }}"
-      >
-        <span class="svg-wrapper">
-          {{- 'icon-caret.svg' | inline_asset_content -}}
-        </span>
-      </button>
-      <div class="slider-counter caption">
-        <span class="slider-counter--current">1</span>
-        <span aria-hidden="true"> / </span>
-        <span class="visually-hidden">{{ 'general.slider.of' | t }}</span>
-        <span class="slider-counter--total">{{ media_count }}</span>
-      </div>
-      <button
-        type="button"
-        class="slider-button slider-button--next"
-        name="next"
-        aria-label="{{ 'general.slider.next_slide' | t }}"
-      >
-        <span class="svg-wrapper">
-          {{- 'icon-caret.svg' | inline_asset_content -}}
-        </span>
-      </button>
-    </div>
+    {%- endif -%}
   </slider-component>
 
-  <!-- Nouvelle position du compteur complètement en dehors du slider -->
-  <div class="slideshow-counter-bottom">
-    <span class="slider-counter">
-      <span class="current-slide">1</span>
-      <span aria-hidden="true"> / </span>
-      <span class="total-slides">{{ media_count }}</span>
-    </span>
-  </div>
+  {%- if media_count > 1 -%}
+    <div class="slideshow-counter-bottom">
+      <span class="slider-counter">
+        <span class="current-slide">1</span>
+        <span aria-hidden="true"> / </span>
+        <span class="total-slides">{{ media_count }}</span>
+      </span>
+    </div>
+  {%- endif -%}
 
   {%- if first_3d_model -%}
     <button

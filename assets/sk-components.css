@@ -68,7 +68,7 @@
 }
 
 .facets__item {
-  border-top: var(--sk-border) !important;
+  border: none !important;
 }
 
 .quick-order-list__table thead {
@@ -350,23 +350,39 @@
   border-color: var(--sk-color-black);
 }
 
-/* OVERRIDE FORM FIELDS HOVER - NOIR AU LIEU DE GRIS */
+/* ========================================
+   FORM FIELDS - BORDURES UNIFORMES
+   ======================================== */
+/* Application universelle des bordures fines pour tous les champs */
+.field:hover.field:after,
+.field__input:focus,
+.field__input:focus-visible,
+.select:hover.select:after,
+.select__select:focus,
+.select__select:focus-visible,
+.customer .field:hover.field:after,
+.customer .field input:focus,
+.customer .field input:focus-visible {
+  box-shadow: 0 0 0 var(--sk-field-border-hover) rgba(var(--color-foreground));
+}
+
+/* Couleur noire spécifique pour les champs de contact */
 .contact .field:hover.field:after,
-.contact .field__input:hover {
-  box-shadow: 0 0 0 calc(0.1rem + var(--inputs-border-width)) var(--sk-color-black) !important;
-  border-color: var(--sk-color-black) !important;
+.contact .field__input:focus,
+.contact .field__input:focus-visible {
+  box-shadow: 0 0 0 var(--sk-field-border-hover) var(--sk-color-black);
 }
 
 /* ESPACEMENT TITRE DE PAGE - COHÉRENT HAUT/BAS */
 .main-page-title {
   padding-top: var(--sk-space-sm);
-  margin-bottom: var(--sk-space-sm) !important;
+  margin-bottom: var(--sk-space-sm);
 }
 
 @media screen and (min-width: 750px) {
   .main-page-title {
     padding-top: var(--sk-space-md);
-    margin-bottom: var(--sk-space-md) !important;
+    margin-bottom: var(--sk-space-md);
   }
 }
 
@@ -468,11 +484,11 @@ body[data-sk-animations="true"] .sk-button {
 
 /* Supprimer l'espacement entre les sections adjacentes avec fond */
 .shopify-section + .shopify-section {
-  margin-top: 0 !important;
+  margin-top: 0;
 }
 
 .section + .section {
-  margin-top: 0 !important;
+  margin-top: 0;
 }
 
 /* Coller spécifiquement les blocs de contenu */
@@ -482,6 +498,6 @@ body[data-sk-animations="true"] .sk-button {
 .color-scheme-accent-1 + .color-scheme-accent-2,
 .background-secondary + .section,
 .section + .background-secondary {
-  margin-top: 0 !important;
-  border-top: none !important;
+  margin-top: 0;
+  border-top: none;
 } 

@@ -6,6 +6,15 @@
   --focused-base-outline: 0.2rem solid rgba(var(--color-foreground), 0.5);
   --focused-base-outline-offset: 0.3rem;
   --focused-base-box-shadow: 0 0 0 0.3rem rgb(var(--color-background)), 0 0 0.5rem 0.4rem rgba(var(--color-foreground), 0.3);
+  
+  /* Z-index scale - Simplified and consistent */
+  --z-backdrop: -1;
+  --z-base: 0;
+  --z-dropdown: 10;
+  --z-sticky: 20;
+  --z-modal: 100;
+  --z-header: 1000;
+  --z-overlay: 9999;
 }
 
 .product-card-wrapper .card,
@@ -320,12 +329,14 @@ h2,
 h3,
 .h3 {
   font-size: calc(var(--font-heading-scale) * 1.7rem);
+  font-weight: 400;
 }
 
 @media only screen and (min-width: 750px) {
   h3,
   .h3 {
     font-size: calc(var(--font-heading-scale) * 1.8rem);
+    font-weight: 400;
   }
 }
 
@@ -1004,9 +1015,10 @@ summary::-webkit-details-marker {
     max-width: calc(25% - var(--grid-desktop-horizontal-spacing) * 3 / 4);
   }
 
-  .grid--3-col-desktop .grid__item {
-    width: calc(33.33% - var(--grid-desktop-horizontal-spacing) * 2 / 3);
-    max-width: calc(33.33% - var(--grid-desktop-horizontal-spacing) * 2 / 3);
+  .grid--3-col-desktop .grid__item,
+  .product-grid .grid__item {
+    width: calc(33.33% - var(--grid-desktop-horizontal-spacing) * 2 / 3) !important;
+    max-width: calc(33.33% - var(--grid-desktop-horizontal-spacing) * 2 / 3) !important;
   }
 
   .grid--2-col-desktop .grid__item {
@@ -1637,7 +1649,7 @@ details[open] > .share-button__fallback {
 .customer .field:hover.field:after,
 .customer select:hover.select:after,
 .localization-form__select:hover.localization-form__select:after {
-  box-shadow: 0 0 0 calc(0.1rem + var(--inputs-border-width))
+  box-shadow: 0 0 0 var(--sk-field-border-hover)
     rgba(var(--color-foreground), var(--inputs-border-opacity));
   outline: 0;
   border-radius: var(--inputs-radius);
@@ -1648,7 +1660,7 @@ details[open] > .share-button__fallback {
 .customer .field input:focus-visible,
 .customer select:focus-visible,
 .localization-form__select:focus-visible.localization-form__select:after {
-  box-shadow: 0 0 0 calc(0.1rem + var(--inputs-border-width)) rgba(var(--color-foreground));
+  box-shadow: 0 0 0 var(--sk-field-border-hover) rgba(var(--color-foreground));
   outline: 0;
   border-radius: var(--inputs-radius);
 }
@@ -1658,7 +1670,7 @@ details[open] > .share-button__fallback {
 .customer .field input:focus,
 .customer select:focus,
 .localization-form__select:focus.localization-form__select:after {
-  box-shadow: 0 0 0 calc(0.1rem + var(--inputs-border-width)) rgba(var(--color-foreground));
+  box-shadow: 0 0 0 var(--sk-field-border-hover) rgba(var(--color-foreground));
   outline: 0;
   border-radius: var(--inputs-radius);
 }
@@ -1666,6 +1678,15 @@ details[open] > .share-button__fallback {
 .localization-form__select:focus {
   outline: 0;
   box-shadow: none;
+}
+
+/* Bordures spécifiques pour les champs de contact - bordure fine au survol */
+.contact .field:hover.field:after,
+.contact .field__input:focus,
+.contact .field__input:focus-visible {
+  box-shadow: 0 0 0 var(--sk-field-border-hover) rgba(var(--color-foreground));
+  outline: 0;
+  border-radius: var(--inputs-radius);
 }
 
 .text-area,
@@ -2311,7 +2332,7 @@ input[type='checkbox'] {
 
 /* section-header */
 .section-header.shopify-section-group-header-group {
-  z-index: 3;
+  z-index: var(--z-header);
 }
 
 .shopify-section-header-sticky {
@@ -2332,7 +2353,7 @@ input[type='checkbox'] {
 }
 
 .shopify-section-group-header-group {
-  z-index: 4;
+  z-index: var(--z-header);
 }
 
 .section-header ~ .shopify-section-group-header-group {
@@ -3594,4 +3615,47 @@ details-disclosure > details {
   100% {
     transform: translateX(100%) scaleX(0);
   }
+}
+
+/* Section padding utility - Consolidation */
+.section-padding {
+  padding-top: calc(var(--section-padding-top, 5rem) * 0.75);
+  padding-bottom: calc(var(--section-padding-bottom, 5rem) * 0.75);
+}
+
+@media screen and (min-width: 750px) {
+  .section-padding {
+    padding-top: var(--section-padding-top, 5rem);
+    padding-bottom: var(--section-padding-bottom, 5rem);
+  }
+}
+
+/* Utility classes to replace !important */
+.u-hide { display: none; }
+.u-show { display: block; }
+.u-flex { display: flex; }
+.u-absolute { position: absolute; }
+.u-relative { position: relative; }
+.u-no-transition { transition: none; }
+.u-no-animation { animation: none; }
+.u-overflow-hidden { overflow: hidden; }
+.u-overflow-visible { overflow: visible; }
+.u-pointer-events-none { pointer-events: none; }
+
+/* Performance optimizations */
+.load-critical {
+  contain: layout style;
+  will-change: auto;
+}
+
+.animate-perf {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Reduce repaints */
+.no-select {
+  user-select: none;
+  -webkit-touch-callout: none;
 }

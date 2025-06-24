@@ -1713,7 +1713,7 @@ a.product__text {
 /* ====== NOUVELLE SECTION ACCORDÉON PLEINE LARGEUR ====== */
 
 .product-accordions {
-  margin-top: 16rem;
+  margin-top: 4rem;
   margin-bottom: 6rem;
   clear: both;
   position: relative;
@@ -1778,14 +1778,14 @@ a.product__text {
 
 @media screen and (max-width: 749px) {
   .product-accordions {
-    margin-top: 10rem;
+    margin-top: 3rem;
     margin-bottom: 4rem;
   }
 }
 
 @media screen and (min-width: 750px) {
   .product-accordions {
-    margin-top: 18rem;
+    margin-top: 4rem;
     margin-bottom: 8rem;
   }
 }

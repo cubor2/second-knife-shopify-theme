@@ -106,4 +106,106 @@ Avec ce système, votre travail est protégé en permanence. Vous pouvez dévelo
 ---
 
 **Dernière mise à jour :** $(Get-Date -Format "yyyy-MM-dd")
-**Version :** 1.0 
+**Version :** 1.0
+
+# Guide de Synchronisation des Paramètres - Second Knife Theme
+
+## Problème Résolu
+Plus besoin de reconfigurer manuellement le logo et les textes à chaque redémarrage du serveur de développement !
+
+## Scripts Disponibles
+
+### 1. Sauvegarde Rapide
+```powershell
+.\quick-save.ps1
+```
+Sauvegarde instantanée des paramètres actuels dans `config/settings_data.json`
+
+### 2. Sauvegarde Complète
+```powershell
+.\backup-settings.ps1
+```
+Sauvegarde complète depuis l'admin Shopify avec export des paramètres
+
+### 3. Restauration
+```powershell
+.\restore-settings.ps1
+```
+Restaure la sauvegarde la plus récente
+
+```powershell
+.\restore-settings.ps1 "chemin/vers/sauvegarde.json"
+```
+Restaure une sauvegarde spécifique
+
+### 4. Démarrage avec Synchronisation
+```powershell
+.\start-dev.ps1 --sync
+```
+Démarre le serveur et restaure automatiquement les paramètres
+
+## Workflow Recommandé
+
+### Première Configuration
+1. Configurez votre logo et textes dans l'admin Shopify
+2. Sauvegardez : `.\backup-settings.ps1`
+3. Démarrez avec sync : `.\start-dev.ps1 --sync`
+
+### Développement Quotidien
+1. Modifiez vos paramètres dans l'admin si nécessaire
+2. Sauvegardez rapidement : `.\quick-save.ps1`
+3. Redémarrez : `.\start-dev.ps1 --sync`
+
+### Après Modifications Importantes
+1. Testez vos changements
+2. Sauvegarde complète : `.\backup-settings.ps1`
+3. Continuez le développement
+
+## Structure des Sauvegardes
+
+```
+backup-settings/
+├── settings_backup_2024-01-15_14-30-25.json
+├── settings_backup_2024-01-15_16-45-12.json
+└── settings_backup_2024-01-16_09-15-33.json
+```
+
+## Paramètres Sauvegardés
+
+- **Logo** : Image et largeur
+- **Typographie** : Polices header et body
+- **Couleurs** : Schémas de couleurs
+- **Layout** : Largeur de page, espacements
+- **Composants** : Styles de cartes, boutons, etc.
+- **Sections** : Configuration des sections
+- **Et plus...** : Tous les paramètres du thème
+
+## Avantages
+
+✅ **Persistance** : Vos paramètres ne se réinitialisent plus
+✅ **Sécurité** : Sauvegardes multiples avec timestamps
+✅ **Flexibilité** : Restauration de n'importe quelle sauvegarde
+✅ **Automatisation** : Synchronisation au démarrage
+✅ **Simplicité** : Commandes courtes et intuitives
+
+## Dépannage
+
+### "Aucune sauvegarde trouvée"
+```powershell
+.\backup-settings.ps1
+```
+Créez d'abord une sauvegarde initiale
+
+### "Erreur lors de l'export"
+Vérifiez votre connexion Shopify et réessayez
+
+### Paramètres non synchronisés
+1. Sauvegardez : `.\quick-save.ps1`
+2. Redémarrez : `.\start-dev.ps1 --sync`
+
+## Notes Importantes
+
+- Les sauvegardes sont locales (dossier `backup-settings/`)
+- Chaque sauvegarde a un timestamp unique
+- Le script `--sync` utilise toujours la sauvegarde la plus récente
+- Les paramètres sont appliqués au redémarrage du serveur 

@@ -135,9 +135,9 @@
           aria-label="{{ 'general.slider.previous_slide' | t }}"
         >
           <span class="visually-hidden">{{ 'general.slider.previous_slide' | t }}</span>
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <polyline points="15 18 9 12 15 6"></polyline>
-          </svg>
+          <span class="svg-wrapper">
+            {{- 'icon-caret.svg' | inline_asset_content -}}
+          </span>
         </button>
         <button
           type="button"
@@ -146,9 +146,9 @@
           aria-label="{{ 'general.slider.next_slide' | t }}"
         >
           <span class="visually-hidden">{{ 'general.slider.next_slide' | t }}</span>
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <polyline points="9 18 15 12 9 6"></polyline>
-          </svg>
+          <span class="svg-wrapper">
+            {{- 'icon-caret.svg' | inline_asset_content -}}
+          </span>
         </button>
       </div>
     {%- endif -%}
@@ -157,9 +157,9 @@
   {%- if media_count > 1 -%}
     <div class="slideshow-counter-bottom">
       <span class="slider-counter">
-        <span class="current-slide">1</span>
+        <span class="slider-counter--current">1</span>
         <span aria-hidden="true"> / </span>
-        <span class="total-slides">{{ media_count }}</span>
+        <span class="slider-counter--total">{{ media_count }}</span>
       </span>
     </div>
   {%- endif -%}

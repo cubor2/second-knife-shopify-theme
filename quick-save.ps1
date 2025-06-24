@@ -1,41 +1,34 @@
 #!/usr/bin/env pwsh
 
-# Script de sauvegarde rapide Second Knife
-# Usage: .\quick-save.ps1 "Description des modifications"
+# Script de sauvegarde rapide des paramètres
+# Usage: .\quick-save.ps1
 
-param(
-    [string]$Message = "Sauvegarde rapide du travail en cours"
-)
+Write-Host "Sauvegarde rapide des paramètres actuels..." -ForegroundColor Green
 
-Write-Host "SECOND KNIFE QUICK SAVE" -ForegroundColor Green
-Write-Host "=======================" -ForegroundColor Green
-
-$timestamp = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
-$status = git status --porcelain
-
-if ($status) {
-    Write-Host "Modifications detectees:" -ForegroundColor Yellow
-    git status --short
-    Write-Host ""
-    
-    Write-Host "Sauvegarde en cours..." -ForegroundColor Blue
-    git add -A
-    
-    $commitMessage = "QUICK-SAVE $timestamp - $Message"
-    git commit -m $commitMessage
-    
-    Write-Host "Sauvegarde terminee !" -ForegroundColor Green
-    Write-Host "Commit: $commitMessage" -ForegroundColor Cyan
-    
-    # Afficher les derniers commits
-    Write-Host ""
-    Write-Host "Dernieres sauvegardes:" -ForegroundColor Magenta
-    git log --oneline -5
-} else {
-    Write-Host "Aucune modification a sauvegarder" -ForegroundColor Blue
-    Write-Host "Dernieres sauvegardes:" -ForegroundColor Magenta
-    git log --oneline -3
+# Créer le dossier de sauvegarde s'il n'existe pas
+$backupDir = ".\backup-settings"
+if (!(Test-Path $backupDir)) {
+    New-Item -ItemType Directory -Path $backupDir
 }
 
-Write-Host ""
-Write-Host "Pour sauvegardes automatiques: .\auto-backup.ps1" -ForegroundColor Yellow 
+# Nom du fichier de sauvegarde avec timestamp
+$timestamp = Get-Date -Format "yyyy-MM-dd_HH-mm-ss"
+$backupFile = "$backupDir\settings_backup_$timestamp.json"
+
+# Copier le fichier settings_data.json actuel
+if (Test-Path ".\config\settings_data.json") {
+    Copy-Item ".\config\settings_data.json" $backupFile
+    Write-Host "Sauvegarde créée: $backupFile" -ForegroundColor Green
+    
+    # Afficher un résumé
+    $settings = Get-Content ".\config\settings_data.json" | ConvertFrom-Json
+    Write-Host "`nParamètres sauvegardés:" -ForegroundColor Yellow
+    Write-Host "  - Logo width: $($settings.current.logo_width)px" -ForegroundColor Gray
+    Write-Host "  - Font header: $($settings.current.type_header_font)" -ForegroundColor Gray
+    Write-Host "  - Font body: $($settings.current.type_body_font)" -ForegroundColor Gray
+    Write-Host "  - Page width: $($settings.current.page_width)px" -ForegroundColor Gray
+} else {
+    Write-Host "Erreur: Fichier settings_data.json non trouvé" -ForegroundColor Red
+}
+
+Write-Host "`nSauvegarde rapide terminée!" -ForegroundColor Green 

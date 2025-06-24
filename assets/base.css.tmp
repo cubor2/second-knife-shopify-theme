@@ -1,9 +1,3 @@
-/*
-==============================================
-🔥 SECOND KNIFE THEME - OPTIMISATIONS MAXIME
-==============================================
-
-✅ OPTIMISATIONS APPLIQUÉES :
 - Variables z-index standardisées (--z-*)
 - Suppression CSS inutilisé (animations 3D, ambient)
 - Classes utilitaires (u-*)
@@ -325,7 +319,7 @@ h5,
 
 h1,
 .h1 {
-  font-size: 4rem;
+  font-size: calc(var(--font-heading-scale) * 3rem);
 }
 
 @media only screen and (min-width: 750px) {
@@ -337,7 +331,7 @@ h1,
 
 h2,
 .h2 {
-  font-size: 4rem;
+  font-size: calc(var(--font-heading-scale) * 2.4rem);
 }
 
 @media only screen and (min-width: 750px) {
@@ -349,12 +343,34 @@ h2,
 
 h3,
 .h3 {
+  font-family: var(--font-heading-family);
+  font-style: var(--font-heading-style);
+  font-weight: 700;
   font-size: 2.5rem;
+  letter-spacing: calc(var(--font-heading-scale) * 0.06rem);
+  color: rgb(var(--color-foreground));
+  line-height: calc(1 + 0.3 / max(1, var(--font-heading-scale)));
+  word-break: break-word;
+}
+
+@media only screen and (min-width: 750px) {
+  h3,
+  .h3 {
+    font-size: calc(var(--font-heading-scale) * 1.8rem);
+    font-weight: 400;
+  }
 }
 
 h4,
 .h4 {
+  font-family: var(--font-heading-family);
+  font-style: var(--font-heading-style);
+  font-weight: 600;
   font-size: 1.75rem;
+  letter-spacing: calc(var(--font-heading-scale) * 0.06rem);
+  color: rgb(var(--color-foreground));
+  line-height: calc(1 + 0.3 / max(1, var(--font-heading-scale)));
+  word-break: break-word;
 }
 
 h5,
@@ -2360,16 +2376,6 @@ input[type='checkbox'] {
 
 .section-header.animate {
   transition: top 0.15s ease-out;
-}
-
-/* Prevent animation conflicts during rapid scrolling */
-.section-header.shopify-section-header-sticky.animate {
-  transition: top 0.1s ease-out;
-}
-
-/* Disable transition when hiding to prevent flicker */
-.section-header.shopify-section-header-hidden {
-  transition: none;
 }
 
 .shopify-section-group-header-group {

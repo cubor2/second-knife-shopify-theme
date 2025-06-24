@@ -8,8 +8,8 @@ class ProductSlideshow {
     this.mediaItems = document.querySelectorAll('.product__media-item');
     this.prevButton = document.querySelector('.slideshow-control--prev');
     this.nextButton = document.querySelector('.slideshow-control--next');
-    this.currentSlideCounter = document.querySelector('.slideshow-counter-bottom .current-slide');
-    this.totalSlidesCounter = document.querySelector('.slideshow-counter-bottom .total-slides');
+    this.currentSlideCounter = document.querySelector('.slideshow-counter-bottom .slider-counter--current');
+    this.totalSlidesCounter = document.querySelector('.slideshow-counter-bottom .slider-counter--total');
     this.mediaList = document.querySelector('.product__media-list');
 
     this.currentIndex = 0;
@@ -309,13 +309,167 @@ class ProductSlideshow {
   }
 }
 
-// Initialisation automatique au chargement du DOM
-document.addEventListener('DOMContentLoaded', () => {
-  // Vérifier si on est sur une page produit
-  if (document.querySelector('.product__media-list')) {
-    window.productSlideshow = new ProductSlideshow();
-  }
-});
+// Initialisation automatique au chargement du DOM - DÉSACTIVÉE pour éviter conflit avec SliderComponent
+// document.addEventListener('DOMContentLoaded', () => {
+//   // Vérifier si on est sur une page produit
+//   if (document.querySelector('.product__media-list')) {
+//     window.productSlideshow = new ProductSlideshow();
+//   }
+// });
 
 // Export pour utilisation externe si nécessaire
 window.ProductSlideshow = ProductSlideshow;
+
+// Slider de produit simple et efficace
+class SimpleProductSlider {
+  constructor() {
+    this.slider = document.querySelector('.product__media-list');
+    this.slides = document.querySelectorAll('.product__media-item');
+    this.prevButton = document.querySelector('.slideshow-control--prev');
+    this.nextButton = document.querySelector('.slideshow-control--next');
+    this.currentIndex = 0;
+
+    if (!this.slider || !this.slides.length) return;
+
+    this.init();
+  }
+
+  init() {
+    console.log('🚀 Initializing SimpleProductSlider with', this.slides.length, 'slides');
+
+    // Connecter les événements
+    if (this.prevButton) {
+      this.prevButton.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        console.log('⬅️ Previous button clicked');
+        this.goToPrevious();
+      });
+    }
+
+    if (this.nextButton) {
+      this.nextButton.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        console.log('➡️ Next button clicked');
+        this.goToNext();
+      });
+    }
+
+    // Trouver l'index initial de la slide active
+    this.slides.forEach((slide, index) => {
+      if (slide.classList.contains('is-active')) {
+        this.currentIndex = index;
+      }
+    });
+
+    console.log('✅ SimpleProductSlider initialized, current index:', this.currentIndex);
+  }
+
+  goToNext() {
+    if (this.slides.length <= 1) return;
+
+    this.currentIndex = (this.currentIndex + 1) % this.slides.length;
+    this.updateSlider();
+    console.log('➡️ Went to slide', this.currentIndex + 1, 'of', this.slides.length);
+  }
+
+  goToPrevious() {
+    if (this.slides.length <= 1) return;
+
+    this.currentIndex = (this.currentIndex - 1 + this.slides.length) % this.slides.length;
+    this.updateSlider();
+    console.log('⬅️ Went to slide', this.currentIndex + 1, 'of', this.slides.length);
+  }
+
+  updateSlider() {
+    // Méthode 1: Utiliser les classes is-active comme fait Dawn
+    this.slides.forEach((slide, index) => {
+      slide.classList.toggle('is-active', index === this.currentIndex);
+    });
+
+    // Méthode 2: Scroll horizontal si c'est un slider horizontal
+    if (this.slider.scrollWidth > this.slider.clientWidth) {
+      const slideWidth = this.slides[0]?.offsetWidth || 0;
+      const scrollPosition = this.currentIndex * slideWidth;
+
+      this.slider.scrollTo({
+        left: scrollPosition,
+        behavior: 'smooth',
+      });
+    }
+
+    // Méthode 3: Pour thumbnail_slider, cacher/montrer les slides
+    const isThumbLayout = document.querySelector('.product--thumbnail_slider');
+    if (isThumbLayout) {
+      this.slides.forEach((slide, index) => {
+        slide.style.display = index === this.currentIndex ? 'block' : 'none';
+      });
+    }
+
+    // Mettre à jour le compteur
+    this.updateCounter();
+  }
+
+  updateCounter() {
+    const currentCounter = document.querySelector('.slider-counter--current');
+    if (currentCounter) {
+      currentCounter.textContent = (this.currentIndex + 1).toString();
+    }
+  }
+}
+
+// Diagnostic complet du slider
+document.addEventListener('DOMContentLoaded', () => {
+  console.log('🔍 === DIAGNOSTIC SLIDER PRODUIT ===');
+
+  // 1. Vérifier tous les éléments disponibles
+  const sliderComponent = document.querySelector('slider-component');
+  const productSlideshow = document.querySelector('.product-slideshow');
+  const mediaList = document.querySelector('.product__media-list');
+  const mediaItems = document.querySelectorAll('.product__media-item');
+  const slideshowControls = document.querySelector('.slideshow-controls');
+  const prevButtons = document.querySelectorAll('[name="previous"]');
+  const nextButtons = document.querySelectorAll('[name="next"]');
+
+  console.log('📍 Éléments trouvés:', {
+    'slider-component': !!sliderComponent,
+    'product-slideshow': !!productSlideshow,
+    'media-list': !!mediaList,
+    'media-items': mediaItems.length,
+    'slideshow-controls': !!slideshowControls,
+    'prev-buttons': prevButtons.length,
+    'next-buttons': nextButtons.length,
+  });
+
+  // 2. Vérifier le layout actuel
+  const productWrapper = document.querySelector('.product');
+  if (productWrapper) {
+    const classes = Array.from(productWrapper.classList);
+    console.log('📋 Classes du produit:', classes);
+  }
+
+  // 3. Vérifier les boutons spécifiques
+  const customPrev = document.querySelector('.slideshow-control--prev');
+  const customNext = document.querySelector('.slideshow-control--next');
+
+  console.log('🎯 Boutons custom:', {
+    'prev-button': !!customPrev,
+    'next-button': !!customNext,
+    'prev-visible': customPrev ? getComputedStyle(customPrev).display !== 'none' : false,
+    'next-visible': customNext ? getComputedStyle(customNext).display !== 'none' : false,
+  });
+
+  // 4. Test des clics avec activation du SimpleProductSlider
+  if (customPrev && customNext && mediaList && mediaItems.length > 1) {
+    console.log('✅ Initialisation du SimpleProductSlider...');
+    window.simpleSlider = new SimpleProductSlider();
+  } else {
+    console.log("❌ Impossible d'initialiser le slider - éléments manquants");
+  }
+
+  console.log('🏁 Diagnostic terminé - vérifiez la console lors des clics');
+});
+
+// Export pour utilisation externe si nécessaire
+window.SimpleProductSlider = SimpleProductSlider;

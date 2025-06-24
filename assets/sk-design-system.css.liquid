@@ -125,22 +125,22 @@ h2,
 .h2,
 .title.h2,
 h2.title {
+  font-size: 4rem !important;
+  line-height: 1.1 !important;
   font-family: var(--sk-font-heading);
   font-weight: 700;
-  font-size: clamp(1.5rem, 3vw, 2.5rem);
   letter-spacing: -0.015em;
-  line-height: 1.2;
   margin-bottom: var(--sk-space-3);
 }
 
-/* H3 - PETIT (Figtree Semi-Bold) */
+/* H3 - MOYEN (Figtree Bold) - 25px */
 h3, 
 .h3,
 .title.h3,
 h3.title {
   font-family: var(--sk-font-heading);
-  font-weight: 600;
-  font-size: clamp(1.25rem, 2vw, 1.75rem);
+  font-weight: 700;
+  font-size: 2.5rem;
   letter-spacing: -0.01em;
   line-height: 1.3;
   margin-bottom: var(--sk-space-2);
@@ -339,6 +339,96 @@ html body .header a {
   border-bottom: none;
 }
 
+/* Hide border when header becomes sticky */
+.shopify-section-header-sticky .header-wrapper--border-bottom {
+  border-bottom: none;
+}
+
+/* Optimize sticky header transitions to prevent trembling */
+.section-header.shopify-section-header-sticky {
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+/* Smooth transition for sticky reveal */
+.section-header.shopify-section-header-sticky.animate {
+  transition: top 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* SOLUTION ULTRA SIMPLE : Rendre les contrôles slideshow visibles et bien positionnés */
+.slideshow-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  pointer-events: none;
+  z-index: 10;
+  padding: 0 1rem;
+  height: 0;
+}
+
+.slideshow-control {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: auto;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.slideshow-control:hover {
+  background: white;
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.slideshow-control .svg-wrapper {
+  width: 16px;
+  height: 16px;
+}
+
+.slideshow-control--prev .svg-wrapper {
+  transform: rotate(90deg);
+}
+
+.slideshow-control--next .svg-wrapper {
+  transform: rotate(-90deg);
+}
+
+/* Assurer que le slider principal occupe toute la largeur */
+.product__media-wrapper .product__media-list {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+}
+
+.product__media-wrapper .product__media-item {
+  flex: none;
+  scroll-snap-align: start;
+  width: 100%;
+}
+
+/* Masquer la scrollbar */
+.product__media-wrapper .product__media-list::-webkit-scrollbar {
+  display: none;
+}
+
+.product__media-wrapper .product__media-list {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
 /* UTILITY CLASSES */
 .sk-center { text-align: center; }
 
@@ -356,4 +446,12 @@ html body .header a {
   .sk-container {
     padding-inline: var(--sk-space-2);
   }
+}
+
+/* OVERRIDE padding-top rich-text - 16px partout */
+.shopify-section[id*="rich_text"],
+.shopify-section[id*="rich-text"],
+section[id*="rich_text"],
+section[id*="rich-text"] {
+  padding-top: 16px !important;
 } 

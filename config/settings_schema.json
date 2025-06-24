@@ -12,22 +12,22 @@
     "settings": [
       {
         "type": "header",
-        "content": "Minimal Design System"
+        "content": "Système de Design Minimal"
       },
       {
         "type": "paragraph",
-        "content": "Configure the Second Knife minimal aesthetic inspired by best-in-class design."
+        "content": "Configurez l'esthétique minimaliste Second Knife inspirée des meilleures pratiques de design."
       },
       {
         "type": "checkbox",
         "id": "sk_enable_minimal_mode",
-        "label": "Enable Second Knife design",
+        "label": "Activer le design Second Knife",
         "default": true,
-        "info": "Activates the minimal, border-focused design system"
+        "info": "Active le système de design minimaliste axé sur les bordures"
       },
       {
         "type": "header",
-        "content": "Borders & Structure"
+        "content": "Bordures et Structure"
       },
       {
         "type": "range",
@@ -36,16 +36,16 @@
         "max": 4,
         "step": 1,
         "unit": "px",
-        "label": "Global border width",
+        "label": "Largeur de bordure globale",
         "default": 1,
-        "info": "Controls the thickness of borders throughout the site"
+        "info": "Contrôle l'épaisseur des bordures sur tout le site"
       },
       {
         "type": "color",
         "id": "sk_border_color",
-        "label": "Global border color",
+        "label": "Couleur de bordure globale",
         "default": "#121212",
-        "info": "Main border color for cards, sections and elements"
+        "info": "Couleur principale des bordures pour les cartes, sections et éléments"
       },
       {
         "type": "range",
@@ -54,7 +54,7 @@
         "max": 100,
         "step": 5,
         "unit": "%",
-        "label": "Border opacity",
+        "label": "Opacité des bordures",
         "default": 100
       },
       {
@@ -64,20 +64,20 @@
         "max": 48,
         "step": 4,
         "unit": "px",
-        "label": "Content spacing",
+        "label": "Espacement du contenu",
         "default": 24,
-        "info": "Base spacing unit for padding and margins"
+        "info": "Unité d'espacement de base pour les marges et paddings"
       },
       {
         "type": "header",
-        "content": "Animations & Interactions"
+        "content": "Animations et Interactions"
       },
       {
         "type": "checkbox",
         "id": "sk_enable_animations",
-        "label": "Enable minimal animations",
+        "label": "Activer les animations minimales",
         "default": true,
-        "info": "Subtle hover effects and transitions"
+        "info": "Effets de survol et transitions subtiles"
       },
       {
         "type": "select",
@@ -85,20 +85,20 @@
         "options": [
           {
             "value": "subtle",
-            "label": "Subtle"
+            "label": "Subtile"
           },
           {
             "value": "moderate",
-            "label": "Moderate"
+            "label": "Modérée"
           },
           {
             "value": "none",
-            "label": "None"
+            "label": "Aucune"
           }
         ],
         "default": "subtle",
-        "label": "Animation intensity",
-        "info": "Controls the strength of hover and scroll animations"
+        "label": "Intensité des animations",
+        "info": "Contrôle la force des animations de survol et de défilement"
       }
     ]
   },

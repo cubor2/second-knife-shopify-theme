@@ -63,9 +63,7 @@
 
   .footer__copyright {
     text-align: center;
-    font-size: 0.875rem;
     color: rgba(255, 255, 255, 0.75);
-    line-height: 1.4;
     margin-top: 6rem;
   }
 
@@ -86,14 +84,14 @@
     <div class="footer__content-main">
       <!-- About Column -->
       <div class="footer__column">
-        <h2 class="h2">About</h2>
+        <h2 class="h2">À propos</h2>
         <ul class="footer-block__details-content list-unstyled">
           <li>
-            <a href="/pages/our-story" class="link link--text list-menu__item list-menu__item--link">Our story</a>
+            <a href="/pages/our-story" class="link link--text list-menu__item list-menu__item--link">Notre histoire</a>
           </li>
           <li><a href="/pages/faq" class="link link--text list-menu__item list-menu__item--link">FAQ</a></li>
           <li>
-            <a href="/pages/contact-us" class="link link--text list-menu__item list-menu__item--link">Contact us</a>
+            <a href="/pages/contact-us" class="link link--text list-menu__item list-menu__item--link">Contactez-nous</a>
           </li>
         </ul>
       </div>
@@ -104,17 +102,17 @@
         <ul class="footer-block__details-content list-unstyled">
           <li>
             <a href="/pages/knife-sharpening-guide" class="link link--text list-menu__item list-menu__item--link"
-              >Knife sharpening guide</a
+              >Guide d'affûtage</a
             >
           </li>
           <li>
             <a href="/pages/knife-care-guide" class="link link--text list-menu__item list-menu__item--link"
-              >Knife care guide</a
+              >Guide d'entretien</a
             >
           </li>
           <li>
             <a href="/pages/find-perfect-knife" class="link link--text list-menu__item list-menu__item--link"
-              >Find the perfect knife</a
+              >Trouver le couteau parfait</a
             >
           </li>
         </ul>
@@ -122,21 +120,21 @@
 
       <!-- Shop Column -->
       <div class="footer__column">
-        <h2 class="h2">Shop</h2>
+        <h2 class="h2">Boutique</h2>
         <ul class="footer-block__details-content list-unstyled">
           <li>
             <a href="/collections/santoku-knives" class="link link--text list-menu__item list-menu__item--link"
-              >Santoku knives</a
+              >Couteaux Santoku</a
             >
           </li>
           <li>
             <a href="/collections/gyuto-knives" class="link link--text list-menu__item list-menu__item--link"
-              >Guyoto Knives</a
+              >Couteaux Gyuto</a
             >
           </li>
           <li>
             <a href="/collections/nakiri-knives" class="link link--text list-menu__item list-menu__item--link"
-              >Nakiri Knives</a
+              >Couteaux Nakiri</a
             >
           </li>
         </ul>
@@ -144,11 +142,11 @@
 
       <!-- Connect Column -->
       <div class="footer__column">
-        <h2 class="h2">Connect</h2>
+        <h2 class="h2">Se connecter</h2>
         <ul class="footer-block__details-content list-unstyled">
-          <li><a href="/blogs/news" class="link link--text list-menu__item list-menu__item--link">Our blog</a></li>
+          <li><a href="/blogs/news" class="link link--text list-menu__item list-menu__item--link">Notre blog</a></li>
           <li>
-            <a href="/pages/newsletter" class="link link--text list-menu__item list-menu__item--link">The newsletter</a>
+            <a href="/pages/newsletter" class="link link--text list-menu__item list-menu__item--link">La newsletter</a>
           </li>
           <li>
             <a
@@ -168,7 +166,7 @@
     <!-- Copyright -->
     <div class="footer__copyright caption">
       <p>
-        &copy; {{ 'now' | date: '%Y' }}, Second Knife Powered by
+        &copy; {{ 'now' | date: '%Y' }}, Second Knife Propulsé par
         <a href="https://shopify.com" target="_blank">Shopify</a> - <a href="/pages/cookies">Cookies</a> -
         <a href="/pages/mentions-legales">Mentions légales</a>
       </p>
@@ -178,12 +176,12 @@
 
 {% schema %}
 {
-  "name": "Footer",
+  "name": "Pied de page",
   "settings": [
     {
       "type": "color_scheme",
       "id": "color_scheme",
-      "label": "Color scheme",
+      "label": "Schéma de couleurs",
       "default": "scheme-1"
     },
     {
@@ -193,7 +191,7 @@
       "max": 100,
       "step": 4,
       "unit": "px",
-      "label": "Margin top",
+      "label": "Marge supérieure",
       "default": 0
     },
     {
@@ -203,7 +201,7 @@
       "max": 100,
       "step": 4,
       "unit": "px",
-      "label": "Padding top",
+      "label": "Espacement supérieur",
       "default": 36
     },
     {
@@ -213,7 +211,7 @@
       "max": 100,
       "step": 4,
       "unit": "px",
-      "label": "Padding bottom",
+      "label": "Espacement inférieur",
       "default": 36
     }
   ]

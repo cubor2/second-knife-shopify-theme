@@ -1,4 +1,4 @@
-{{ 'sk-components.css' | asset_url | stylesheet_tag }}
+{{ 'sk-design-system.css.liquid' | asset_url | stylesheet_tag }}
 
 {%- style -%}
   .section-{{ section.id }}-padding {
@@ -98,7 +98,7 @@
     {
       "type": "image_picker",
       "id": "image",
-      "label": "Background image"
+      "label": "Image d'arrière-plan"
     },
     {
       "type": "range",
@@ -107,18 +107,18 @@
       "max": 80,
       "step": 5,
       "unit": "%",
-      "label": "Overlay opacity",
+      "label": "Opacité de superposition",
       "default": 0
     },
     {
       "type": "color_scheme",
       "id": "color_scheme",
-      "label": "Color scheme",
+      "label": "Schéma de couleurs",
       "default": "scheme-1"
     },
     {
       "type": "header",
-      "content": "Section padding"
+      "content": "Espacement de section"
     },
     {
       "type": "range",
@@ -127,7 +127,7 @@
       "max": 100,
       "step": 4,
       "unit": "px",
-      "label": "Top padding",
+      "label": "Espacement supérieur",
       "default": 80
     },
     {
@@ -137,74 +137,74 @@
       "max": 100,
       "step": 4,
       "unit": "px",
-      "label": "Bottom padding",
+      "label": "Espacement inférieur",
       "default": 80
     }
   ],
   "blocks": [
     {
       "type": "heading",
-      "name": "Heading",
+      "name": "Titre",
       "limit": 1,
       "settings": [
         {
           "type": "inline_richtext",
           "id": "heading",
-          "default": "Your minimalist headline",
-          "label": "Heading"
+          "default": "Votre titre minimaliste",
+          "label": "Titre"
         }
       ]
     },
     {
       "type": "text",
-      "name": "Text",
+      "name": "Texte",
       "limit": 1,
       "settings": [
         {
           "type": "richtext",
           "id": "text",
-          "default": "<p>Showcase your brand with minimal, impactful messaging.</p>",
+          "default": "<p>Présentez votre marque avec un message minimal et impactant.</p>",
           "label": "Description"
         }
       ]
     },
     {
       "type": "button",
-      "name": "Buttons",
+      "name": "Boutons",
       "limit": 1,
       "settings": [
         {
           "type": "text",
           "id": "button_label_1",
-          "default": "Shop Now",
-          "label": "First button label"
+          "default": "Acheter maintenant",
+          "label": "Libellé du premier bouton"
         },
         {
           "type": "url",
           "id": "button_link_1",
-          "label": "First button link"
+          "label": "Lien du premier bouton"
         },
         {
           "type": "checkbox",
           "id": "button_style_secondary_1",
           "default": false,
-          "label": "Use secondary style for first button"
+          "label": "Utiliser le style secondaire pour le premier bouton"
         },
         {
           "type": "text",
           "id": "button_label_2",
-          "label": "Second button label"
+          "label": "Libellé du deuxième bouton"
         },
         {
           "type": "url",
           "id": "button_link_2",
-          "label": "Second button link"
+          "label": "Lien du deuxième bouton"
         },
         {
           "type": "checkbox",
           "id": "button_style_secondary_2",
           "default": true,
-          "label": "Use secondary style for second button"
+          "label": "Utiliser le style secondaire pour le deuxième bouton"
         }
       ]
     }

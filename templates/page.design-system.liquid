@@ -15,27 +15,120 @@
     <section class="design-section" style="margin: 48px 0; padding: 24px; border: var(--sk-border);">
       <h2 class="h2">Typographie</h2>
 
+      <!-- Tailles Standardisées -->
       <div style="margin: 24px 0;">
         <h3 style="font-family: var(--sk-font-heading-family); font-weight: 700; margin-bottom: 12px;">
-          Titres - Figtree Bold
+          ⚠️ Tailles Standardisées (SEULEMENT 4 tailles autorisées)
         </h3>
 
-        <div style="margin: 24px 0; padding: 12px; background: #fafafa;">
-          <h1 class="h1" style="margin: 12px 0;">H1 - Titre Principal (Figtree Bold)</h1>
-          <h2 class="h2" style="margin: 12px 0;">H2 - Titre Section (Figtree Bold 1.8rem)</h2>
-          <h3 class="h3" style="margin: 12px 0;">H3 - Sous-titre (Figtree Regular)</h3>
+        <div style="margin: 24px 0; padding: 12px; background: #fafafa; border-left: 4px solid #22c55e;">
+          <p style="font-size: 1rem; margin: 6px 0;">
+            <strong>10px</strong> (1rem) - Très petits textes (copyright, mentions légales)
+          </p>
+          <p style="font-size: 1.2rem; margin: 6px 0;">
+            <strong>12px</strong> (1.2rem) - Petits textes (captions, métadonnées)
+          </p>
+          <p style="font-size: 1.4rem; margin: 6px 0;">
+            <strong>14px</strong> (1.4rem) - TEXTE STANDARD (body, navigation) ← NOTRE BASE
+          </p>
+          <p style="font-size: 1.8rem; margin: 6px 0;">
+            <strong>18px</strong> (1.8rem) - Textes plus gros (sous-titres, intro)
+          </p>
+        </div>
+
+        <div style="padding: 12px; background: #fef2f2; border-left: 4px solid #ef4444; margin: 12px 0;">
+          <p style="margin: 0; font-size: 1.2rem;">
+            <strong>🚨 RAPPEL CRITIQUE :</strong> Dawn utilise body_scale=100, donc 1rem = 10px (pas 16px standard)
+          </p>
         </div>
       </div>
 
+      <!-- Hiérarchie des Titres -->
       <div style="margin: 24px 0;">
         <h3 style="font-family: var(--sk-font-heading-family); font-weight: 700; margin-bottom: 12px;">
-          Textes - Work Sans
+          Hiérarchie des Titres
         </h3>
 
         <div style="margin: 24px 0; padding: 12px; background: #fafafa;">
-          <p style="font-size: 1.4rem; font-family: var(--sk-font-body-family);">Texte principal - Work Sans 1.4rem</p>
-          <p style="font-size: 1.3rem; font-family: var(--sk-font-body-family);">Texte mobile - Work Sans 1.3rem</p>
-          <p class="subtitle">Subtitle - Work Sans</p>
+          <h1 class="h1" style="margin: 12px 0;">H1 - Titres Principaux (Figtree Extra Bold)</h1>
+          <p style="font-size: 1.2rem; color: #666; margin: 6px 0 24px 0;">
+            <code>clamp(2rem, 4vw, 4rem)</code> - Responsive<br>
+            <strong>Usage:</strong> "Philosophie", "Gardez le fil", titres héros
+          </p>
+
+          <h2 class="h2" style="margin: 12px 0;">H2 - Titres de Sections (Figtree Bold)</h2>
+          <p style="font-size: 1.2rem; color: #666; margin: 6px 0 24px 0;">
+            <code>clamp(1.5rem, 3vw, 2.5rem)</code> - Responsive<br>
+            <strong>Usage:</strong> "Produits vedettes", titres de contenu
+          </p>
+
+          <h3 class="h3" style="margin: 12px 0;">H3 - Sous-titres (Figtree Semi-Bold)</h3>
+          <p style="font-size: 1.2rem; color: #666; margin: 6px 0;">
+            <code>clamp(1.25rem, 2vw, 1.75rem)</code> - Responsive<br>
+            <strong>Usage:</strong> Sous-sections, catégories
+          </p>
+        </div>
+      </div>
+
+      <!-- Classes Utilitaires -->
+      <div style="margin: 24px 0;">
+        <h3 style="font-family: var(--sk-font-heading-family); font-weight: 700; margin-bottom: 12px;">
+          Classes de Texte Standardisées
+        </h3>
+
+        <div style="margin: 24px 0; padding: 12px; background: #fafafa;">
+          <p class="sk-text-xs" style="margin: 12px 0;">.sk-text-xs - 10px (copyright, mentions)</p>
+          <p class="sk-text-sm" style="margin: 12px 0;">.sk-text-sm - 12px (captions, métadonnées)</p>
+          <p class="sk-text-base" style="margin: 12px 0;">.sk-text-base - 14px (texte standard) ← DÉFAUT</p>
+          <p class="sk-text-lg" style="margin: 12px 0;">.sk-text-lg - 18px (sous-titres, intro)</p>
+        </div>
+      </div>
+
+      <!-- Fontes -->
+      <div style="margin: 24px 0;">
+        <h3 style="font-family: var(--sk-font-heading-family); font-weight: 700; margin-bottom: 12px;">Fontes</h3>
+
+        <div style="margin: 24px 0; padding: 12px; background: #fafafa;">
+          <p style="font-family: 'Figtree', system-ui, sans-serif; font-weight: 800; margin: 12px 0; font-size: 1.8rem;">
+            Figtree Extra Bold (800) - Titres H1
+          </p>
+          <p style="font-family: 'Figtree', system-ui, sans-serif; font-weight: 700; margin: 12px 0; font-size: 1.6rem;">
+            Figtree Bold (700) - Titres H2
+          </p>
+          <p style="font-family: 'Figtree', system-ui, sans-serif; font-weight: 600; margin: 12px 0; font-size: 1.4rem;">
+            Figtree Semi-Bold (600) - Titres H3
+          </p>
+          <p style="font-family: 'Work Sans', system-ui, sans-serif; font-weight: 400; margin: 12px 0; font-size: 1.4rem;">
+            Work Sans Regular (400) - Texte de body
+          </p>
+          <p style="font-family: 'Work Sans', system-ui, sans-serif; font-weight: 500; margin: 12px 0; font-size: 1.4rem;">
+            Work Sans Medium (500) - Boutons, liens importants
+          </p>
+        </div>
+      </div>
+
+      <!-- Démonstration Réelle -->
+      <div style="margin: 24px 0;">
+        <h3 style="font-family: var(--sk-font-heading-family); font-weight: 700; margin-bottom: 12px;">
+          Démonstration en Situation Réelle
+        </h3>
+
+        <div style="margin: 24px 0; padding: 24px; background: #fafafa; border: var(--sk-border);">
+          <h2 style="margin-bottom: 12px;">Adoptez-en un et vous verrez, il vous le rendra bien !</h2>
+          <p style="margin-bottom: 24px;">
+            Ce texte utilise notre taille standardisée de 14px (1.4rem avec Dawn). Il est parfaitement lisible et
+            cohérent avec notre design system.
+          </p>
+
+          <div style="padding: 12px; background: white; border: var(--sk-border); margin: 12px 0;">
+            <p style="margin: 0; font-size: 1.4rem;">
+              📧 Newsletter: "Faites partie des premières personnes à être informées..." (14px)
+            </p>
+          </div>
+
+          <div style="padding: 12px; background: white; border: var(--sk-border); margin: 12px 0;">
+            <p style="margin: 0; font-size: 1.4rem;">🧭 Navigation: "Accueil • Produits • Contact" (14px)</p>
+          </div>
         </div>
       </div>
     </section>
@@ -341,31 +434,108 @@
       </div>
     </section>
 
+    <!-- Architecture CSS -->
+    <section class="design-section" style="margin: 48px 0; padding: 24px; border: var(--sk-border);">
+      <h2 class="h2">Architecture CSS</h2>
+
+      <div style="margin: 24px 0; padding: 16px; background: #f0fdf4; border: 2px solid #16a34a;">
+        <h3 style="font-family: var(--sk-font-heading-family); font-weight: 700; margin-bottom: 8px; color: #16a34a;">
+          ✅ CSS Consolidé - sk-master.css.liquid
+        </h3>
+        <p style="font-size: 1.2rem; margin: 0 0 12px 0; line-height: 1.5;">
+          L'architecture CSS a été <strong>consolidée en un seul fichier</strong> pour une meilleure maintenabilité.
+        </p>
+        <div style="font-size: 1.1rem; color: #15803d; line-height: 1.6;">
+          <p><strong>Ancien système :</strong> 4 fichiers (800+ lignes)</p>
+          <ul style="margin: 8px 0;">
+            <li><code>sk-variables.css.liquid</code> → ❌ Supprimé</li>
+            <li><code>sk-typography.css.liquid</code> → ❌ Supprimé</li>
+            <li><code>sk-components.css</code> → ❌ Supprimé</li>
+            <li><code>section-rich-text.css</code> → ❌ Supprimé</li>
+          </ul>
+          <p><strong>Nouveau système :</strong> 1 fichier (400 lignes)</p>
+          <ul style="margin: 8px 0;">
+            <li><code>sk-master.css.liquid</code> → ✅ Tout consolidé</li>
+          </ul>
+        </div>
+      </div>
+
+      <div style="margin: 24px 0;">
+        <h3 style="font-family: var(--sk-font-heading-family); font-weight: 700; margin-bottom: 12px;">
+          Structure du fichier master
+        </h3>
+        <div style="font-size: 1.1rem; color: #374151; line-height: 1.8;">
+          <ol>
+            <li><strong>Variables CSS</strong> - Couleurs, espacements, polices</li>
+            <li><strong>Typographie</strong> - H1, H2, H3, classes utilitaires</li>
+            <li><strong>Layout</strong> - Conteneurs, grilles, sections</li>
+            <li><strong>Composants</strong> - Cartes, boutons, héro</li>
+            <li><strong>Overrides Dawn</strong> - Personnalisations du thème</li>
+            <li><strong>Responsive</strong> - Media queries mobile/desktop</li>
+          </ol>
+        </div>
+      </div>
+
+      <div style="margin: 24px 0;">
+        <h3 style="font-family: var(--sk-font-heading-family); font-weight: 700; margin-bottom: 12px;">
+          Responsive Typography
+        </h3>
+        <div style="background: #fafafa; padding: 16px; border-left: 4px solid #121212;">
+          <p style="margin: 0 0 12px 0; font-weight: 600;">H1 avec classe sk-display :</p>
+          <code style="display: block; margin: 6px 0;">
+            Mobile (≤749px): font-size: 25px !important;<br>
+            Desktop (≥750px): font-size: clamp(2.5rem, 4vw, 4rem) !important;
+          </code>
+          <p style="margin: 12px 0 0 0; font-size: 0.95rem; color: #666;">
+            Appliqué automatiquement aux sections : rich-text, hero, newsletter
+          </p>
+        </div>
+      </div>
+    </section>
+
     <!-- Usage Guidelines -->
     <section class="design-section" style="margin: 48px 0; padding: 24px; border: var(--sk-border);">
       <h2 class="h2">Règles d'Usage</h2>
 
       <div class="rte">
-        <h3>Cohérence</h3>
+        <h3>Hiérarchie Sémantique</h3>
         <ul>
-          <li>Toujours utiliser les multiples de 8 pour l'espacement</li>
-          <li>Bordures toujours identiques (1px solid #121212)</li>
-          <li>Figtree Bold pour tous les titres</li>
-          <li>Work Sans pour tous les textes</li>
+          <li><strong>H1 + sk-display</strong> : Titres principaux ("Philosophie", "Gardez le fil")</li>
+          <li><strong>H2</strong> : Titres de sections ("Produits vedettes")</li>
+          <li><strong>H3</strong> : Sous-sections et catégories</li>
+          <li>Un seul H1 par section, H2 pour le contenu</li>
         </ul>
 
-        <h3>Responsive</h3>
+        <h3>CSS et Architecture</h3>
         <ul>
-          <li>Mobile: espacement réduit de moitié</li>
-          <li>Grilles adaptatives selon la taille</li>
-          <li>Typographie plus petite sur mobile</li>
+          <li>Utiliser <code>sk-master.css.liquid</code> comme fichier unique</li>
+          <li>Classes SK pour les composants custom</li>
+          <li>Classes Dawn natives pour les formulaires</li>
+          <li>Préfixer toutes les classes custom par <code>sk-</code></li>
+        </ul>
+
+        <h3>Responsive Design</h3>
+        <ul>
+          <li>Mobile-first avec breakpoint à 750px</li>
+          <li>H1 Display : 25px mobile, responsive desktop</li>
+          <li>Espacement réduit sur mobile (multiples de 6px)</li>
+          <li>Grilles adaptatives (1 col mobile → 2-4 cols desktop)</li>
+        </ul>
+
+        <h3>Cohérence Visuelle</h3>
+        <ul>
+          <li>Bordures : toujours 1px solid #121212</li>
+          <li>Espacement : multiples de 8px (6px sur mobile)</li>
+          <li>Polices : Figtree (titres) + Work Sans (texte)</li>
+          <li>Couleurs : Noir/Blanc avec gris pour les nuances</li>
         </ul>
 
         <h3>Accessibilité</h3>
         <ul>
-          <li>Contraste suffisant (noir sur blanc)</li>
-          <li>Tailles de touch targets minimum 44px</li>
-          <li>Navigation au clavier possible</li>
+          <li>Contraste WCAG AA (noir sur blanc)</li>
+          <li>Touch targets minimum 44px</li>
+          <li>Navigation clavier sur tous les éléments</li>
+          <li>Structure sémantique HTML correcte</li>
         </ul>
       </div>
     </section>

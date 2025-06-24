@@ -1,0 +1,359 @@
+/*
+ * SECOND KNIFE DESIGN SYSTEM
+ * Système de tailles de texte standardisées
+ * 
+ * ⚠️  IMPORTANT : Lire DAWN-CSS-OVERRIDE-GUIDE.md avant toute modification !
+ * 
+ * RÉSUMÉ CRITIQUE :
+ * - Dawn utilise body_scale=100 donc 1rem = 10px (pas 16px)
+ * - Pour 14px utiliser 1.4rem (PAS 0.875rem qui donne 8.75px)
+ * - Ce fichier contient 2 approches : propre + brutale en backup
+ */
+
+/* GOOGLE FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700;800&family=Work+Sans:wght@300;400;500;600&display=swap');
+
+/* VARIABLES TAILLES DE TEXTE STANDARDISÉES */
+:root {
+  --sk-text-xs: 1rem;        /* 10px - très petits textes (avec body_scale=100) */
+  --sk-text-sm: 1.2rem;      /* 12px - petits textes */
+  --sk-text-base: 1.4rem;    /* 14px - textes normaux */
+  --sk-text-lg: 1.6rem;      /* 16px - textes plus gros (réduit de 18px) */
+}
+
+/* OVERRIDE SIMPLE DES TAILLES DE DAWN */
+
+/* Textes de base (rich-text, newsletter) - 14px */
+.rich-text__text.rte,
+.rich-text__text.rte p,
+.newsletter__subheading.rte,
+.newsletter__subheading.rte p {
+  font-size: 1.4rem;
+}
+
+/* Textes du menu - 14px */
+.header__menu-item.list-menu__item,
+.header__menu-item span {
+  font-size: 1.4rem;
+}
+
+/* CUSTOM PROPERTIES */
+:root {
+  --sk-border-width: 1px;
+  --sk-border-color: 18, 18, 18;
+  --sk-border-opacity: 1;
+  --sk-spacing-base: 24px;
+
+  --sk-border: var(--sk-border-width) solid rgba(var(--sk-border-color), var(--sk-border-opacity));
+  
+  --sk-space-1: calc(var(--sk-spacing-base) * 0.25);
+  --sk-space-2: calc(var(--sk-spacing-base) * 0.5);
+  --sk-space-3: var(--sk-spacing-base);
+  --sk-space-4: calc(var(--sk-spacing-base) * 1.5);
+  --sk-space-5: calc(var(--sk-spacing-base) * 2);
+
+  --sk-font-heading: 'Figtree', system-ui, sans-serif;
+  --sk-font-body: 'Work Sans', system-ui, sans-serif;
+  
+  --sk-transition: 0.2s ease;
+
+  /* STANDARDIZED TEXT SIZES - Only 4 sizes allowed */
+  --sk-text-xs: 1rem;      /* 10px - très petits textes (copyright, mentions) */
+  --sk-text-sm: 1.2rem;    /* 12px - petits textes (captions, métadonnées) */
+  --sk-text-base: 1.4rem;  /* 14px - textes normaux (body, navigation) */
+  --sk-text-lg: 1.8rem;    /* 18px - textes plus gros (sous-titres) */
+}
+
+/* SOLUTION CIBLÉE - ÉCRASE SEULEMENT LES TEXTES VOULUS */
+
+/* RESET de Dawn text-body SEULEMENT pour les textes de contenu */
+.text-body p,
+.rte p,
+.content-container p,
+.page-width p {
+  font-size: 1.4rem; /* 14px avec body_scale=100 */
+  line-height: 1.6;
+  font-family: 'Work Sans', system-ui, sans-serif;
+}
+
+/* Navigation header 14px */
+.header__menu-item,
+.list-menu__item {
+  font-size: 1.4rem; /* 14px avec body_scale=100 */
+  line-height: 1.6;
+  font-family: 'Work Sans', system-ui, sans-serif;
+}
+
+/* Newsletter 14px */
+.newsletter__subheading,
+.newsletter__subheading p {
+  font-size: 1.4rem; /* 14px avec body_scale=100 */
+  line-height: 1.6;
+  font-family: 'Work Sans', system-ui, sans-serif;
+}
+
+/* Sections rich-text spécifiques (Philosophie + Gardez le fil) */
+.shopify-section[id*="rich_text"] .rich-text__text p,
+.shopify-section[id*="rich-text"] .rte p,
+section[id*="rich_text"] .rich-text__text p,
+section[id*="rich_text"] .rte p {
+  font-size: 1.4rem; /* 14px avec body_scale=100 */
+  line-height: 1.6;
+  font-family: 'Work Sans', system-ui, sans-serif;
+}
+
+/* HIÉRARCHIE TYPOGRAPHIQUE CLAIRE - Overrides complets de Dawn */
+
+/* H1 - GROS (Figtree Extra Bold) */
+h1, 
+.h1, 
+.sk-hero__title, 
+.sk-display,
+.rich-text__heading,
+.title.h1,
+h1.title {
+  font-family: var(--sk-font-heading);
+  font-weight: 800;
+  font-size: clamp(2rem, 4vw, 4rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: var(--sk-space-4);
+}
+
+/* H2 - MOYEN (Figtree Bold) */
+h2, 
+.h2,
+.title.h2,
+h2.title {
+  font-family: var(--sk-font-heading);
+  font-weight: 700;
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  letter-spacing: -0.015em;
+  line-height: 1.2;
+  margin-bottom: var(--sk-space-3);
+}
+
+/* H3 - PETIT (Figtree Semi-Bold) */
+h3, 
+.h3,
+.title.h3,
+h3.title {
+  font-family: var(--sk-font-heading);
+  font-weight: 600;
+  font-size: clamp(1.25rem, 2vw, 1.75rem);
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+  margin-bottom: var(--sk-space-2);
+}
+
+/* STANDARDIZED TEXT CLASSES */
+.sk-text-xs {
+  font-size: var(--sk-text-xs);
+  line-height: 1.4;
+}
+
+.sk-text-sm {
+  font-size: var(--sk-text-sm);
+  line-height: 1.5;
+}
+
+.sk-text-base {
+  font-size: var(--sk-text-base);
+  line-height: 1.6;
+}
+
+.sk-text-lg {
+  font-size: var(--sk-text-lg);
+  line-height: 1.6;
+}
+
+/* AUTRES TEXTES STANDARDISÉS */
+
+/* Texte de base - 14px */
+body, 
+p, 
+.rte,
+.rte p,
+.link,
+.footer-block__details-content a {
+  font-family: var(--sk-font-body);
+  font-weight: 400;
+  font-size: var(--sk-text-base);
+  line-height: 1.6;
+}
+
+/* Très petits textes - 10px */
+.footer__copyright,
+.caption,
+.legal-text,
+.small-print {
+  font-family: var(--sk-font-body);
+  font-size: var(--sk-text-xs);
+  line-height: 1.4;
+}
+
+/* Petits textes - 12px */
+.meta,
+.caption-text,
+.product-caption,
+.label-small {
+  font-family: var(--sk-font-body);
+  font-size: var(--sk-text-sm);
+  line-height: 1.5;
+}
+
+/* Textes plus gros - 18px */
+.sk-hero__subtitle,
+.subtitle,
+.intro-text {
+  font-family: var(--sk-font-body);
+  font-size: var(--sk-text-lg);
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+/* HERO SECTION STYLES */
+.sk-hero {
+  text-align: center;
+  padding: calc(var(--sk-space-5) * 2) 0;
+}
+
+.sk-hero__content {
+  max-width: 60rem;
+  margin: 0 auto;
+}
+
+.sk-hero__subtitle {
+  margin-bottom: var(--sk-space-5);
+}
+
+.sk-hero__actions {
+  display: flex;
+  gap: var(--sk-space-3);
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/* BUTTON SYSTEM */
+.sk-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--sk-space-2) var(--sk-space-4);
+  border: var(--sk-border);
+  background: transparent;
+  color: rgb(var(--sk-border-color));
+  font-family: var(--sk-font-body);
+  font-weight: 500;
+  font-size: var(--sk-text-base);
+  text-decoration: none;
+  cursor: pointer;
+  transition: all var(--sk-transition);
+  min-height: 48px;
+}
+
+.sk-button:hover {
+  background: rgb(var(--sk-border-color));
+  color: white;
+}
+
+.sk-button--primary {
+  background: rgb(var(--sk-border-color));
+  color: white;
+}
+
+.sk-button--primary:hover {
+  background: transparent;
+  color: rgb(var(--sk-border-color));
+}
+
+/* CONTAINER */
+.sk-container {
+  max-width: 120rem;
+  margin: 0 auto;
+  padding-inline: var(--sk-space-3);
+}
+
+/* SÉPARATEURS DE SECTIONS */
+.section {
+  border-bottom: var(--sk-border);
+}
+
+/* Pas de bordure sur la dernière section */
+.section:last-child {
+  border-bottom: none;
+}
+
+/* SOLUTION BRUTALE FINALE - ÉCRASE TOUT DAWN SANS PITIÉ */
+html body .shopify-section .rich-text .rich-text__text p,
+html body .shopify-section .rich-text .rte p,
+html body .shopify-section .rich-text p,
+html body .shopify-section p,
+html body .page-width p,
+html body .content-container p,
+html body .rte p,
+html body p {
+  font-size: 14px !important;
+  line-height: 1.6 !important;
+  font-family: 'Work Sans', system-ui, sans-serif !important;
+}
+
+/* MENU NAVIGATION - ARME NUCLÉAIRE TOTALE */
+html body .shopify-section .header .header__menu-item,
+html body .shopify-section .header .header__menu-item a,
+html body .shopify-section .header .list-menu__item,
+html body .shopify-section .header .list-menu__item a,
+html body .shopify-section .header nav a,
+html body .shopify-section .header nav .list-menu__item,
+html body .shopify-section .header nav .list-menu__item a,
+html body .shopify-section .header .header__menu-item,
+html body .shopify-section .header .list-menu__item,
+html body .header .header__menu-item,
+html body .header .list-menu__item,
+html body .header a {
+  font-size: 14px !important;
+  line-height: 1.6 !important;
+  font-family: 'Work Sans', system-ui, sans-serif !important;
+}
+
+/* FOOTER COPYRIGHT - FORCE 10px */
+.footer__copyright,
+.footer__copyright.caption,
+.footer__copyright p,
+.footer__copyright.caption p,
+.footer__copyright a,
+.footer__copyright span {
+  font-size: 1rem !important; /* 10px avec body_scale=100 */
+  line-height: 1.4 !important;
+  font-family: 'Work Sans', system-ui, sans-serif !important;
+}
+
+/* HEADER BORDER - Override Dawn's gray border */
+.header-wrapper--border-bottom {
+  border-bottom: var(--sk-border);
+}
+
+/* Hide border when sticky header is hidden */
+.shopify-section-header-hidden .header-wrapper--border-bottom {
+  border-bottom: none;
+}
+
+/* UTILITY CLASSES */
+.sk-center { text-align: center; }
+
+/* RESPONSIVE */
+@media (max-width: 749px) {
+  .sk-hero__actions {
+    flex-direction: column;
+    gap: var(--sk-space-2);
+  }
+
+  .sk-hero {
+    padding: var(--sk-space-5) 0;
+  }
+
+  .sk-container {
+    padding-inline: var(--sk-space-2);
+  }
+} 

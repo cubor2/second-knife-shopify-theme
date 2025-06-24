@@ -2,6 +2,37 @@
 
 Un thème Shopify minimaliste inspiré de l'esthétique **Bestmade**, basé sur Dawn pour la performance et la stabilité.
 
+## 🚀 Démarrage Rapide
+
+### Lancer le serveur de développement (IMPORTANT)
+```powershell
+# 1. Ouvrir PowerShell dans le dossier du projet
+cd "D:\PROJETS\Cloud\Second Knife\Theme\dawn"
+
+# 2. Lancer le serveur (TOUJOURS avec --store)
+shopify theme dev --store=second-knife.myshopify.com
+```
+
+> ⚠️ **Éviter les erreurs** :
+> - **TOUJOURS** utiliser `--store=second-knife.myshopify.com`
+> - Ne pas utiliser `shopify theme dev` seul (erreur `_shopify_essential`)
+> - Si erreur d'auth, faire `shopify auth logout` puis relancer
+
+### URLs d'accès
+- **Local** : http://127.0.0.1:9292
+- **Prévisualisation** : Affichée dans le terminal au démarrage
+
+### En cas de problème
+```powershell
+# Réinitialiser l'auth si nécessaire
+shopify auth logout
+
+# Puis relancer
+shopify theme dev --store=second-knife.myshopify.com
+```
+
+---
+
 ## ✨ Caractéristiques
 
 ### Design Minimaliste
@@ -121,18 +152,14 @@ templates/
 
 ### Commandes de Développement
 
-#### Démarrer le serveur local
+#### 🚀 Démarrage rapide (RECOMMANDÉ)
 ```powershell
-# Assurez-vous d'être dans le bon répertoire
-cd "D:\PROJETS\Cloud\Second Knife\Theme\dawn"
+# Option 1: Script automatique
+.\start-dev.ps1
 
-# Lancer le serveur de développement
+# Option 2: Commande manuelle
 shopify theme dev --store=second-knife.myshopify.com
 ```
-
-> ⚠️ **Important** : 
-> - Il faut impérativement spécifier le paramètre `--store` pour éviter les erreurs d'autorisation
-> - En PowerShell, ne pas utiliser `&&` (syntaxe Unix), utiliser `;` ou des commandes séparées
 
 #### Accès aux URLs
 - **Local** : http://127.0.0.1:9292
@@ -156,6 +183,29 @@ shopify theme pull --store=second-knife.myshopify.com
 1. Modifiez les fichiers CSS dans `assets/`
 2. Testez dans l'éditeur Shopify
 3. Synchronisez avec `shopify theme dev --store=second-knife.myshopify.com`
+
+### 🔄 Synchronisation des données
+
+#### Modifications dans l'admin Shopify (logo, textes, etc.)
+```powershell
+# 1. Récupérer les changements de l'admin vers le local
+shopify theme pull --store=second-knife.myshopify.com
+
+# 2. Relancer le serveur pour voir les changements
+shopify theme dev --store=second-knife.myshopify.com
+```
+
+#### Modifications du code local (CSS, Liquid, etc.)
+```powershell
+# 1. Le serveur local se met à jour automatiquement (hot reload)
+# 2. Pousser vers l'admin si nécessaire
+shopify theme push --store=second-knife.myshopify.com
+```
+
+#### Règles d'or
+- **Admin → Local** : `shopify theme pull` puis relancer serveur
+- **Local → Admin** : Hot reload automatique, `shopify theme push` si besoin
+- **Toujours** spécifier `--store=second-knife.myshopify.com`
 
 ## 📱 Responsive
 

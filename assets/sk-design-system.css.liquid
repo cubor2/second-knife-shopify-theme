@@ -276,13 +276,25 @@ p,
 }
 
 /* SÉPARATEURS DE SECTIONS */
-.section {
+/* RETIRÉ : Cette règle créait un liseré noir indésirable sous tous les titres */
+/* .section {
   border-bottom: var(--sk-border);
-}
+} */
 
 /* Pas de bordure sur la dernière section */
-.section:last-child {
+/* .section:last-child {
   border-bottom: none;
+} */
+
+/* Pas de bordure sous les sections de titres de pages */
+/* .template-page .section:first-child,
+.template-collection .section:first-child {
+  border-bottom: none;
+} */
+
+/* BORDURES SPÉCIFIQUES POUR LA HOME PAGE - Approche directe dans les templates */
+.sk-home-border {
+  border-bottom: var(--sk-border);
 }
 
 /* SOLUTION BRUTALE FINALE - ÉCRASE TOUT DAWN SANS PITIÉ */

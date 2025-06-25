@@ -23,6 +23,18 @@
     {%- else -%}
       <h2 class="visually-hidden">{{ 'templates.contact.form.title' | t }}</h2>
     {%- endif -%}
+
+    {%- comment -%} Texte d'introduction standardisé {%- endcomment -%}
+    <div
+      class="contact__intro rte{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+      style="margin-top: 2.4rem; margin-bottom: 2.4rem;"
+    >
+      <p>
+        Nous serions ravis de vous entendre. Remplissez le formulaire ci-dessous et nous vous répondrons dans les plus
+        brefs délais.
+      </p>
+    </div>
+
     {%- liquid
       assign contact_form_class = 'isolate'
       if settings.animations_reveal_on_scroll
@@ -51,7 +63,7 @@
           </li>
         </ul>
       {%- endif -%}
-      <div class="contact__fields">
+      <div class="contact__fields" style="margin-top: 2.4rem;">
         <div class="field">
           <input
             class="field__input"

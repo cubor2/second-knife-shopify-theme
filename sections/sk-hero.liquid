@@ -46,7 +46,7 @@
   }
 {%- endstyle -%}
 
-<div class="sk-hero sk-hero-{{ section.id }} section-{{ section.id }}-padding color-{{ section.settings.color_scheme }} gradient">
+<div class="sk-hero sk-hero-{{ section.id }} section-{{ section.id }}-padding color-{{ section.settings.color_scheme }} gradient{% if template == 'index' %} sk-home-border{% endif %}">
   <div class="sk-container">
     <div class="sk-hero__content">
       {%- for block in section.blocks -%}

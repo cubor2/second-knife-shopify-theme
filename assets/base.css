@@ -2388,7 +2388,7 @@ input[type='checkbox'] {
 }
 
 .header-wrapper--border-bottom {
-  border-bottom: 0.1rem solid rgba(var(--color-foreground), 0.08);
+  /* border-bottom: 0.1rem solid rgba(var(--color-foreground), 0.08); */
 }
 
 .header {
@@ -3549,3 +3549,18 @@ details-disclosure > details {
   user-select: none;
   -webkit-touch-callout: none;
 }
+
+/* ====== STANDARD SECOND KNIFE - TITRES DE PAGES ====== */
+/* Standardisation des espacements pour tous les titres de pages */
+.main-page-title,
+.collection-hero__title {
+  margin-top: 2.5rem !important;
+  margin-bottom: 2.5rem !important;
+}
+
+/* Sections - Espacement standard */
+.section {
+  margin-top: 0 !important;
+}
+
+

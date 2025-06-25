@@ -37,8 +37,8 @@ if ($Sync) {
     Write-Host "`nSynchronisation terminée!" -ForegroundColor Green
 }
 
-# Lancer le serveur avec le bon store
-Write-Host "`nConnexion a second-knife.myshopify.com..." -ForegroundColor Cyan
-shopify theme dev --store=second-knife.myshopify.com
+# Lancer le serveur avec le bon store et le THÈME LIVE
+Write-Host "`nConnexion au thème LIVE (Second Knife LIVE #183719133448)..." -ForegroundColor Cyan
+shopify theme dev --store=second-knife.myshopify.com --theme=183719133448
 
 # Le script s'arrete ici car shopify theme dev reste actif 

@@ -2,24 +2,53 @@
 
 Un thème Shopify minimaliste inspiré de l'esthétique **Bestmade**, basé sur Dawn pour la performance et la stabilité.
 
+## 🎯 **INFORMATIONS THÈMES - IMPORTANT**
+
+### Configuration des Thèmes Shopify
+```
+🟢 "Second Knife LIVE"     → Thème en production (ID: #183719133448)
+🔧 "Development (Gaming)"  → Thème de développement (ID: #184417681672)
+```
+
+### ⚠️ **RÈGLES IMPORTANTES** 
+- **TOUJOURS** travailler sur le thème **"Second Knife LIVE"** (#183719133448)
+- **JAMAIS** configurer les textes/sections sur le thème de développement
+- Le thème LIVE est celui que voient vos clients ET celui sur lequel vous devez configurer vos contenus
+
 ## 🚀 Démarrage Rapide
 
-### Lancer le serveur de développement (IMPORTANT)
+### Lancer le serveur de développement sur le THÈME LIVE
 ```powershell
 # 1. Ouvrir PowerShell dans le dossier du projet
 cd "D:\PROJETS\Cloud\Second Knife\Theme\dawn"
 
-# 2. Lancer le serveur (TOUJOURS avec --store)
-shopify theme dev --store=second-knife.myshopify.com
+# 2. Se connecter au THÈME LIVE (OBLIGATOIRE)
+shopify theme dev --store=second-knife.myshopify.com --theme=183719133448
+```
+
+### 🔄 Scripts Automatisés (RECOMMANDÉS)
+```powershell
+# Démarrage avec synchronisation des paramètres
+.\start-dev.ps1 --sync
+
+# Démarrage normal
+.\start-dev.ps1
+
+# Sauvegarde rapide des paramètres
+.\quick-save.ps1
+
+# Restauration des paramètres
+.\restore-settings.ps1
 ```
 
 > ⚠️ **Éviter les erreurs** :
+> - **TOUJOURS** utiliser l'ID du thème LIVE : `--theme=183719133448`
 > - **TOUJOURS** utiliser `--store=second-knife.myshopify.com`
 > - Ne pas utiliser `shopify theme dev` seul (erreur `_shopify_essential`)
 > - Si erreur d'auth, faire `shopify auth logout` puis relancer
 
 ### URLs d'accès
-- **Local** : http://127.0.0.1:9292
+- **Local** : http://127.0.0.1:9292 (pas localhost)
 - **Prévisualisation** : Affichée dans le terminal au démarrage
 
 ### En cas de problème
@@ -27,8 +56,45 @@ shopify theme dev --store=second-knife.myshopify.com
 # Réinitialiser l'auth si nécessaire
 shopify auth logout
 
-# Puis relancer
-shopify theme dev --store=second-knife.myshopify.com
+# Puis relancer sur le THÈME LIVE
+shopify theme dev --store=second-knife.myshopify.com --theme=183719133448
+```
+
+### 🎛️ Configuration des Contenus
+1. **Ouvrir l'admin Shopify** : https://admin.shopify.com/store/second-knife/themes
+2. **Sélectionner "Second Knife LIVE"** (celui avec le badge vert "Current theme")
+3. **Cliquer "Customize"** pour configurer textes et sections
+4. **IMPORTANT** : Ne jamais configurer sur un autre thème !
+
+---
+
+## 🔄 **WORKFLOW CORRECT - À SUIVRE**
+
+### 1. Démarrage d'une session
+```powershell
+# Connecter au thème LIVE avec sauvegarde
+.\start-dev.ps1 --sync
+```
+
+### 2. Configuration des contenus
+- Aller dans l'admin Shopify → "Second Knife LIVE" → Customize
+- Configurer vos textes, sections, images, etc.
+- **Vérifier** que vous êtes bien sur le thème LIVE
+
+### 3. Modifications du code
+- Modifier les fichiers `.liquid`, `.css`, `.js` localement
+- Les changements s'appliquent automatiquement (hot reload)
+
+### 4. Sauvegarde
+```powershell
+# Sauvegarder votre configuration actuelle
+.\quick-save.ps1
+```
+
+### 5. Push en production
+```powershell
+# Pusher vers le thème LIVE
+shopify theme push --store=second-knife.myshopify.com --theme=183719133448
 ```
 
 ---

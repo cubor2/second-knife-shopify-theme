@@ -209,3 +209,70 @@ Vérifiez votre connexion Shopify et réessayez
 - Chaque sauvegarde a un timestamp unique
 - Le script `--sync` utilise toujours la sauvegarde la plus récente
 - Les paramètres sont appliqués au redémarrage du serveur 
+
+# 🔄 GUIDE SAUVEGARDE COMPLÈTE - SECOND KNIFE
+
+## ❌ PROBLÈME RÉSOLU 
+
+Avant, on ne sauvegardait que les `settings_data.json` (polices, couleurs...) mais **PAS les templates** (configuration des blocs de la home page). Résultat : à chaque session, il fallait reconfigurer la home page manuellement.
+
+## ✅ NOUVELLE SOLUTION
+
+Les scripts ont été mis à jour pour sauvegarder ET restaurer :
+- ✅ **Settings** (`config/settings_data.json`) - paramètres généraux
+- ✅ **Templates** (`templates/*.json`) - configuration des pages, notamment `index.json` pour la home
+
+## 🚀 PROCESSUS OPTIMISÉ
+
+### 1. Après avoir configuré ton thème dans l'admin Shopify :
+```powershell
+.\backup-settings.ps1
+```
+→ Sauvegarde COMPLÈTE : settings + templates + home page
+
+### 2. En début de nouvelle session :
+```powershell
+.\restore-settings.ps1
+```
+→ Restaure TOUT automatiquement
+
+### 3. Relancer le serveur :
+```powershell
+.\start-dev.ps1
+```
+
+## 📁 STRUCTURE DES SAUVEGARDES
+
+```
+backup-settings/
+├── settings_backup_2025-06-26_11-09-04.json      # Paramètres généraux
+└── templates_backup_2025-06-26_11-09-04/         # Configuration des pages
+    ├── index.json          # ⭐ HOME PAGE (le plus important!)
+    ├── product.json        # Page produit
+    ├── collection.json     # Page collection
+    └── ...
+```
+
+## ⚡ AVANTAGES
+
+- **Plus de reconfiguration manuelle** de la home page
+- **Textes et blocs sauvegardés** automatiquement  
+- **Cohérence** entre les sessions de travail
+- **Backup automatique** avant chaque restauration
+
+## 🎯 SAUVEGARDE DU 26/06/2025 11:09
+
+La sauvegarde `2025-06-26_11-09-04` contient :
+- ✅ Settings avec les bonnes polices et paramètres
+- ✅ Templates avec la home page configurée
+- ✅ Tous les textes "Crafted with Purpose", "Philosophie", etc.
+
+## 💡 CONSEILS
+
+1. **Sauvegarde après chaque modification importante** dans l'admin
+2. **Restauration systématique** en début de session
+3. **Vérification** : `http://127.0.0.1:9292` doit montrer la bonne home page
+
+---
+
+**🎊 FINI LES GALÈRES DE RECONFIGURATION !**

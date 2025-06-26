@@ -1,0 +1,603 @@
+{{ 'section-main-page.css' | asset_url | stylesheet_tag }}
+{{ 'section-contact-form.css' | asset_url | stylesheet_tag }}
+
+<div class="section page-design-system">
+  <div class="page-width page-width--narrow">
+    <!-- Header -->
+    <header class="page-header text-center">
+      <h1 class="h1">{{ page.title | escape }}</h1>
+      <div class="rte">
+        <p>Documentation complète du Design System Second Knife</p>
+      </div>
+    </header>
+
+    <!-- Typography Section -->
+    <section class="design-section" style="margin: 48px 0; padding: 24px; border: var(--sk-border);">
+      <h2 class="h2">Typographie</h2>
+
+      <!-- Tailles Standardisées -->
+      <div style="margin: 24px 0;">
+        <h3 style="font-family: var(--sk-font-heading-family); font-weight: 700; margin-bottom: 12px;">
+          ⚠️ Tailles Standardisées (SEULEMENT 4 tailles autorisées)
+        </h3>
+
+        <div style="margin: 24px 0; padding: 12px; background: #fafafa; border-left: 4px solid #22c55e;">
+          <p style="font-size: 1rem; margin: 6px 0;">
+            <strong>10px</strong> (1rem) - Très petits textes (copyright, mentions légales)
+          </p>
+          <p style="font-size: 1.2rem; margin: 6px 0;">
+            <strong>12px</strong> (1.2rem) - Petits textes (captions, métadonnées)
+          </p>
+          <p style="font-size: 1.4rem; margin: 6px 0;">
+            <strong>14px</strong> (1.4rem) - TEXTE STANDARD (body, navigation) ← NOTRE BASE
+          </p>
+          <p style="font-size: 1.8rem; margin: 6px 0;">
+            <strong>18px</strong> (1.8rem) - Textes plus gros (sous-titres, intro)
+          </p>
+        </div>
+
+        <div style="padding: 12px; background: #fef2f2; border-left: 4px solid #ef4444; margin: 12px 0;">
+          <p style="margin: 0; font-size: 1.2rem;">
+            <strong>🚨 RAPPEL CRITIQUE :</strong> Dawn utilise body_scale=100, donc 1rem = 10px (pas 16px standard)
+          </p>
+        </div>
+      </div>
+
+      <!-- Hiérarchie des Titres -->
+      <div style="margin: 24px 0;">
+        <h3 style="font-family: var(--sk-font-heading-family); font-weight: 700; margin-bottom: 12px;">
+          Hiérarchie des Titres
+        </h3>
+
+        <div style="margin: 24px 0; padding: 12px; background: #fafafa;">
+          <h1 class="h1" style="margin: 12px 0;">H1 – Titre Principal (4rem / 40px, Extra Bold)</h1>
+          <p style="font-size: 1.2rem; color: #666; margin: 6px 0 24px 0;">
+            <strong>Usage :</strong> Page principale, titres héros, sections majeures<br>
+            <strong>Style :</strong> 4rem (40px), même style que H2, Extra Bold (800)
+          </p>
+
+          <h2 class="h2" style="margin: 12px 0;">H2 – Titre de Section (4rem / 40px, Extra Bold)</h2>
+          <p style="font-size: 1.2rem; color: #666; margin: 6px 0 24px 0;">
+            <strong>Usage :</strong> Titres de section, pages secondaires<br>
+            <strong>Style :</strong> 4rem (40px), identique à H1, Extra Bold (800)
+          </p>
+
+          <h3 class="h3" style="margin: 12px 0;">H3 – Sous-titre (2.5rem / 25px, bold)</h3>
+          <p style="font-size: 1.2rem; color: #666; margin: 6px 0 24px 0;">
+            <strong>Usage :</strong> Sous-sections, catégories<br>
+            <strong>Style :</strong> 2.5rem (25px), bold (700)
+          </p>
+
+          <h4 class="h4" style="margin: 12px 0;">H4 – Intertitre (1.75rem / 17.5px, semi-bold)</h4>
+          <p style="font-size: 1.2rem; color: #666; margin: 6px 0;">
+            <strong>Usage :</strong> Intertitres, légendes, petits titres<br>
+            <strong>Style :</strong> 1.75rem (17.5px), semi-bold (600)
+          </p>
+        </div>
+      </div>
+
+      <!-- Classes Utilitaires -->
+      <div style="margin: 24px 0;">
+        <h3 style="font-family: var(--sk-font-heading-family); font-weight: 700; margin-bottom: 12px;">
+          Classes de Texte Standardisées
+        </h3>
+
+        <div style="margin: 24px 0; padding: 12px; background: #fafafa;">
+          <p class="sk-text-xs" style="margin: 12px 0;">.sk-text-xs - 10px (copyright, mentions)</p>
+          <p class="sk-text-sm" style="margin: 12px 0;">.sk-text-sm - 12px (captions, métadonnées)</p>
+          <p class="sk-text-base" style="margin: 12px 0;">.sk-text-base - 14px (texte standard) ← DÉFAUT</p>
+          <p class="sk-text-lg" style="margin: 12px 0;">.sk-text-lg - 18px (sous-titres, intro)</p>
+        </div>
+      </div>
+
+      <!-- Fontes -->
+      <div style="margin: 24px 0;">
+        <h3 style="font-family: var(--sk-font-heading-family); font-weight: 700; margin-bottom: 12px;">Fontes</h3>
+
+        <div style="margin: 24px 0; padding: 12px; background: #fafafa;">
+          <p style="font-family: 'Figtree', system-ui, sans-serif; font-weight: 800; margin: 12px 0; font-size: 1.8rem;">
+            Figtree Extra Bold (800) - Titres H1
+          </p>
+          <p style="font-family: 'Figtree', system-ui, sans-serif; font-weight: 700; margin: 12px 0; font-size: 1.6rem;">
+            Figtree Bold (700) - Titres H2
+          </p>
+          <p style="font-family: 'Figtree', system-ui, sans-serif; font-weight: 600; margin: 12px 0; font-size: 1.4rem;">
+            Figtree Semi-Bold (600) - Titres H3
+          </p>
+          <p style="font-family: 'Work Sans', system-ui, sans-serif; font-weight: 400; margin: 12px 0; font-size: 1.4rem;">
+            Work Sans Regular (400) - Texte de body
+          </p>
+          <p style="font-family: 'Work Sans', system-ui, sans-serif; font-weight: 500; margin: 12px 0; font-size: 1.4rem;">
+            Work Sans Medium (500) - Boutons, liens importants
+          </p>
+        </div>
+      </div>
+
+      <!-- Démonstration Réelle -->
+      <div style="margin: 24px 0;">
+        <h3 style="font-family: var(--sk-font-heading-family); font-weight: 700; margin-bottom: 12px;">
+          Démonstration en Situation Réelle
+        </h3>
+
+        <div style="margin: 24px 0; padding: 24px; background: #fafafa; border: var(--sk-border);">
+          <h2 style="margin-bottom: 12px;">Adoptez-en un et vous verrez, il vous le rendra bien !</h2>
+          <p style="margin-bottom: 24px;">
+            Ce texte utilise notre taille standardisée de 14px (1.4rem avec Dawn). Il est parfaitement lisible et
+            cohérent avec notre design system.
+          </p>
+
+          <div style="padding: 12px; background: white; border: var(--sk-border); margin: 12px 0;">
+            <p style="margin: 0; font-size: 1.4rem;">
+              📧 Newsletter: "Faites partie des premières personnes à être informées..." (14px)
+            </p>
+          </div>
+
+          <div style="padding: 12px; background: white; border: var(--sk-border); margin: 12px 0;">
+            <p style="margin: 0; font-size: 1.4rem;">🧭 Navigation: "Accueil • Produits • Contact" (14px)</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Buttons Section -->
+    <section class="design-section" style="margin: 48px 0; padding: 24px; border: var(--sk-border);">
+      <h2 class="h2">Boutons</h2>
+
+      <div style="margin: 24px 0; display: flex; gap: 12px; flex-wrap: wrap;">
+        <button class="sk-button">Bouton Standard</button>
+        <button class="sk-button sk-button--primary">Bouton Primary</button>
+        <button class="sk-button sk-button--large">Bouton Large</button>
+        <button class="sk-button sk-button--full" style="max-width: 300px;">Bouton Full Width</button>
+      </div>
+
+      <div style="margin: 12px 0; font-size: 1.2rem; color: #666;">
+        <p>• Standard: transparent avec bordure, hover noir</p>
+        <p>• Primary: fond noir, hover transparent</p>
+        <p>• Large: padding augmenté</p>
+        <p>• Full: largeur 100%</p>
+      </div>
+    </section>
+
+    <!-- Cards Section -->
+    <section class="design-section" style="margin: 48px 0; padding: 24px; border: var(--sk-border);">
+      <h2 class="h2">Cartes</h2>
+
+      <div class="sk-grid sk-grid--3" style="margin: 24px 0;">
+        <div class="sk-card">
+          <div class="sk-card__media">
+            <img
+              src="https://via.placeholder.com/300x300/f4f4f5/999?text=Image"
+              alt="Exemple"
+              loading="lazy"
+              width="300"
+              height="300"
+            >
+          </div>
+          <div class="sk-card__content">
+            <h3 class="sk-card__title">Titre Carte</h3>
+            <p class="sk-card__subtitle">Sous-titre</p>
+            <p class="sk-card__text">Description du produit ou contenu de la carte.</p>
+          </div>
+        </div>
+
+        <div class="sk-card">
+          <div class="sk-card__media">
+            <img
+              src="https://via.placeholder.com/300x300/f4f4f5/999?text=Image"
+              alt="Exemple"
+              loading="lazy"
+              width="300"
+              height="300"
+            >
+          </div>
+          <div class="sk-card__content">
+            <h3 class="sk-card__title">Autre Carte</h3>
+            <p class="sk-card__subtitle">Prix</p>
+            <p class="sk-card__text">Autre exemple de contenu.</p>
+          </div>
+        </div>
+
+        <div class="sk-card">
+          <div class="sk-card__media">
+            <img
+              src="https://via.placeholder.com/300x300/f4f4f5/999?text=Image"
+              alt="Exemple"
+              loading="lazy"
+              width="300"
+              height="300"
+            >
+          </div>
+          <div class="sk-card__content">
+            <h3 class="sk-card__title">Troisième</h3>
+            <p class="sk-card__subtitle">Exemple</p>
+            <p class="sk-card__text">Contenu de démonstration.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Colors Section -->
+    <section class="design-section" style="margin: 48px 0; padding: 24px; border: var(--sk-border);">
+      <h2 class="h2">Palette Couleurs</h2>
+
+      <div style="margin: 24px 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px;">
+        <div style="padding: 24px; background: #ffffff; border: var(--sk-border); text-align: center;">
+          <strong>Blanc</strong><br>
+          <code>#ffffff</code>
+        </div>
+        <div style="padding: 24px; background: #121212; color: white; border: var(--sk-border); text-align: center;">
+          <strong>Noir</strong><br>
+          <code>#121212</code>
+        </div>
+        <div style="padding: 24px; background: #fafafa; border: var(--sk-border); text-align: center;">
+          <strong>Gris 50</strong><br>
+          <code>#fafafa</code>
+        </div>
+        <div style="padding: 24px; background: #52525b; color: white; border: var(--sk-border); text-align: center;">
+          <strong>Gris 600</strong><br>
+          <code>#52525b</code>
+        </div>
+      </div>
+    </section>
+
+    <!-- Spacing Section -->
+    <section class="design-section" style="margin: 48px 0; padding: 24px; border: var(--sk-border);">
+      <h2 class="h2">Espacement</h2>
+
+      <div style="margin: 24px 0;">
+        <h3 style="font-family: var(--sk-font-heading-family); font-weight: 700; margin-bottom: 12px;">
+          Base Unit: 24px (multiples de 8)
+        </h3>
+
+        <div style="margin: 24px 0;">
+          <div style="background: #f4f4f5; margin-bottom: 6px; padding: 6px; border-left: 4px solid #121212;">
+            XS: 6px (base × 0.25)
+          </div>
+          <div style="background: #f4f4f5; margin-bottom: 12px; padding: 12px; border-left: 4px solid #121212;">
+            SM: 12px (base × 0.5)
+          </div>
+          <div style="background: #f4f4f5; margin-bottom: 24px; padding: 24px; border-left: 4px solid #121212;">
+            MD: 24px (base × 1) ← BASE
+          </div>
+          <div style="background: #f4f4f5; margin-bottom: 36px; padding: 36px; border-left: 4px solid #121212;">
+            LG: 36px (base × 1.5)
+          </div>
+          <div style="background: #f4f4f5; margin-bottom: 48px; padding: 48px; border-left: 4px solid #121212;">
+            XL: 48px (base × 2)
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Borders Section -->
+    <section class="design-section" style="margin: 48px 0; padding: 24px; border: var(--sk-border);">
+      <h2 class="h2">Bordures</h2>
+
+      <div style="margin: 24px 0;">
+        <div style="margin: 12px 0; padding: 12px; border: var(--sk-border);">Bordure standard: 1px solid #121212</div>
+        <div style="margin: 12px 0; padding: 12px; border-top: var(--sk-border);">Bordure top uniquement</div>
+        <div style="margin: 12px 0; padding: 12px; border-bottom: var(--sk-border);">Bordure bottom uniquement</div>
+      </div>
+    </section>
+
+    <!-- Layout Standards Section -->
+    <section class="design-section" style="margin: 48px 0; padding: 24px; border: var(--sk-border);">
+      <h2 class="h2">Standards de Mise en Page</h2>
+
+      <div style="margin: 24px 0; padding: 12px; background: #f0fdf4; border-left: 4px solid #22c55e;">
+        <h3 style="margin: 0 0 12px 0; font-weight: 600;">Espacements Standardisés</h3>
+        <p style="margin: 6px 0;">Standard adopté pour TOUTES les pages :</p>
+        <ul style="margin: 12px 0; padding-left: 20px;">
+          <li><strong>padding_top: 0</strong> - Pas d'espace supplémentaire en haut</li>
+          <li><strong>padding_bottom: 32</strong> - Espacement standard en bas (32px)</li>
+        </ul>
+        <p style="margin: 6px 0; font-size: 1.1rem;">
+          Pages appliquées : Contact, À propos, Catalogue (titre et grille)
+        </p>
+      </div>
+
+      <div style="margin: 24px 0; padding: 12px; background: #f0f9ff; border-left: 4px solid #3b82f6;">
+        <h3 style="margin: 0 0 12px 0; font-weight: 600;">Bordures Home Page</h3>
+        <p style="margin: 6px 0;">Solution avec classe .sk-home-border :</p>
+        <ul style="margin: 12px 0; padding-left: 20px;">
+          <li>Ajoutée conditionnellement avec template == 'index'</li>
+          <li>Sections concernées : sk-hero et featured-collection</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Grid Section -->
+    <section class="design-section" style="margin: 48px 0; padding: 24px; border: var(--sk-border);">
+      <h2 class="h2">Système de Grille</h2>
+
+      <div style="margin: 24px 0;">
+        <h3 style="font-family: var(--sk-font-heading-family); font-weight: 700; margin-bottom: 12px;">
+          Grille 2 colonnes
+        </h3>
+        <div class="sk-grid sk-grid--2" style="margin: 12px 0;">
+          <div style="padding: 12px; background: #f4f4f5; border: var(--sk-border); text-align: center;">Colonne 1</div>
+          <div style="padding: 12px; background: #f4f4f5; border: var(--sk-border); text-align: center;">Colonne 2</div>
+        </div>
+      </div>
+
+      <div style="margin: 24px 0;">
+        <h3 style="font-family: var(--sk-font-heading-family); font-weight: 700; margin-bottom: 12px;">
+          Grille 3 colonnes
+        </h3>
+        <div class="sk-grid sk-grid--3" style="margin: 12px 0;">
+          <div style="padding: 12px; background: #f4f4f5; border: var(--sk-border); text-align: center;">Col 1</div>
+          <div style="padding: 12px; background: #f4f4f5; border: var(--sk-border); text-align: center;">Col 2</div>
+          <div style="padding: 12px; background: #f4f4f5; border: var(--sk-border); text-align: center;">Col 3</div>
+        </div>
+      </div>
+
+      <div style="margin: 24px 0;">
+        <h3 style="font-family: var(--sk-font-heading-family); font-weight: 700; margin-bottom: 12px;">
+          Grille 4 colonnes
+        </h3>
+        <div class="sk-grid sk-grid--4" style="margin: 12px 0;">
+          <div style="padding: 12px; background: #f4f4f5; border: var(--sk-border); text-align: center;">1</div>
+          <div style="padding: 12px; background: #f4f4f5; border: var(--sk-border); text-align: center;">2</div>
+          <div style="padding: 12px; background: #f4f4f5; border: var(--sk-border); text-align: center;">3</div>
+          <div style="padding: 12px; background: #f4f4f5; border: var(--sk-border); text-align: center;">4</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Forms Section -->
+    <section class="design-section" style="margin: 48px 0; padding: 24px; border: var(--sk-border);">
+      <h2 class="h2">Formulaires</h2>
+
+      <div style="margin: 24px 0; padding: 16px; background: #fafafa; border: var(--sk-border);">
+        <h3 style="font-family: var(--sk-font-heading-family); font-weight: 700; margin-bottom: 8px; color: #e11d48;">
+          ⚠️ Important : Utilisation des classes Dawn
+        </h3>
+        <p style="font-size: 1.2rem; margin: 0; line-height: 1.5;">
+          Les formulaires utilisent les <strong>classes Dawn natives</strong> (<code>.field</code>,
+          <code>.field__input</code>, <code>.field__label</code>) et non les classes SK (<code>.sk-field</code>). Ceci
+          assure la compatibilité avec tous les formulaires Shopify (contact, newsletter, compte client, etc.) et
+          maintient les comportements JavaScript intégrés.
+        </p>
+      </div>
+
+      <form class="contact" autocomplete="off" style="margin: 24px 0; max-width: 600px;">
+        <div class="contact__fields">
+          <div class="field">
+            <input class="field__input" type="text" id="DesignSystem-name" name="name" placeholder=" " value="John Doe">
+            <label class="field__label" for="DesignSystem-name">Nom</label>
+          </div>
+          <div class="field">
+            <input
+              class="field__input"
+              type="email"
+              id="DesignSystem-email"
+              name="email"
+              placeholder=" "
+              value="john@example.com"
+            >
+            <label class="field__label" for="DesignSystem-email">Email <span aria-hidden="true">*</span></label>
+          </div>
+        </div>
+        <div class="field">
+          <input
+            class="field__input"
+            type="tel"
+            id="DesignSystem-phone"
+            name="phone"
+            placeholder=" "
+            value="+33 6 12 34 56 78"
+          >
+          <label class="field__label" for="DesignSystem-phone">Téléphone</label>
+        </div>
+        <div class="field">
+          <textarea
+            rows="6"
+            id="DesignSystem-message"
+            class="text-area field__input"
+            name="message"
+            placeholder=" ">Ceci est un exemple de message dans une textarea...</textarea>
+          <label class="form__label field__label" for="DesignSystem-message">Message</label>
+        </div>
+        <div class="contact__button">
+          <button type="button" class="button">Envoyer</button>
+        </div>
+      </form>
+
+      <div style="margin: 24px 0 12px 0; padding-top: 24px; border-top: var(--sk-border);">
+        <h3 style="font-family: var(--sk-font-heading-family); font-weight: 700; margin-bottom: 12px;">
+          États des champs
+        </h3>
+        <form class="contact" autocomplete="off" style="max-width: 600px;">
+          <div class="field" style="margin-bottom: 12px;">
+            <input class="field__input" type="text" placeholder=" " id="DesignSystem-empty" name="empty">
+            <label class="field__label" for="DesignSystem-empty">Champ vide</label>
+          </div>
+          <div class="field" style="margin-bottom: 12px;">
+            <input
+              class="field__input"
+              type="text"
+              placeholder=" "
+              id="DesignSystem-filled"
+              name="filled"
+              value="Contenu du champ"
+            >
+            <label class="field__label" for="DesignSystem-filled">Champ rempli</label>
+          </div>
+          <div class="field field--with-error" style="margin-bottom: 12px;">
+            <input
+              class="field__input"
+              type="email"
+              placeholder=" "
+              id="DesignSystem-error"
+              name="error"
+              value="email-invalide"
+              aria-invalid="true"
+            >
+            <label class="field__label" for="DesignSystem-error">Email avec erreur</label>
+            <small class="contact__field-error">
+              <span class="form__message">
+                <span class="svg-wrapper">
+                  <svg width="13" height="13" viewBox="0 0 13 13">
+                    <circle cx="6.5" cy="6.50049" r="5.5" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="6.5" cy="6.5" r="1.5" fill="currentColor"/>
+                  </svg>
+                </span>
+                Email requis et doit être valide
+              </span>
+            </small>
+          </div>
+        </form>
+      </div>
+
+      <div style="margin: 24px 0 12px 0; padding-top: 24px; border-top: var(--sk-border);">
+        <h3 style="font-family: var(--sk-font-heading-family); font-weight: 700; margin-bottom: 12px;">
+          Classes CSS utilisées
+        </h3>
+        <div style="font-size: 1.2rem; color: #666; line-height: 1.6;">
+          <p><strong>Conteneur :</strong> <code>.contact__fields</code> (grille 2 colonnes sur desktop)</p>
+          <p>
+            <strong>Champ :</strong> <code>.field</code> avec <code>.field__input</code> et <code>.field__label</code>
+          </p>
+          <p><strong>Zone de texte :</strong> <code>.text-area.field__input</code></p>
+          <p><strong>Bouton :</strong> <code>.button</code> dans <code>.contact__button</code></p>
+          <p><strong>Espacement :</strong> 1.5rem mobile, 2rem desktop entre champs</p>
+          <p><strong>Espacement bouton :</strong> 3rem mobile, 4rem desktop</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Architecture CSS -->
+    <section class="design-section" style="margin: 48px 0; padding: 24px; border: var(--sk-border);">
+      <h2 class="h2">Architecture CSS</h2>
+
+      <div style="margin: 24px 0; padding: 16px; background: #f0fdf4; border: 2px solid #16a34a;">
+        <h3 style="font-family: var(--sk-font-heading-family); font-weight: 700; margin-bottom: 8px; color: #16a34a;">
+          ✅ CSS Consolidé - sk-master.css.liquid
+        </h3>
+        <p style="font-size: 1.2rem; margin: 0 0 12px 0; line-height: 1.5;">
+          L'architecture CSS a été <strong>consolidée en un seul fichier</strong> pour une meilleure maintenabilité.
+        </p>
+        <div style="font-size: 1.1rem; color: #15803d; line-height: 1.6;">
+          <p><strong>Ancien système :</strong> 4 fichiers (800+ lignes)</p>
+          <ul style="margin: 8px 0;">
+            <li><code>sk-variables.css.liquid</code> → ❌ Supprimé</li>
+            <li><code>sk-typography.css.liquid</code> → ❌ Supprimé</li>
+            <li><code>sk-components.css</code> → ❌ Supprimé</li>
+            <li><code>section-rich-text.css</code> → ❌ Supprimé</li>
+          </ul>
+          <p><strong>Nouveau système :</strong> 1 fichier (400 lignes)</p>
+          <ul style="margin: 8px 0;">
+            <li><code>sk-master.css.liquid</code> → ✅ Tout consolidé</li>
+          </ul>
+        </div>
+      </div>
+
+      <div style="margin: 24px 0;">
+        <h3 style="font-family: var(--sk-font-heading-family); font-weight: 700; margin-bottom: 12px;">
+          Structure du fichier master
+        </h3>
+        <div style="font-size: 1.1rem; color: #374151; line-height: 1.8;">
+          <ol>
+            <li><strong>Variables CSS</strong> - Couleurs, espacements, polices</li>
+            <li><strong>Typographie</strong> - H1, H2, H3, classes utilitaires</li>
+            <li><strong>Layout</strong> - Conteneurs, grilles, sections</li>
+            <li><strong>Composants</strong> - Cartes, boutons, héro</li>
+            <li><strong>Overrides Dawn</strong> - Personnalisations du thème</li>
+            <li><strong>Responsive</strong> - Media queries mobile/desktop</li>
+          </ol>
+        </div>
+      </div>
+
+      <div style="margin: 24px 0;">
+        <h3 style="font-family: var(--sk-font-heading-family); font-weight: 700; margin-bottom: 12px;">
+          Responsive Typography
+        </h3>
+        <div style="background: #fafafa; padding: 16px; border-left: 4px solid #121212;">
+          <p style="margin: 0 0 12px 0; font-weight: 600;">H1 avec classe sk-display :</p>
+          <code style="display: block; margin: 6px 0;">
+            Mobile (≤749px): font-size: 25px !important;<br>
+            Desktop (≥750px): font-size: clamp(2.5rem, 4vw, 4rem) !important;
+          </code>
+          <p style="margin: 12px 0 0 0; font-size: 0.95rem; color: #666;">
+            Appliqué automatiquement aux sections : rich-text, hero, newsletter
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Usage Guidelines -->
+    <section class="design-section" style="margin: 48px 0; padding: 24px; border: var(--sk-border);">
+      <h2 class="h2">Règles d'Usage</h2>
+
+      <div class="rte">
+        <h3>Hiérarchie Sémantique</h3>
+        <ul>
+          <li><strong>H1 + sk-display</strong> : Titres principaux ("Philosophie", "Gardez le fil")</li>
+          <li><strong>H2</strong> : Titres de sections ("Produits vedettes")</li>
+          <li><strong>H3</strong> : Sous-sections et catégories</li>
+          <li>Un seul H1 par section, H2 pour le contenu</li>
+        </ul>
+
+        <h3>CSS et Architecture</h3>
+        <ul>
+          <li>Utiliser <code>sk-master.css.liquid</code> comme fichier unique</li>
+          <li>Classes SK pour les composants custom</li>
+          <li>Classes Dawn natives pour les formulaires</li>
+          <li>Préfixer toutes les classes custom par <code>sk-</code></li>
+        </ul>
+
+        <h3>Responsive Design</h3>
+        <ul>
+          <li>Mobile-first avec breakpoint à 750px</li>
+          <li>H1 Display : 25px mobile, responsive desktop</li>
+          <li>Espacement réduit sur mobile (multiples de 6px)</li>
+          <li>Grilles adaptatives (1 col mobile → 2-4 cols desktop)</li>
+        </ul>
+
+        <h3>Cohérence Visuelle</h3>
+        <ul>
+          <li>Bordures : toujours 1px solid #121212</li>
+          <li>Espacement : multiples de 8px (6px sur mobile)</li>
+          <li>Polices : Figtree (titres) + Work Sans (texte)</li>
+          <li>Couleurs : Noir/Blanc avec gris pour les nuances</li>
+        </ul>
+
+        <h3>Accessibilité</h3>
+        <ul>
+          <li>Contraste WCAG AA (noir sur blanc)</li>
+          <li>Touch targets minimum 44px</li>
+          <li>Navigation clavier sur tous les éléments</li>
+          <li>Structure sémantique HTML correcte</li>
+        </ul>
+      </div>
+    </section>
+  </div>
+</div>
+
+<style>
+  .page-design-system .design-section {
+    border-radius: 0;
+  }
+
+  .page-design-system code {
+    background: #f4f4f5;
+    padding: 2px 6px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9em;
+  }
+
+  .page-design-system .sk-grid {
+    gap: var(--sk-space-md);
+  }
+
+  @media (max-width: 749px) {
+    .page-design-system .sk-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .page-design-system .design-section {
+      margin: 24px 0;
+      padding: 12px;
+    }
+  }
+</style>

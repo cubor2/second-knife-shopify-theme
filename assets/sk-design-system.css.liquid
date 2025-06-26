@@ -10,8 +10,8 @@
  * - Ce fichier contient 2 approches : propre + brutale en backup
  */
 
-/* GOOGLE FONTS */
-@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700;800&family=Work+Sans:wght@300;400;500;600&display=swap');
+/* GOOGLE FONTS - Lora pour titres + IBM Plex Serif pour textes */
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=IBM+Plex+Serif:wght@400;500;600;700&display=swap');
 
 /* VARIABLES TAILLES DE TEXTE STANDARDISÉES */
 :root {
@@ -52,8 +52,8 @@
   --sk-space-4: calc(var(--sk-spacing-base) * 1.5);
   --sk-space-5: calc(var(--sk-spacing-base) * 2);
 
-  --sk-font-heading: 'Figtree', system-ui, sans-serif;
-  --sk-font-body: 'Work Sans', system-ui, sans-serif;
+  --sk-font-heading: 'Lora', Georgia, serif;
+  --sk-font-body: 'IBM Plex Serif', Georgia, serif;
   
   --sk-transition: 0.2s ease;
 
@@ -73,7 +73,7 @@
 .page-width p {
   font-size: 1.4rem; /* 14px avec body_scale=100 */
   line-height: 1.6;
-  font-family: 'Work Sans', system-ui, sans-serif;
+  font-family: 'IBM Plex Serif', Georgia, serif;
 }
 
 /* Navigation header 14px */
@@ -81,7 +81,7 @@
 .list-menu__item {
   font-size: 1.4rem; /* 14px avec body_scale=100 */
   line-height: 1.6;
-  font-family: 'Work Sans', system-ui, sans-serif;
+  font-family: 'IBM Plex Serif', Georgia, serif;
 }
 
 /* Newsletter 14px */
@@ -89,7 +89,7 @@
 .newsletter__subheading p {
   font-size: 1.4rem; /* 14px avec body_scale=100 */
   line-height: 1.6;
-  font-family: 'Work Sans', system-ui, sans-serif;
+  font-family: 'IBM Plex Serif', Georgia, serif;
 }
 
 /* Sections rich-text spécifiques (Philosophie + Gardez le fil) */
@@ -99,12 +99,12 @@ section[id*="rich_text"] .rich-text__text p,
 section[id*="rich_text"] .rte p {
   font-size: 1.4rem; /* 14px avec body_scale=100 */
   line-height: 1.6;
-  font-family: 'Work Sans', system-ui, sans-serif;
+  font-family: 'IBM Plex Serif', Georgia, serif;
 }
 
 /* HIÉRARCHIE TYPOGRAPHIQUE CLAIRE - Overrides complets de Dawn */
 
-/* H1 - GROS (Figtree Extra Bold) */
+/* H1 - GROS (Lora Bold) */
 h1, 
 .h1, 
 .sk-hero__title, 
@@ -113,14 +113,14 @@ h1,
 .title.h1,
 h1.title {
   font-family: var(--sk-font-heading);
-  font-weight: 800;
+  font-weight: 700;
   font-size: clamp(2rem, 4vw, 4rem);
   line-height: 1.1;
   letter-spacing: -0.02em;
   margin-bottom: var(--sk-space-4);
 }
 
-/* H2 - MOYEN (Figtree Bold) */
+/* H2 - MOYEN (Lora Bold) */
 h2, 
 .h2,
 .title.h2,
@@ -133,7 +133,7 @@ h2.title {
   margin-bottom: var(--sk-space-3);
 }
 
-/* H3 - MOYEN (Figtree Bold) - 25px */
+/* H3 - MOYEN (Lora Bold) - 25px */
 h3, 
 .h3,
 .title.h3,
@@ -143,6 +143,19 @@ h3.title {
   font-size: 2.5rem;
   letter-spacing: -0.01em;
   line-height: 1.3;
+  margin-bottom: var(--sk-space-2);
+}
+
+/* H4 - (Lora Semi-Bold) - 20px */
+h4, 
+.h4,
+.title.h4,
+h4.title {
+  font-family: var(--sk-font-heading);
+  font-weight: 600;
+  font-size: 2rem;
+  letter-spacing: -0.005em;
+  line-height: 1.4;
   margin-bottom: var(--sk-space-2);
 }
 
@@ -308,7 +321,7 @@ html body .rte p,
 html body p {
   font-size: 14px !important;
   line-height: 1.6 !important;
-  font-family: 'Work Sans', system-ui, sans-serif !important;
+  font-family: 'IBM Plex Serif', Georgia, serif !important;
 }
 
 /* MENU NAVIGATION - ARME NUCLÉAIRE TOTALE */
@@ -326,7 +339,7 @@ html body .header .list-menu__item,
 html body .header a {
   font-size: 14px !important;
   line-height: 1.6 !important;
-  font-family: 'Work Sans', system-ui, sans-serif !important;
+  font-family: 'IBM Plex Serif', Georgia, serif !important;
 }
 
 /* FOOTER COPYRIGHT - FORCE 10px */
@@ -338,7 +351,7 @@ html body .header a {
 .footer__copyright span {
   font-size: 1rem !important; /* 10px avec body_scale=100 */
   line-height: 1.4 !important;
-  font-family: 'Work Sans', system-ui, sans-serif !important;
+  font-family: 'IBM Plex Serif', Georgia, serif !important;
 }
 
 /* HEADER BORDER - Override Dawn's gray border */

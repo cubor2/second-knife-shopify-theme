@@ -479,4 +479,520 @@ html body .header a {
 section[id*="rich_text"],
 section[id*="rich-text"] {
   padding-top: 16px !important;
+}
+
+/* ==========================================================================
+   BEST MADE CO. INSPIRED SECTION SYSTEM - BLOCS ENCADRÉS
+   ========================================================================== */
+
+/* Conteneur principal avec bordures latérales fixes */
+.sk-main-container {
+  max-width: 120rem;
+  margin: 0 auto;
+  border-left: var(--sk-border);
+  border-right: var(--sk-border);
+  min-height: 100vh;
+}
+
+/* Chaque section devient un BLOC encadré */
+.sk-section-block {
+  border-bottom: var(--sk-border);
+  padding: var(--sk-space-5) var(--sk-space-4);
+  position: relative;
+}
+
+/* Première section - avec bordure top */
+.sk-section-block:first-child {
+  border-top: var(--sk-border);
+}
+
+/* Hero section - bloc principal */
+.sk-hero-block {
+  padding: calc(var(--sk-space-5) * 2) var(--sk-space-4);
+  text-align: center;
+  border-bottom: var(--sk-border);
+}
+
+/* Collection grid - inspiré Postevand avec bordures internes */
+.sk-collection-block {
+  padding: 0;
+}
+
+.sk-collection-block .collection-title {
+  text-align: center;
+  margin-bottom: var(--sk-space-3);
+  padding-bottom: var(--sk-space-3);
+  margin-left: var(--sk-space-4);
+  margin-right: var(--sk-space-4);
+}
+
+.sk-collection-description {
+  text-align: center;
+  margin-bottom: var(--sk-space-4);
+  max-width: 60rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--sk-space-4);
+  padding-right: var(--sk-space-4);
+}
+
+/* Grille produits style Postevand - bordures entre les items */
+.sk-product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  border: var(--sk-border);
+  border-left: none;
+  border-right: none;
+}
+
+.sk-product-grid .card-wrapper {
+  border-right: var(--sk-border);
+  border-bottom: var(--sk-border);
+  position: relative;
+}
+
+.sk-product-grid .card-wrapper:nth-child(3n) {
+  border-right: none;
+}
+
+.sk-product-grid .card-wrapper:nth-last-child(-n+3) {
+  border-bottom: none;
+}
+
+/* Card produit ultra minimaliste */
+.sk-product-card {
+  padding: 0;
+  text-align: center;
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  transition: background-color var(--sk-transition);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.sk-product-card:hover {
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+.sk-product-card__image-wrapper {
+  margin-bottom: 0;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-bottom: var(--sk-border);
+}
+
+.sk-product-card__image {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.sk-product-card__image.placeholder-svg {
+  height: 420px;
+  width: 100%;
+  background-color: #f8f8f8;
+}
+
+.sk-product-card__info {
+  flex-shrink: 0;
+  padding: var(--sk-space-3) var(--sk-space-2);
+  background: white;
+}
+
+.sk-product-card__title {
+  font-family: var(--sk-font-body);
+  font-size: var(--sk-text-base);
+  font-weight: 500;
+  margin-bottom: var(--sk-space-1);
+  line-height: 1.3;
+  margin: 0 0 var(--sk-space-1) 0;
+}
+
+.sk-product-card__price {
+  font-family: var(--sk-font-body);
+  font-size: var(--sk-text-sm);
+  color: rgba(var(--sk-border-color), 0.7);
+}
+
+.sk-product-card__compare-price {
+  margin-left: var(--sk-space-1);
+  opacity: 0.6;
+}
+
+/* View all button */
+.sk-collection-view-all {
+  text-align: center;
+  margin-top: var(--sk-space-5);
+  padding-top: var(--sk-space-4);
+  padding-bottom: var(--sk-space-4);
+  border-top: var(--sk-border);
+  margin-left: var(--sk-space-4);
+  margin-right: var(--sk-space-4);
+}
+
+/* Rich text sections - blocs de contenu */
+.sk-text-block {
+  padding: var(--sk-space-5) var(--sk-space-4);
+  border-bottom: var(--sk-border);
+  text-align: center;
+}
+
+.sk-text-block__title {
+  margin-bottom: var(--sk-space-4);
+}
+
+.sk-text-block__content {
+  max-width: 60rem;
+  margin: 0 auto;
+}
+
+/* Newsletter block - dernier bloc sans bordure bottom */
+.sk-newsletter-block {
+  padding: var(--sk-space-5) var(--sk-space-4);
+  text-align: center;
+}
+
+/* ==========================================================================
+   TYPOGRAPHIE ULTRA CLEAN
+   ========================================================================== */
+
+/* H1 - GROS (Lora Bold) */
+h1, 
+.h1, 
+.sk-hero__title, 
+.sk-display,
+.rich-text__heading,
+.title.h1,
+h1.title {
+  font-family: var(--sk-font-heading);
+  font-weight: 700;
+  font-size: clamp(2.5rem, 4vw, 4.5rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: var(--sk-space-4);
+}
+
+/* H2 - MOYEN (Lora Bold) */
+h2, 
+.h2,
+.title.h2,
+h2.title,
+h1.h2 {
+  font-size: 3rem !important;
+  line-height: 1.2 !important;
+  font-family: var(--sk-font-heading);
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  margin-bottom: var(--sk-space-3);
+}
+
+/* H3 - MOYEN (Lora Bold) - 25px */
+h3, 
+.h3,
+.title.h3,
+h3.title {
+  font-family: var(--sk-font-heading);
+  font-weight: 700;
+  font-size: 2.2rem;
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+  margin-bottom: var(--sk-space-2);
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN
+   ========================================================================== */
+
+@media (max-width: 749px) {
+  .sk-main-container {
+    border-left: none;
+    border-right: none;
+  }
+  
+  .sk-section-block,
+  .sk-hero-block,
+  .sk-collection-block,
+  .sk-text-block,
+  .sk-newsletter-block {
+    padding-left: var(--sk-space-3);
+    padding-right: var(--sk-space-3);
+  }
+  
+  .sk-product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .sk-product-grid .card-wrapper:nth-child(3n) {
+    border-right: var(--sk-border);
+  }
+  
+  .sk-product-grid .card-wrapper:nth-child(2n) {
+    border-right: none;
+  }
+  
+  .sk-hero__actions {
+    flex-direction: column;
+    gap: var(--sk-space-2);
+  }
+  
+  .sk-product-card__image {
+    height: 360px;
+  }
+}
+
+/* ==========================================================================
+   OVERRIDES SPÉCIFIQUES HOME PAGE
+   ========================================================================== */
+
+/* Application du système de blocs à la home */
+.template-index .shopify-section {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Container principal pour la home */
+.template-index .main-content {
+  max-width: 120rem;
+  margin: 0 auto;
+  border-left: var(--sk-border);
+  border-right: var(--sk-border);
+}
+
+/* Section hero comme premier bloc */
+.template-index .sk-hero {
+  border-top: var(--sk-border);
+  border-bottom: var(--sk-border);
+  padding: calc(var(--sk-space-5) * 2) var(--sk-space-4);
+}
+
+/* Featured collection avec grille */
+.template-index .section[id*="featured_collection"] {
+  border-bottom: var(--sk-border);
+  padding: var(--sk-space-5) var(--sk-space-4);
+}
+
+/* Rich text sections */
+.template-index .section[id*="rich_text"] {
+  border-bottom: var(--sk-border);
+  padding: var(--sk-space-5) var(--sk-space-4);
+  text-align: center;
+}
+
+/* Newsletter - dernier bloc */
+.template-index .section[id*="newsletter"] {
+  padding: var(--sk-space-5) var(--sk-space-4);
+  text-align: center;
+}
+
+/* Centrage du contenu */
+.sk-center { text-align: center; }
+
+/* Responsive mobile */
+@media (max-width: 749px) {
+  .template-index .main-content {
+    border-left: none;
+    border-right: none;
+  }
+  
+  .template-index .sk-hero,
+  .template-index .section[id*="featured_collection"],
+  .template-index .section[id*="rich_text"],
+  .template-index .section[id*="newsletter"] {
+    padding-left: var(--sk-space-3);
+    padding-right: var(--sk-space-3);
+  }
+}
+
+/* ==========================================================================
+   SYSTÈME DE BLOCS MODULAIRES - EXTENSION TOUTES PAGES
+   ========================================================================== */
+
+/* Page content block - pour pages statiques */
+.sk-page-block {
+  padding: var(--sk-space-3) 0 0 0;
+  border-bottom: var(--sk-border);
+}
+
+.sk-page-block:last-child {
+  border-bottom: none;
+}
+
+/* Page content styling */
+.sk-page-content {
+  max-width: 60rem;
+  margin: 0 auto;
+  padding: 0 var(--sk-space-4);
+  font-family: var(--sk-font-body);
+  line-height: 1.6;
+}
+
+.sk-page-content p {
+  margin-bottom: var(--sk-space-3);
+}
+
+.sk-page-content h2 {
+  margin-top: var(--sk-space-4);
+  margin-bottom: var(--sk-space-2);
+}
+
+.sk-page-content h3 {
+  margin-top: var(--sk-space-3);
+  margin-bottom: var(--sk-space-2);
+}
+
+/* Content block générique */
+.sk-content-block {
+  padding: var(--sk-space-5) var(--sk-space-4);
+  border-bottom: var(--sk-border);
+}
+
+.sk-content-block:last-child {
+  border-bottom: none;
+}
+
+/* Force la bordure sur certaines pages */
+.sk-content-block--with-border {
+  border-bottom: var(--sk-border) !important;
+}
+
+/* Product page block */
+.sk-product-block {
+  padding: var(--sk-space-5) var(--sk-space-4);
+  border-bottom: var(--sk-border);
+}
+
+.sk-product-block:last-child {
+  border-bottom: none;
+}
+
+/* Bloc titre standard - SIMPLE ET UNIFORME */
+.sk-title-block {
+  padding: var(--sk-space-4) 0;
+  text-align: center;
+}
+
+/* Force la bordure sous certains titres */
+.sk-title-block--with-border {
+  border-bottom: var(--sk-border);
+}
+
+.sk-collection-page-block:last-child {
+  border-bottom: none;
+}
+
+/* Titre de section générique - UTILISE LE ZEN SYSTEM */
+.sk-block-title {
+  /* Hérite de .sk-section-title pour la standardisation */
+}
+
+.sk-collection-block .collection-title {
+  /* Hérite de .sk-section-title pour la standardisation */
+}
+
+/* ==========================================================================
+   BEST MADE CO. INSPIRED SECTION SYSTEM - BLOCS ENCADRÉS (EXISTANT)
+   ========================================================================== */
+
+/* ==========================================================================
+   COLLECTION PAGE STYLES
+   ========================================================================== */
+
+/* Titre standard - SIMPLE */
+.sk-title {
+  font-size: 3rem !important;
+  line-height: 1.2 !important;
+  font-family: var(--sk-font-heading);
+  font-weight: 700;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.sk-collection-description {
+  text-align: center;
+  margin-bottom: var(--sk-space-4);
+  max-width: 60rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.sk-collection-image {
+  margin-top: var(--sk-space-4);
+  text-align: center;
+}
+
+.sk-collection-image__img {
+  max-width: 100%;
+  height: auto;
+  border: var(--sk-border);
+}
+
+/* Collection product grid - réutilise le système de la home */
+.sk-collection-products {
+  /* Hérite des styles .sk-product-grid existants */
+}
+
+/* ==========================================================================
+   SYSTÈME DE BLOCS MODULAIRES - EXTENSION TOUTES PAGES
+   ========================================================================== */
+
+/* Collection empty state */
+.sk-empty-collection {
+  text-align: center;
+  padding: var(--sk-space-5) 0;
+}
+
+.sk-empty-collection__title {
+  margin-bottom: var(--sk-space-3);
+}
+
+.sk-empty-collection__text {
+  color: rgba(var(--sk-border-color), 0.7);
+}
+
+/* Collection pagination */
+.sk-pagination {
+  margin-top: var(--sk-space-5);
+  text-align: center;
+  padding-top: var(--sk-space-4);
+  border-top: var(--sk-border);
+}
+
+/* ==========================================================================
+   COLLECTION PAGE STYLES
+   ========================================================================== */
+
+/* ==========================================================================
+   ZEN SYSTEM - STANDARDISATION DES ESPACEMENTS
+   ========================================================================== */
+
+/* Espacement standardisé sous tous les titres de section */
+/* Supprimé - remplacé par .sk-title */
+
+/* ==========================================================================
+   SYSTÈME DE BLOCS MODULAIRES - EXTENSION TOUTES PAGES
+   ========================================================================== */
+
+/* Collection filters - bordure de délimitation */
+.facets-wrapper {
+  border-top: var(--sk-border);
+  padding-top: var(--sk-space-2);
+  padding-bottom: var(--sk-space-2);
+}
+
+/* Titre de page - alignement parfait sans marges latérales */
+.sk-page-title {
+  text-align: center;
+  margin-bottom: var(--sk-space-3) !important;
+  padding-bottom: var(--sk-space-3);
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0 !important;
 } 

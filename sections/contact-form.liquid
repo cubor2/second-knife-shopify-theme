@@ -1,4 +1,4 @@
-{{ 'section-contact-form.css' | asset_url | stylesheet_tag }}
+{{ 'sk-design-system.css' | asset_url | stylesheet_tag }}
 
 {%- style -%}
   .section-{{ section.id }}-padding {
@@ -14,21 +14,18 @@
   }
 {%- endstyle -%}
 
-<div class="color-{{ section.settings.color_scheme }} gradient">
-  <div class="contact page-width page-width--narrow section-{{ section.id }}-padding">
-    {%- if section.settings.heading != blank -%}
-      <h2 class="title title-wrapper--no-top-margin inline-richtext {{ section.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
-        {{ section.settings.heading }}
-      </h2>
-    {%- else -%}
-      <h2 class="visually-hidden">{{ 'templates.contact.form.title' | t }}</h2>
-    {%- endif -%}
+<div class="sk-title-block sk-title-block--with-border">
+  {%- if section.settings.heading != blank -%}
+    <h1 class="sk-title">{{ section.settings.heading }}</h1>
+  {%- else -%}
+    <h1 class="sk-title">{{ 'templates.contact.form.title' | t }}</h1>
+  {%- endif -%}
+</div>
 
+<div class="sk-content-block">
+  <div class="sk-page-content">
     {%- comment -%} Texte d'introduction standardisé {%- endcomment -%}
-    <div
-      class="contact__intro rte{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
-      style="margin-top: 2.4rem; margin-bottom: 2.4rem;"
-    >
+    <div class="contact__intro rte{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
       <p>
         Nous serions ravis de vous entendre. Remplissez le formulaire ci-dessous et nous vous répondrons dans les plus
         brefs délais.
@@ -63,7 +60,7 @@
           </li>
         </ul>
       {%- endif -%}
-      <div class="contact__fields" style="margin-top: 2.4rem;">
+      <div class="contact__fields">
         <div class="field">
           <input
             class="field__input"

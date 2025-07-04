@@ -592,6 +592,11 @@ section[id*="rich-text"] {
   height: 420px;
   object-fit: cover;
   object-position: center;
+  transition: transform 0.3s ease;
+}
+
+.sk-product-card:hover .sk-product-card__image {
+  transform: scale(1.1);
 }
 
 .sk-product-card__image.placeholder-svg {
@@ -827,25 +832,163 @@ h3.title {
 
 /* Page content styling */
 .sk-page-content {
-  max-width: 60rem;
+  max-width: 110rem;
   margin: 0 auto;
   padding: 0 var(--sk-space-4);
   font-family: var(--sk-font-body);
   line-height: 1.6;
+  text-align: left;
 }
 
 .sk-page-content p {
   margin-bottom: var(--sk-space-3);
+  text-align: left;
 }
 
 .sk-page-content h2 {
   margin-top: var(--sk-space-4);
   margin-bottom: var(--sk-space-2);
+  text-align: left;
 }
 
 .sk-page-content h3 {
   margin-top: var(--sk-space-3);
   margin-bottom: var(--sk-space-2);
+  text-align: left;
+}
+
+.sk-page-content .rte {
+  text-align: left;
+}
+
+.sk-page-content .rte p {
+  text-align: left;
+}
+
+.sk-page-content .rte img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 0 var(--sk-space-3) 0;
+}
+
+/* Force le contenu à rester dans le conteneur */
+.sk-page-content * {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Contenu de page générique - s'assure que tout reste aligné à gauche */
+.sk-content-block .rte {
+  text-align: left;
+}
+
+.sk-content-block .rte p {
+  text-align: left;
+}
+
+.sk-content-block .rte img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Styles spécifiques pour le formulaire de contact dans le nouveau layout */
+.sk-content-block .contact__intro {
+  margin-bottom: var(--sk-space-4);
+}
+
+.sk-content-block .contact__fields {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--sk-space-3);
+  margin-bottom: var(--sk-space-3);
+}
+
+@media screen and (min-width: 750px) {
+  .sk-content-block .contact__fields {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--sk-space-4);
+    margin-bottom: var(--sk-space-4);
+  }
+}
+
+/* Espacement standardisé entre tous les champs du formulaire */
+.sk-content-block .field {
+  margin-bottom: var(--sk-space-3);
+}
+
+@media screen and (min-width: 750px) {
+  .sk-content-block .field {
+    margin-bottom: var(--sk-space-4);
+  }
+}
+
+/* Retire la marge des champs dans .contact__fields pour éviter un double espacement */
+.sk-content-block .contact__fields .field {
+  margin-bottom: 0;
+}
+
+/* Retire la marge du dernier champ pour éviter un espacement double */
+.sk-content-block .field:last-of-type {
+  margin-bottom: 0;
+}
+
+/* Uniformiser la hauteur des champs - annuler flex-wrap pour field--with-error */
+.sk-content-block .field {
+  position: relative;
+  min-height: 4.8rem; /* hauteur standardisée pour tous les champs */
+}
+
+/* Forcer les champs avec erreur à avoir la même hauteur */
+.sk-content-block .field.field--with-error {
+  flex-wrap: nowrap !important;
+  min-height: 4.8rem;
+  height: 4.8rem;
+}
+
+/* Le message d'erreur ne doit pas affecter la hauteur du champ */
+.sk-content-block .field .contact__field-error {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  margin-top: 0.5rem;
+  z-index: 1;
+}
+
+/* S'assurer que tous les inputs ont la même hauteur */
+.sk-content-block .field .field__input {
+  height: 4.8rem;
+  box-sizing: border-box;
+}
+
+/* Exception pour le textarea qui peut être plus grand */
+.sk-content-block .field .text-area.field__input {
+  height: auto;
+  min-height: 10rem;
+}
+
+.sk-content-block .contact__button {
+  margin-top: var(--sk-space-4);
+}
+
+/* ==========================================================================
+   PAGE CONTACT - STRUCTURE AVEC BORDURES VERTICALES
+   ========================================================================== */
+
+/* Container principal pour la page contact */
+.sk-contact-page {
+  border-left: var(--sk-border);
+  border-right: var(--sk-border);
+}
+
+/* Mobile - pas de bordures latérales */
+@media (max-width: 749px) {
+  .sk-contact-page {
+    border-left: none;
+    border-right: none;
+  }
 }
 
 /* Content block générique */
@@ -882,6 +1025,18 @@ h3.title {
 /* Force la bordure sous certains titres */
 .sk-title-block--with-border {
   border-bottom: var(--sk-border);
+}
+
+/* Titre de page à propos - aligné à gauche */
+.template-page .sk-title-block {
+  text-align: left;
+  max-width: 110rem;
+  margin: 0 auto;
+  padding: var(--sk-space-4) var(--sk-space-4) 0;
+}
+
+.template-page .sk-title {
+  text-align: left;
 }
 
 .sk-collection-page-block:last-child {

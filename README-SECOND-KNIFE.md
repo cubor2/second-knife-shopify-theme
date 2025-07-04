@@ -324,3 +324,212 @@ Pour tout problème ou question :
 ---
 
 **Second Knife Theme v1.0.0** - Minimalisme et performance pour Shopify 
+
+## 🎯 TEMPLATE DE HANDOFF POUR NOUVEAUX CHATS
+
+### ⚡ SETUP IMMÉDIAT (Copier/Coller)
+
+```
+CONTEXTE SECOND KNIFE THEME - SESSION CONTINUE
+
+📍 PROJET : Second Knife Shopify Theme (Couteaux artisanaux)
+🎨 DESIGN SYSTEM : SK Ultra-propre minimaliste et moderne
+📦 STATUS : Production-ready (commit 4b35e63)
+🔧 TECH STACK : Shopify Dawn + SK Design System
+
+🏗️ ARCHITECTURE ACTUELLE :
+- CSS consolidé : assets/sk-design-system.css.liquid (fichier unique)
+- Système d'encadrement : .sk-main-container + bordures latérales
+- Titres standardisés : .sk-title-block + .sk-title (espacement pixel-perfect)
+- Variables d'espacement : --sk-space-1 à --sk-space-5 (multiples de 6px/24px)
+- Typographie : Lora (titres) + IBM Plex Serif (texte)
+- Bordures fines : --sk-border: 1px solid rgba(18,18,18,1)
+
+✅ PAGES FINALISÉES :
+- Homepage : Grille produits 3x3 portrait, section "Produits vedettes"
+- Collection (/collections/all) : Design unifié avec homepage
+- À propos (/pages/a-propos) : Système de titres standardisé
+- Design System (/pages/design-system) : Documentation complète (291 lignes)
+
+🎨 ESTHÉTIQUE CIBLE :
+- Minimalisme radical avec bordures fines encadrant tout
+- Espacement parfait et cohérence absolue entre pages
+- Images portrait pour couteaux (420px height desktop, 360px mobile)
+- Grilles touchant les bordures (pas de padding externe)
+- Titres parfaitement alignés sur toutes les pages
+
+📋 STRUCTURE HTML STANDARD :
+<div class="sk-main-container">
+  <div class="sk-page-block">
+    <div class="sk-title-block">
+      <h1 class="sk-title">Titre</h1>
+    </div>
+    <div class="sk-content-block">
+      <!-- Contenu -->
+    </div>
+  </div>
+</div>
+
+🚨 RÈGLES CRITIQUES :
+- H1 pour pages, H2 pour sections homepage
+- Toujours utiliser les variables --sk-space-*
+- .sk-title force margin/padding: 0 !important
+- Images produits en object-fit: cover
+- Responsive automatique (mobile ≤749px, desktop ≥750px)
+
+💾 SAUVEGARDES :
+- Git : commit 4b35e63 "Complete SK Design System Implementation"
+- Local : settings_backup_2025-06-26_22-31-55.json
+- GitHub : second-knife-shopify-theme.git
+
+🎯 PROCHAINES ÉTAPES POSSIBLES :
+- Pages supplémentaires (Contact étendu, FAQ, Politique retour)
+- Page produit individuelle
+- Optimisations mobile
+- Animations et micro-interactions
+```
+
+### 📋 RÈGLES SENIOR ENGINEER (À INCLURE)
+
+```
+RÈGLES DE DÉVELOPPEMENT :
+
+1. Clarifier Scope First
+- Mapper l'approche avant tout code
+- Confirmer l'interprétation de l'objectif
+- Plan clair des fonctions/modules touchés
+- Pas d'implémentation avant validation du plan
+
+2. Localiser Point d'Insertion Exact
+- Identifier fichier(s) et ligne(s) précis
+- Jamais d'éditions massives sur fichiers non-liés
+- Justifier chaque inclusion de fichier
+- Pas de nouvelles abstractions sauf demande explicite
+
+3. Changements Minimaux et Contenus
+- Code strictement requis pour la tâche
+- Éviter logging, commentaires, tests, TODOs sauf nécessaire
+- Pas de changements spéculatifs
+- Logique isolée pour éviter régressions
+
+4. Double Check Everything
+- Vérifier exactitude, scope, effets de bord
+- Alignement avec patterns existants
+- Vérifier impacts downstream
+
+5. Livraison Claire
+- Résumer changements et raisons
+- Lister chaque fichier modifié
+- Signaler assumptions/risques
+```
+
+### 🎨 DESIGN SYSTEM QUICK REF
+
+```
+VARIABLES CSS ESSENTIELLES :
+--sk-space-1: 6px     (base × 0.25)
+--sk-space-2: 12px    (base × 0.5) 
+--sk-space-3: 24px    (base × 1) ← BASE
+--sk-space-4: 36px    (base × 1.5) ← TITRES
+--sk-space-5: 48px    (base × 2)
+--sk-border: 1px solid rgba(18,18,18,1)
+
+TYPOGRAPHIE :
+H1: 4rem (40px) - Titres de pages
+H2: 4rem (40px) - Titres de sections  
+H3: 2.5rem (25px) - Sous-titres
+H4: 2rem (20px) - Intertitres
+Body: 1.4rem (14px) - Texte standard
+
+CLASSES CRITIQUES :
+.sk-main-container - Wrapper avec bordures latérales
+.sk-page-block - Bloc encadré pour page
+.sk-title-block - Espacement titre (48px top/bottom)
+.sk-title - Reset titre (margin/padding: 0)
+.sk-content-block - Zone contenu encadrée
+.sk-title-block--with-border - Bordure sous titre
+```
+
+### 🚀 INDICATEURS DE REFRESH NEEDED
+
+```
+SIGNES QU'IL FAUT NOUVEAU CHAT :
+❌ Réponses moins précises
+❌ Oubli du contexte récent  
+❌ Solutions moins élégantes
+❌ Temps de réponse plus longs
+❌ Répétition d'erreurs corrigées
+❌ Perte du "momentum" technique
+
+TIMING OPTIMAL : 50-70 échanges ou dès baisse qualité
+```
+
+### 💡 BONNES PRATIQUES HANDOFF
+
+```
+POUR MAINTENIR LA QUALITÉ :
+✅ Copier ce template complet au début du nouveau chat
+✅ Mentionner le commit GitHub (4b35e63)
+✅ Préciser l'objectif immédiat
+✅ Inclure les règles senior engineer
+✅ Donner feedback immédiat si dérive
+✅ Maintenir momentum avec instructions claires
+```
+
+---
+
+## 📁 Structure du Projet
+
+```
+dawn/
+├── assets/
+│   └── sk-design-system.css.liquid    # CSS consolidé (FICHIER UNIQUE)
+├── layout/
+│   └── theme.liquid                    # Layout principal avec SK system
+├── sections/
+│   ├── featured-collection.liquid     # Homepage grille 3x3
+│   ├── main-collection-banner.liquid  # Titre collection standardisé
+│   ├── main-collection-product-grid.liquid # Grille collection
+│   └── main-page.liquid              # Pages standards
+├── templates/
+│   └── page.design-system.liquid     # Documentation complète
+└── backup-settings/                   # Sauvegardes automatiques
+```
+
+## 🎨 Design System Features
+
+- **Bordures fines** encadrant tout le contenu
+- **Espacement standardisé** avec variables CSS
+- **Titres pixel-perfect** alignés sur toutes les pages
+- **Grilles produits** optimisées pour couteaux (format portrait)
+- **Responsive design** mobile-first
+- **Typographie cohérente** Lora + IBM Plex Serif
+
+## 🚀 Quick Start
+
+```bash
+# Démarrer le serveur de développement
+.\start-dev.ps1
+
+# Sauvegarder settings + templates
+.\backup-settings.ps1
+
+# Commit et push vers GitHub
+git add .
+git commit -m "Description des changements"
+git push
+```
+
+## 📝 Pages Documentées
+
+- **Homepage** : Section "Produits vedettes" avec grille 3x3
+- **Collection** : Page catalogue avec filtres et grille unifiée  
+- **À propos** : Page standard avec système de titres
+- **Design System** : Documentation complète du système SK
+
+## 🔧 Maintenance
+
+- **CSS** : Un seul fichier `sk-design-system.css.liquid`
+- **Sauvegardes** : Automatiques dans `backup-settings/`
+- **Git** : Commits réguliers avec messages descriptifs
+- **Documentation** : Page `/pages/design-system` toujours à jour 

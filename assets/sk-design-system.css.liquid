@@ -359,14 +359,63 @@ html body .header a {
   border-bottom: var(--sk-border);
 }
 
+/* FIX: Aligner tout le bloc "Trier par" à droite */
+.facet-filters__sort {
+  display: flex !important;
+  justify-content: flex-end !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+}
+
+.facet-filters__label {
+  margin: 0 0.5rem 0 0 !important;
+  white-space: nowrap !important;
+}
+
+/* Alignement du wrapper select */
+.facet-filters__field .select {
+  display: flex !important;
+  align-items: center !important;
+}
+
+/* Style du dropdown natif à la charte SK */
+.facet-filters__field .select__select,
+.mobile-facets__sort .select__select {
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  padding: 0 0 0 1rem !important;
+  font-size: 14px !important;
+  font-family: 'IBM Plex Serif', Georgia, serif !important;
+}
+
+.facet-filters__field .select__select:hover,
+.mobile-facets__sort .select__select:hover {
+  background: transparent !important;
+}
+
+.facet-filters__field .select__select:focus,
+.mobile-facets__sort .select__select:focus {
+  outline: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Padding dans les options du dropdown */
+.facet-filters__field .select__select option,
+.mobile-facets__sort .select__select option {
+  padding: 0.8rem 1rem !important;
+}
+
 /* Hide border when sticky header is hidden */
 .shopify-section-header-hidden .header-wrapper--border-bottom {
   border-bottom: none;
 }
 
-/* Hide border when header becomes sticky */
+/* Keep border when header becomes sticky */
 .shopify-section-header-sticky .header-wrapper--border-bottom {
-  border-bottom: none;
+  border-bottom: var(--sk-border);
 }
 
 /* Optimize sticky header transitions to prevent trembling */

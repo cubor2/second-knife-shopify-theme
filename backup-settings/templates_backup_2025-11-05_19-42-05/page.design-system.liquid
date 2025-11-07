@@ -1,0 +1,290 @@
+{{ 'section-main-page.css' | asset_url | stylesheet_tag }}
+
+<!-- Structure avec le système d'encadrement SK -->
+<div class="sk-main-container">
+  <div class="sk-page-block">
+    <!-- Titre avec le système standardisé -->
+    <div class="sk-title-block">
+      <h1 class="sk-title">{{ page.title | escape }}</h1>
+    </div>
+
+    <!-- Contenu principal -->
+    <div class="sk-content-block" style="padding: var(--sk-space-4);">
+      <!-- Introduction -->
+      <div style="text-align: center; margin-bottom: var(--sk-space-5); padding: var(--sk-space-4); background: #f0fdf4; border: 2px solid #16a34a; border-radius: 8px;">
+        <h2 style="color: #16a34a; margin-bottom: var(--sk-space-2); font-size: 2.5rem;">
+          🎯 Second Knife Design System
+        </h2>
+        <p style="font-size: 1.6rem; color: #15803d; margin: 0; line-height: 1.6;">
+          Système ultra-propre minimaliste et moderne<br>
+          Bordures fines • Espacement parfait • Cohérence absolue
+        </p>
+      </div>
+
+      <!-- Section 1: Système de Titres et Encadrement -->
+      <section style="margin-bottom: var(--sk-space-5); padding: var(--sk-space-4); border: var(--sk-border); background: white;">
+        <h2 style="color: #1f2937; margin-bottom: var(--sk-space-3); border-bottom: var(--sk-border); padding-bottom: var(--sk-space-2);">
+          🏗️ Système de Titres et Encadrement
+        </h2>
+
+        <!-- Structure HTML -->
+        <div style="margin-bottom: var(--sk-space-4);">
+          <h3 style="color: #374151; margin-bottom: var(--sk-space-2);">📋 Structure HTML Standard</h3>
+          <div style="background: #1f2937; color: #f9fafb; padding: var(--sk-space-3); border-radius: 6px; font-family: monospace; overflow-x: auto;">
+            <div style="color: #10b981;"><!-- Pages normales --></div>
+            <div style="color: #60a5fa;">&lt;div class="sk-main-container"&gt;</div>
+            <br>
+            <div style="margin-left: 20px;">
+              <div style="color: #60a5fa;">&lt;div class="sk-page-block"&gt;</div>
+              <br>
+              <div style="margin-left: 20px;">
+                <div style="color: #60a5fa;">&lt;div class="sk-title-block"&gt;</div>
+                <br>
+                <div style="margin-left: 20px;">
+                  <div style="color: #fbbf24;">&lt;h1 class="sk-title"&gt;</div>
+                  {{ page.title | escape }}
+                  <div style="color: #fbbf24;">&lt;/h1&gt;</div>
+                  <br>
+                </div>
+                <div style="color: #60a5fa;">&lt;/div&gt;</div>
+                <br>
+                <div style="color: #60a5fa;">&lt;div class="sk-content-block"&gt;</div>
+                <br>
+                <div style="margin-left: 20px;">
+                  <div style="color: #10b981;"><!-- Contenu ici --></div>
+                  <br>
+                </div>
+                <div style="color: #60a5fa;">&lt;/div&gt;</div>
+                <br>
+              </div>
+              <div style="color: #60a5fa;">&lt;/div&gt;</div>
+              <br>
+            </div>
+            <div style="color: #60a5fa;">&lt;/div&gt;</div>
+          </div>
+        </div>
+
+        <!-- Classes CSS -->
+        <div>
+          <h3 style="color: #374151; margin-bottom: var(--sk-space-2);">🎨 Classes CSS Principales</h3>
+          <div style="background: #f8fafc; padding: var(--sk-space-3); border: var(--sk-border); border-radius: 6px;">
+            <p style="margin: 6px 0;">
+              <code>.sk-main-container</code> - Conteneur avec bordures latérales (max 1200px)
+            </p>
+            <p style="margin: 6px 0;"><code>.sk-page-block</code> - Bloc encadré pour la page</p>
+            <p style="margin: 6px 0;">
+              <code>.sk-title-block</code> - Espacement standardisé du titre (48px top/bottom)
+            </p>
+            <p style="margin: 6px 0;"><code>.sk-title</code> - Reset complet du titre (margin/padding: 0)</p>
+            <p style="margin: 6px 0;"><code>.sk-content-block</code> - Zone de contenu encadrée</p>
+            <p style="margin: 6px 0;"><code>.sk-title-block--with-border</code> - Ajoute bordure sous le titre</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 2: Typographie -->
+      <section style="margin-bottom: var(--sk-space-5); padding: var(--sk-space-4); border: var(--sk-border); background: white;">
+        <h2 style="color: #1f2937; margin-bottom: var(--sk-space-3); border-bottom: var(--sk-border); padding-bottom: var(--sk-space-2);">
+          ✍️ Typographie
+        </h2>
+
+        <!-- Fontes actuelles -->
+        <div style="margin-bottom: var(--sk-space-4);">
+          <h3 style="color: #374151; margin-bottom: var(--sk-space-2);">🔤 Fontes Utilisées</h3>
+          <div style="background: #f8fafc; padding: var(--sk-space-3); border: var(--sk-border); border-radius: 6px;">
+            <p style="font-family: 'Lora', serif; font-weight: 700; font-size: 2rem; margin: 12px 0; color: #1f2937;">
+              Lora Bold - Titres (H1, H2, H3)
+            </p>
+            <p style="font-family: 'IBM Plex Serif', serif; font-weight: 400; font-size: 1.4rem; margin: 12px 0; color: #374151;">
+              IBM Plex Serif Regular - Textes de contenu
+            </p>
+          </div>
+        </div>
+
+        <!-- Hiérarchie -->
+        <div style="margin-bottom: var(--sk-space-4);">
+          <h3 style="color: #374151; margin-bottom: var(--sk-space-2);">📐 Hiérarchie des Titres</h3>
+          <div style="background: #f8fafc; padding: var(--sk-space-3); border: var(--sk-border); border-radius: 6px;">
+            <h1 style="margin: 12px 0; font-size: 4rem;">H1 - Titres de pages (40px)</h1>
+            <h2 style="margin: 12px 0; font-size: 4rem;">H2 - Titres de sections (40px)</h2>
+            <h3 style="margin: 12px 0; font-size: 2.5rem;">H3 - Sous-titres (25px)</h3>
+            <h4 style="margin: 12px 0; font-size: 2rem;">H4 - Intertitres (20px)</h4>
+            <p style="margin: 12px 0; font-size: 1.4rem;">Texte normal (14px)</p>
+          </div>
+        </div>
+
+        <!-- Tailles standardisées -->
+        <div>
+          <h3 style="color: #374151; margin-bottom: var(--sk-space-2);">📏 Tailles de Texte Standardisées</h3>
+          <div style="background: #fef3c7; padding: var(--sk-space-3); border: 2px solid #f59e0b; border-radius: 6px;">
+            <p style="margin: 0 0 12px 0; font-weight: 600; color: #92400e;">
+              ⚠️ Dawn utilise body_scale=100 donc 1rem = 10px
+            </p>
+            <div style="background: white; padding: var(--sk-space-2); border-radius: 4px; margin-top: 12px;">
+              <p style="font-size: 1rem; margin: 6px 0;">10px (1rem) - Très petits textes</p>
+              <p style="font-size: 1.2rem; margin: 6px 0;">12px (1.2rem) - Petits textes</p>
+              <p style="font-size: 1.4rem; margin: 6px 0;"><strong>14px (1.4rem) - Texte standard ← BASE</strong></p>
+              <p style="font-size: 1.8rem; margin: 6px 0;">18px (1.8rem) - Textes plus gros</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 3: Espacement et Bordures -->
+      <section style="margin-bottom: var(--sk-space-5); padding: var(--sk-space-4); border: var(--sk-border); background: white;">
+        <h2 style="color: #1f2937; margin-bottom: var(--sk-space-3); border-bottom: var(--sk-border); padding-bottom: var(--sk-space-2);">
+          📐 Espacement et Bordures
+        </h2>
+
+        <!-- Variables d'espacement -->
+        <div style="margin-bottom: var(--sk-space-4);">
+          <h3 style="color: #374151; margin-bottom: var(--sk-space-2);">📏 Variables d'Espacement</h3>
+          <div style="background: #f8fafc; padding: var(--sk-space-3); border: var(--sk-border); border-radius: 6px;">
+            <div style="background: #e5e7eb; margin: 6px 0; padding: 6px 12px; border-radius: 4px;">
+              <code>--sk-space-1: 6px</code> (base × 0.25)
+            </div>
+            <div style="background: #e5e7eb; margin: 12px 0; padding: 12px; border-radius: 4px;">
+              <code>--sk-space-2: 12px</code> (base × 0.5)
+            </div>
+            <div style="background: #e5e7eb; margin: 24px 0; padding: 24px; border-radius: 4px;">
+              <code>--sk-space-3: 24px</code> (base × 1) ← BASE
+            </div>
+            <div style="background: #e5e7eb; margin: 36px 0; padding: 36px; border-radius: 4px;">
+              <code>--sk-space-4: 36px</code> (base × 1.5) ← TITRES
+            </div>
+            <div style="background: #e5e7eb; margin: 48px 0; padding: 48px; border-radius: 4px;">
+              <code>--sk-space-5: 48px</code> (base × 2)
+            </div>
+          </div>
+        </div>
+
+        <!-- Bordures -->
+        <div>
+          <h3 style="color: #374151; margin-bottom: var(--sk-space-2);">🔲 Système de Bordures</h3>
+          <div style="background: #f8fafc; padding: var(--sk-space-3); border: var(--sk-border); border-radius: 6px;">
+            <p style="margin: 12px 0;"><code>--sk-border: 1px solid rgba(18,18,18,1)</code></p>
+            <div style="margin: 12px 0; padding: 12px; border: var(--sk-border);">Bordure standard</div>
+            <div style="margin: 12px 0; padding: 12px; border-top: var(--sk-border);">Bordure top uniquement</div>
+            <div style="margin: 12px 0; padding: 12px; border-bottom: var(--sk-border);">Bordure bottom uniquement</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 4: Guide d'Implémentation -->
+      <section style="margin-bottom: var(--sk-space-5); padding: var(--sk-space-4); border: var(--sk-border); background: white;">
+        <h2 style="color: #1f2937; margin-bottom: var(--sk-space-3); border-bottom: var(--sk-border); padding-bottom: var(--sk-space-2);">
+          🚀 Guide d'Implémentation
+        </h2>
+
+        <!-- Étapes pour nouvelle page -->
+        <div style="margin-bottom: var(--sk-space-4);">
+          <h3 style="color: #374151; margin-bottom: var(--sk-space-2);">📝 Créer une Nouvelle Page</h3>
+          <div style="background: #eff6ff; padding: var(--sk-space-3); border-left: 4px solid #3b82f6;">
+            <ol style="margin: 0; padding-left: 20px; color: #1e40af; line-height: 1.8;">
+              <li><strong>Wrapper :</strong> Entourer avec <code>.sk-main-container</code></li>
+              <li><strong>Bloc :</strong> Créer <code>.sk-page-block</code> pour encadrer</li>
+              <li><strong>Titre :</strong> <code>.sk-title-block</code> + <code>.sk-title</code></li>
+              <li><strong>Contenu :</strong> <code>.sk-content-block</code> avec padding</li>
+              <li><strong>Bordure optionnelle :</strong> <code>--with-border</code> si besoin</li>
+            </ol>
+          </div>
+        </div>
+
+        <!-- Exemples de pages -->
+        <div style="margin-bottom: var(--sk-space-4);">
+          <h3 style="color: #374151; margin-bottom: var(--sk-space-2);">✅ Pages Déjà Implémentées</h3>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px;">
+            <div style="text-align: center; padding: var(--sk-space-2); background: #f0fdf4; border: 2px solid #22c55e; border-radius: 6px;">
+              <div style="font-weight: 600; color: #16a34a;">✅ Homepage</div>
+              <div style="font-size: 1.2rem; color: #15803d;">"Produits vedettes"</div>
+            </div>
+            <div style="text-align: center; padding: var(--sk-space-2); background: #f0fdf4; border: 2px solid #22c55e; border-radius: 6px;">
+              <div style="font-weight: 600; color: #16a34a;">✅ Collection</div>
+              <div style="font-size: 1.2rem; color: #15803d;">"Produits"</div>
+            </div>
+            <div style="text-align: center; padding: var(--sk-space-2); background: #f0fdf4; border: 2px solid #22c55e; border-radius: 6px;">
+              <div style="font-weight: 600; color: #16a34a;">✅ À propos</div>
+              <div style="font-size: 1.2rem; color: #15803d;">Page standard</div>
+            </div>
+            <div style="text-align: center; padding: var(--sk-space-2); background: #f0fdf4; border: 2px solid #22c55e; border-radius: 6px;">
+              <div style="font-weight: 600; color: #16a34a;">✅ Design System</div>
+              <div style="font-size: 1.2rem; color: #15803d;">Cette page</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Points d'attention -->
+        <div>
+          <h3 style="color: #374151; margin-bottom: var(--sk-space-2);">⚠️ Points d'Attention</h3>
+          <div style="background: #fef3c7; padding: var(--sk-space-3); border-left: 4px solid #f59e0b;">
+            <ul style="margin: 0; padding-left: 20px; color: #92400e; line-height: 1.8;">
+              <li><strong>Sémantique :</strong> H1 pour pages, H2 pour sections</li>
+              <li><strong>Espacement :</strong> Toujours utiliser les variables <code>--sk-space-*</code></li>
+              <li><strong>Reset CSS :</strong> <code>.sk-title</code> force margin/padding à 0</li>
+              <li><strong>Responsive :</strong> Le système s'adapte automatiquement</li>
+              <li><strong>Cohérence :</strong> Tous les titres doivent avoir le même espacement</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 5: Fichiers CSS -->
+      <section style="padding: var(--sk-space-4); border: var(--sk-border); background: white;">
+        <h2 style="color: #1f2937; margin-bottom: var(--sk-space-3); border-bottom: var(--sk-border); padding-bottom: var(--sk-space-2);">
+          📁 Architecture CSS
+        </h2>
+
+        <!-- Fichier principal -->
+        <div style="margin-bottom: var(--sk-space-4);">
+          <h3 style="color: #374151; margin-bottom: var(--sk-space-2);">📄 Fichier Principal</h3>
+          <div style="background: #f0fdf4; padding: var(--sk-space-3); border: 2px solid #16a34a; border-radius: 6px;">
+            <p style="margin: 0 0 12px 0; font-weight: 600; color: #16a34a;">
+              ✅ <code>assets/sk-design-system.css.liquid</code>
+            </p>
+            <p style="margin: 0; color: #15803d; line-height: 1.6;">
+              Fichier unique consolidé contenant toutes les variables, composants et overrides du système SK. Chargé
+              automatiquement dans <code>layout/theme.liquid</code>.
+            </p>
+          </div>
+        </div>
+
+        <!-- Structure du fichier -->
+        <div>
+          <h3 style="color: #374151; margin-bottom: var(--sk-space-2);">🏗️ Structure du Fichier</h3>
+          <div style="background: #f8fafc; padding: var(--sk-space-3); border: var(--sk-border); border-radius: 6px;">
+            <ol style="margin: 0; padding-left: 20px; color: #374151; line-height: 1.8;">
+              <li><strong>Variables CSS</strong> - Couleurs, espacements, polices</li>
+              <li><strong>Typographie</strong> - H1, H2, H3, classes utilitaires</li>
+              <li><strong>Layout</strong> - Conteneurs, grilles, sections</li>
+              <li><strong>Composants</strong> - Système de titres, cartes produits</li>
+              <li><strong>Overrides Dawn</strong> - Personnalisations du thème</li>
+              <li><strong>Responsive</strong> - Media queries mobile/desktop</li>
+            </ol>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+
+<style>
+  .page-design-system code {
+    background: #f1f5f9;
+    padding: 2px 6px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9em;
+    border-radius: 3px;
+    color: #1e293b;
+  }
+
+  @media (max-width: 749px) {
+    .sk-content-block {
+      padding: var(--sk-space-2) !important;
+    }
+
+    .page-design-system section {
+      margin-bottom: var(--sk-space-3) !important;
+      padding: var(--sk-space-2) !important;
+    }
+  }
+</style>

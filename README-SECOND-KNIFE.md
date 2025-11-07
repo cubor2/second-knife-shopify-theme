@@ -60,6 +60,111 @@ shopify auth logout
 shopify theme dev --store=second-knife.myshopify.com --theme=183719133448
 ```
 
+---
+
+## ⚠️ **PROBLÈME FRÉQUENT : Perte des Modifications Admin**
+
+### Le Problème
+Quand tu modifies du contenu dans Shopify Admin (textes hero, images, sections), puis que tu relances le serveur CLI, **tes modifications disparaissent** et sont remplacées par les valeurs par défaut locales.
+
+**Pourquoi ?**
+- Les contenus admin sont stockés dans `templates/index.json` et `config/settings_data.json` sur Shopify
+- Quand tu lances `shopify theme dev`, il synchronise la version **locale** (sur ton PC) vers Shopify
+- Si la version locale est ancienne → elle écrase tes modifications récentes
+
+### ✅ LA SOLUTION (2 méthodes)
+
+#### Méthode 1 : TOUJOURS démarrer avec --sync (RECOMMANDÉ)
+```powershell
+# Cette commande télécharge AVANT de synchroniser
+.\start-dev.ps1 --sync
+```
+
+**Ce que fait `--sync` :**
+1. Télécharge les settings et templates du thème LIVE
+2. Met à jour les fichiers locaux
+3. PUIS démarre le serveur
+4. → Tes modifications admin sont préservées ✅
+
+#### Méthode 2 : Backup AVANT chaque session
+```powershell
+# 1. Sauvegarder les settings du thème live
+.\backup-settings.ps1
+
+# 2. Démarrer normalement
+.\start-dev.ps1
+```
+
+**Avantage :** Tu as toujours une copie de sauvegarde dans `backup-settings/`
+
+### 🔄 Workflow Correct (OBLIGATOIRE)
+
+```powershell
+# DÉBUT DE SESSION
+.\start-dev.ps1 --sync    # ← Force le téléchargement des settings live
+
+# Faire tes modifs de code local
+# Le serveur synchronise automatiquement
+
+# Faire tes modifs admin (si besoin)
+# Via Shopify Customize sur le thème LIVE
+
+# FIN DE SESSION
+# Tout est déjà synchronisé, pas besoin de push
+```
+
+### ❌ Workflow INCORRECT (À ÉVITER)
+
+```powershell
+# ❌ Démarrer sans --sync
+.\start-dev.ps1           # ← Va écraser tes modifs admin !
+
+# ❌ Modifier templates/index.json manuellement
+# (Sauf si tu veux des valeurs par défaut permanentes)
+```
+
+### 💡 Modifier les Valeurs par Défaut (Avancé)
+
+Si tu veux que certains contenus soient TOUJOURS présents (même après relance), modifie directement les fichiers locaux :
+
+**Fichier : `Theme/dawn/templates/index.json`**
+```json
+{
+  "sections": {
+    "sk_hero": {
+      "blocks": {
+        "heading": {
+          "settings": {
+            "heading": "TON TEXTE ICI"  ← Remplace "Crafted with Purpose"
+          }
+        }
+      },
+      "settings": {
+        "image": "HERO.jpg",           ← Ajoute l'image par défaut
+        "gradient_opacity": 80         ← Configure les settings
+      }
+    }
+  }
+}
+```
+
+**Puis push vers le thème :**
+```powershell
+shopify theme push --store=second-knife.myshopify.com --theme=183719133448
+```
+
+### 🆘 Si tu as DÉJÀ perdu des modifications
+
+```powershell
+# Option A : Restaurer depuis backup (si tu en as fait)
+.\restore-settings.ps1
+
+# Option B : Refaire les modifs manuellement dans Shopify Admin
+# Puis TOUJOURS utiliser --sync au prochain démarrage
+```
+
+---
+
 ### 🎛️ Configuration des Contenus
 1. **Ouvrir l'admin Shopify** : https://admin.shopify.com/store/second-knife/themes
 2. **Sélectionner "Second Knife LIVE"** (celui avec le badge vert "Current theme")

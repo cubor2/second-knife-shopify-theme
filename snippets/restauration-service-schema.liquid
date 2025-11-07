@@ -1,0 +1,134 @@
+{% comment %}
+  Service Schema JSON-LD pour la page Restauration
+  À inclure dans la page Restauration via : {% render 'restauration-service-schema' %}
+{% endcomment %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Restauration de Couteaux Japonais",
+  "name": "Service de Restauration de Couteaux Japonais Artisanaux",
+  "description": "Service professionnel de restauration, réaffûtage et polissage de couteaux japonais anciens. Redonner vie aux lames vintage avec notre savoir-faire artisanal français.",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Second Knife",
+    "image": "{{ shop.url }}{{ 'logo.png' | asset_url }}",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "FR"
+    },
+    "url": "{{ shop.url }}",
+    "priceRange": "€€"
+  },
+  "areaServed": [
+    {
+      "@type": "Country",
+      "name": "France"
+    },
+    {
+      "@type": "Country",
+      "name": "Belgium"
+    },
+    {
+      "@type": "Country",
+      "name": "Switzerland"
+    },
+    {
+      "@type": "Country",
+      "name": "Luxembourg"
+    }
+  ],
+  "offers": [
+    {
+      "@type": "Offer",
+      "name": "Réaffûtage complet",
+      "description": "Réaffûtage professionnel avec pierres japonaises 1000/3000/8000, finition miroir",
+      "price": "50",
+      "priceCurrency": "EUR",
+      "priceSpecification": {
+        "@type": "PriceSpecification",
+        "minPrice": "40",
+        "maxPrice": "60",
+        "priceCurrency": "EUR"
+      }
+    },
+    {
+      "@type": "Offer",
+      "name": "Réaffûtage + polissage",
+      "description": "Réaffûtage complet avec retrait de l'oxydation et restauration de la brillance",
+      "price": "75",
+      "priceCurrency": "EUR",
+      "priceSpecification": {
+        "@type": "PriceSpecification",
+        "minPrice": "60",
+        "maxPrice": "90",
+        "priceCurrency": "EUR"
+      }
+    },
+    {
+      "@type": "Offer",
+      "name": "Restauration complète avec manche",
+      "description": "Restauration complète de la lame avec refonte du manche en bois noble",
+      "price": "105",
+      "priceCurrency": "EUR",
+      "priceSpecification": {
+        "@type": "PriceSpecification",
+        "minPrice": "90",
+        "maxPrice": "120",
+        "priceCurrency": "EUR"
+      }
+    }
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Services de Restauration",
+    "itemListElement": [
+      {
+        "@type": "OfferCatalog",
+        "name": "Couteaux Japonais Acceptés",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Product",
+              "name": "Santoku ancien"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Product",
+              "name": "Gyuto ancien"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Product",
+              "name": "Nakiri ancien"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Product",
+              "name": "Deba ancien"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "termsOfService": "Garantie affûtage gratuit pendant 1 an après restauration",
+  "availableChannel": {
+    "@type": "ServiceChannel",
+    "serviceUrl": "{{ shop.url }}/pages/restauration-couteaux-japonais",
+    "servicePostalAddress": {
+      "@type": "PostalAddress",
+      "addressCountry": "FR"
+    }
+  }
+}
+</script>
+

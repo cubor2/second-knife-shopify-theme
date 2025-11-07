@@ -21,29 +21,15 @@
     "url": "{{ shop.url }}",
     "priceRange": "€€"
   },
-  "areaServed": [
-    {
-      "@type": "Country",
-      "name": "France"
-    },
-    {
-      "@type": "Country",
-      "name": "Belgium"
-    },
-    {
-      "@type": "Country",
-      "name": "Switzerland"
-    },
-    {
-      "@type": "Country",
-      "name": "Luxembourg"
-    }
-  ],
+  "areaServed": {
+    "@type": "Place",
+    "name": "Monde entier"
+  },
   "offers": [
     {
       "@type": "Offer",
       "name": "Réaffûtage complet",
-      "description": "Réaffûtage professionnel avec pierres japonaises 1000/3000/8000, finition miroir",
+      "description": "Réaffûtage professionnel avec pierres japonaises 1000/3000/8000, finition miroir. Délai: 7 jours ouvrés.",
       "price": "50",
       "priceCurrency": "EUR",
       "priceSpecification": {
@@ -56,7 +42,7 @@
     {
       "@type": "Offer",
       "name": "Réaffûtage + polissage",
-      "description": "Réaffûtage complet avec retrait de l'oxydation et restauration de la brillance",
+      "description": "Réaffûtage complet avec retrait de l'oxydation et restauration de la brillance. Délai: 10 jours ouvrés.",
       "price": "75",
       "priceCurrency": "EUR",
       "priceSpecification": {
@@ -69,15 +55,9 @@
     {
       "@type": "Offer",
       "name": "Restauration complète avec manche",
-      "description": "Restauration complète de la lame avec refonte du manche en bois noble",
-      "price": "105",
-      "priceCurrency": "EUR",
-      "priceSpecification": {
-        "@type": "PriceSpecification",
-        "minPrice": "90",
-        "maxPrice": "120",
-        "priceCurrency": "EUR"
-      }
+      "description": "Restauration complète de la lame avec refonte du manche en chêne du Morvan. Tarif sur devis personnalisé. Délai: 14 jours ouvrés.",
+      "price": "90",
+      "priceCurrency": "EUR"
     }
   ],
   "hasOfferCatalog": {
@@ -120,7 +100,7 @@
       }
     ]
   },
-  "termsOfService": "Garantie affûtage gratuit pendant 1 an après restauration",
+  "termsOfService": "Devis gratuit sous 48h. Paiement à réception du devis. Frais de port aller et retour à la charge du client.",
   "availableChannel": {
     "@type": "ServiceChannel",
     "serviceUrl": "{{ shop.url }}/pages/restauration-couteaux-japonais",

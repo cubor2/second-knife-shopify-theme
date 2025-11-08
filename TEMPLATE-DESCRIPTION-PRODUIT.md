@@ -299,6 +299,69 @@
 
 ---
 
+---
+
+## 🎯 MÉTADONNÉES SEO (OBLIGATOIRE)
+
+### Format de Génération
+
+**Pour chaque produit, je génère automatiquement :**
+
+#### 1. **Page Title** (50-60 caractères max)
+**Format :**
+> Couteau [Type] Japonais [Caractéristique Unique] - [Prix]€ | Second Knife
+
+**Exemples :**
+- `Couteau Deba Japonais Forgé Main Années 70 - 80€ | Second Knife` (60 char)
+- `Santoku Artisanal Japonais Rénové 17cm - 150€ | Second Knife` (58 char)
+- `Gyuto Japonais Vintage Sakai 21cm - 120€ | Second Knife` (52 char)
+
+**Éléments clés :**
+- Type de couteau (Deba, Santoku, Gyuto)
+- Mot-clé principal ("Japonais")
+- Différenciation (Forgé Main, Vintage, Artisanal)
+- Prix (signal fort pour recherche)
+- Branding "Second Knife"
+
+---
+
+#### 2. **Meta Description** (150-160 caractères max)
+**Format :**
+> [Type] japonais [période] [lieu]. [Acier type], lame [X]cm. Restauré en Bourgogne. [USP unique]. Livraison France. [Prix]€.
+
+**Exemples :**
+- `Deba japonais forgé années 70 à Sakai par Kanetsugu. Acier sandwich, lame 15.5cm. Restauré en Bourgogne. Manche patiné unique. Livraison France. 80€.` (157 char)
+- `Santoku artisanal japonais rénové. Acier carbone, lame 17cm. Polyvalent quotidien, tranchant rasoir. Restauré Bourgogne. Livraison France/Europe. 150€.` (159 char)
+
+**Éléments clés :**
+- Phrase courte et descriptive
+- Données factuelles (période, lieu, dimensions)
+- USP (restauré Bourgogne, manche unique, etc.)
+- Call to action implicite (Livraison)
+- Prix
+
+---
+
+#### 3. **URL Handle** (Slug Shopify)
+**Format :**
+> couteau-[type]-japonais-[caracteristique]-[detail]
+
+**Exemples :**
+- `couteau-deba-japonais-forge-kanetsugu-sakai`
+- `couteau-santoku-japonais-renove-17cm`
+- `couteau-gyuto-japonais-vintage-21cm`
+- `couteau-nakiri-japonais-artisanal-acier-carbone`
+
+**Règles :**
+- Tout en minuscules
+- Mots séparés par tirets
+- Pas de chiffres seuls (sauf dimensions pertinentes comme "17cm")
+- Inclure mots-clés SEO prioritaires
+- Max 5-6 segments de mots
+- Pas de caractères spéciaux
+
+---
+
 ## 🚀 PRÊT À GÉNÉRER
 
 **Pour lancer une génération, fournis-moi simplement :**
@@ -309,5 +372,12 @@
 > Prix: [Z]€  
 > Infos complémentaires: [Texte libre ou ton ancienne annonce Leboncoin]
 
-**Et je te génère la description HTML complète !** 🎯
+**Et je te génère :**
+1. ✅ **Description HTML complète** (prête à coller)
+2. ✅ **Page Title** optimisé SEO
+3. ✅ **Meta Description** optimisée SEO
+4. ✅ **URL Handle** (slug Shopify)
+5. ✅ **Suggestions Metafields** (Matériaux, Dimensions, Care)
+
+🎯
 

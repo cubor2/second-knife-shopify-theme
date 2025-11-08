@@ -59,18 +59,18 @@
         "collapsible-row-0": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "Materials",
+            "heading": "Matériaux",
             "icon": "leather",
-            "content": "<p>Cuir et acier trempé</p>",
+            "content": "",
             "page": ""
           }
         },
         "collapsible-row-1": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "Shipping & Returns",
-            "icon": "truck",
-            "content": "<p>Livraison sous 10 jours</p>",
+            "heading": "Livraison & Retours",
+            "icon": "return",
+            "content": "",
             "page": ""
           }
         },
@@ -79,16 +79,16 @@
           "settings": {
             "heading": "Dimensions",
             "icon": "ruler",
-            "content": "<p>23 * 45 * 12cm</p>",
+            "content": "",
             "page": ""
           }
         },
         "collapsible-row-3": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "Care Instructions",
+            "heading": "Entretien",
             "icon": "heart",
-            "content": "<p>A rincer puis essuyer après chaque utilisation</p>",
+            "content": "",
             "page": ""
           }
         },

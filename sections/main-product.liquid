@@ -37,6 +37,46 @@
         padding-bottom: {{ section.settings.padding_bottom }}px;
       }
     }
+
+    .product-description-full {
+      margin-top: 4rem;
+      margin-bottom: 2rem;
+    }
+
+    .product-description-full .product__description {
+      max-width: 100%;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .product-description-full h2 {
+      font-size: 1.75rem;
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+
+    .product-description-full h3 {
+      font-size: 1.25rem;
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+      font-weight: 600;
+    }
+
+    .product-description-full ul {
+      margin: 1rem 0;
+      padding-left: 1.5rem;
+    }
+
+    .product-description-full li {
+      margin-bottom: 0.5rem;
+    }
+
+    @media screen and (max-width: 749px) {
+      .product-description-full {
+        margin-top: 3rem;
+      }
+    }
   {%- endstyle -%}
 
   <script src="{{ 'product-info.js' | asset_url }}" defer="defer"></script>
@@ -187,11 +227,10 @@
                   {%- endif -%}
                 </p>
               {%- when 'description' -%}
-                {%- if product.description != blank -%}
-                  <div class="product__description rte quick-add-hidden" {{ block.shopify_attributes }}>
-                    {{ product.description }}
-                  </div>
-                {%- endif -%}
+                {%- comment -%}
+                  Description déplacée en pleine largeur sous le produit
+                  Voir section product-description-full ci-dessous
+                {%- endcomment -%}
               {%- when 'sku' -%}
                 <p
                   class="product__sku{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}{% if product.selected_or_first_available_variant.sku.size == 0 %} visibility-hidden{% endif %}"
@@ -703,6 +742,15 @@
     <script type="application/ld+json">
       {{ product | structured_data }}
     </script>
+
+    {%- comment -%} Description complète en pleine largeur {%- endcomment -%}
+    {%- if product.description != blank -%}
+      <div class="product-description-full page-width">
+        <div class="product__description rte">
+          {{ product.description }}
+        </div>
+      </div>
+    {%- endif -%}
 
     {%- comment -%} Section accordéon pleine largeur en-dessous du produit {%- endcomment -%}
     <div class="product-accordions">

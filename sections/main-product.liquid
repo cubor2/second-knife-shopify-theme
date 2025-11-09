@@ -83,6 +83,10 @@
     .product__title h1 {
       line-height: 1.3;
     }
+
+    .product__title h1 .title-line {
+      display: block;
+    }
   {%- endstyle -%}
 
   <script src="{{ 'product-info.js' | asset_url }}" defer="defer"></script>
@@ -145,11 +149,10 @@
               {%- when 'title' -%}
                 <div class="product__title" {{ block.shopify_attributes }}>
                   <h1>
-                    {%- assign title_parts = product.title | split: ' | ' -%}
-                    {%- for part in title_parts -%}
-                      {{ part -}}
-                      {%- unless forloop.last %}<br>{% endunless -%}
-                    {%- endfor -%}
+                    {% assign title_parts = product.title | split: ' | ' %}
+                    {% for part in title_parts %}
+                      <span class="title-line">{{ part }}</span>
+                    {% endfor %}
                   </h1>
                 </div>
               {%- when 'price' -%}

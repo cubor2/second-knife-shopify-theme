@@ -16,25 +16,13 @@ if ($currentDir.Path -notlike "*dawn*") {
 
 # Synchronisation automatique si demandée
 if ($Sync) {
-    Write-Host "`nSynchronisation automatique des paramètres..." -ForegroundColor Cyan
+    Write-Host "`nTelecharger les settings depuis le theme LIVE Shopify..." -ForegroundColor Cyan
     
-    # Vérifier s'il existe une sauvegarde récente
-    $backupDir = ".\backup-settings"
-    if (Test-Path $backupDir) {
-        $latestBackup = Get-ChildItem -Path $backupDir -Filter "settings_backup_*.json" | Sort-Object LastWriteTime -Descending | Select-Object -First 1
-        if ($latestBackup) {
-            Write-Host "Restauration de la sauvegarde: $($latestBackup.Name)" -ForegroundColor Yellow
-            & ".\restore-settings.ps1" $latestBackup.FullName
-        } else {
-            Write-Host "Aucune sauvegarde trouvée. Création d'une sauvegarde initiale..." -ForegroundColor Yellow
-            & ".\backup-settings.ps1"
-        }
-    } else {
-        Write-Host "Dossier de sauvegarde non trouvé. Création d'une sauvegarde initiale..." -ForegroundColor Yellow
-        & ".\backup-settings.ps1"
-    }
+    # Télécharger les settings depuis le thème LIVE
+    shopify theme pull --store=second-knife.myshopify.com --theme=183719133448 --only config/settings_data.json --force
     
-    Write-Host "`nSynchronisation terminée!" -ForegroundColor Green
+    Write-Host "`nSynchronisation terminee!" -ForegroundColor Green
+    Start-Sleep -Seconds 2
 }
 
 # Lancer le serveur avec le bon store et le THÈME LIVE

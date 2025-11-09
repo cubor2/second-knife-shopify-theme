@@ -79,6 +79,11 @@
         margin-top: 3rem;
       }
     }
+
+    .product__title h1 {
+      white-space: normal;
+      line-height: 1.3;
+    }
   {%- endstyle -%}
 
   <script src="{{ 'product-info.js' | asset_url }}" defer="defer"></script>
@@ -140,7 +145,7 @@
                 </p>
               {%- when 'title' -%}
                 <div class="product__title" {{ block.shopify_attributes }}>
-                  <h1>{{ product.title | escape }}</h1>
+                  <h1>{{ product.title | replace: ' | ', '<br>' }}</h1>
                 </div>
               {%- when 'price' -%}
                 <div id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>

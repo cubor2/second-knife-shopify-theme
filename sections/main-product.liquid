@@ -82,10 +82,16 @@
 
     .product__title h1 {
       line-height: 1.3;
+      font-size: 3.5rem;
     }
 
     .product__title h1 .title-line {
       display: block;
+    }
+
+    /* 2ème partie du titre (après |) en texte normal */
+    .product__title h1 .title-line:nth-child(2) {
+      font-weight: 400;
     }
   {%- endstyle -%}
 

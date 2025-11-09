@@ -72,9 +72,10 @@ Manche bois patiné couteau Yanagiba Chūgi patine authentique
 ### 🚚 Expédition et Retours (Shipping & Returns)
 
 ```
-• Livraison offerte en France métropolitaine
-• Expédition soignée sous 48h ouvrées dans emballage renforcé
-• Retour accepté sous 14 jours si le couteau ne correspond pas à vos attentes (frais de retour à votre charge, produit dans son état d'origine)
+• Livraison France et Europe : 3-5 jours ouvrés
+• Emballage soigné avec protection renforcée
+• Retour possible sous 14 jours (frais de retour à votre charge)
+• Politique de retour complète disponible sur notre page dédiée
 ```
 
 ### 🧼 Entretien (Care Instructions)

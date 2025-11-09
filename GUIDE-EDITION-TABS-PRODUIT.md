@@ -250,3 +250,4 @@ Voici les icônes que tu peux utiliser (pertinentes pour couteaux) :
 
 Si tu ne trouves pas où éditer les tabs, envoie-moi une capture d'écran de ton écran Theme Editor et je t'aide !
 
+

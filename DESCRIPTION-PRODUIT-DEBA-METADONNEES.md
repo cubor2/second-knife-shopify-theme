@@ -156,3 +156,4 @@ Image 4 (marquage) : "Marquage Kanetsugu Sakai couteau japonais authentique"
 
 🎯 **Unicité** : Chaque produit doit avoir des métadonnées UNIQUES. Ne jamais dupliquer les titles/descriptions entre produits.
 
+

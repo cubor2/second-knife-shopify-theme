@@ -603,3 +603,8 @@
     clip-path: polygon(var(--shape--blob-5));
   }
 }
+
+/* Card title line break support */
+.card-title-line {
+  display: block;
+}

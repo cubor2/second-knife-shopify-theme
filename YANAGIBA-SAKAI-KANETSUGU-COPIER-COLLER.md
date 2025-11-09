@@ -63,10 +63,10 @@ Copier le contenu de `YANAGIBA-SAKAI-KANETSUGU-DESCRIPTION-HTML.html`
 
 ### Matériaux
 ```
-Acier sandwich haut carbone japonais (extérieur dur + cœur tranchant ultra-affûté).
-Lame forgée à la main à Sakai par Kanetsugu (堺 刃 司 兼 近).
-Manche en bois patiné d'origine, restauré.
-Patine d'usage authentique conservée au dos de la lame.
+• Acier sandwich haut carbone japonais (extérieur dur + cœur tranchant ultra-affûté)
+• Lame forgée à la main à Sakai par Kanetsugu (堺 刃 司 兼 近)
+• Manche en bois patiné d'origine, restauré
+• Patine d'usage authentique conservée au dos de la lame
 ```
 
 ### Dimensions
@@ -80,10 +80,10 @@ Patine d'usage authentique conservée au dos de la lame.
 
 ### Livraison & Retours
 ```
-Livraison France et Europe : 3-5 jours ouvrés
-Emballage soigné avec protection renforcée
-Retour possible sous 14 jours (frais de retour à votre charge)
-Politique de retour complète disponible sur notre page dédiée
+• Livraison France et Europe : 3-5 jours ouvrés
+• Emballage soigné avec protection renforcée
+• Retour possible sous 14 jours (frais de retour à votre charge)
+• Politique de retour complète disponible sur notre page dédiée
 ```
 
 ### Entretien

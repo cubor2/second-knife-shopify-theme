@@ -63,9 +63,9 @@ Copier le contenu de `DESCRIPTION-PRODUIT-DEBA-2-SADAMITSU-HTML.html`
 
 ### Matériaux
 ```
-Acier sandwich haut carbone japonais (extérieur dur + cœur tranchant). 
-Lame forgée à la main dans les années 70 par Sadamitsu (貞光).
-Manche en bois patiné d'origine, restauré.
+• Acier sandwich haut carbone japonais (extérieur dur + cœur tranchant)
+• Lame forgée à la main dans les années 70 par Sadamitsu (貞光)
+• Manche en bois patiné d'origine, restauré
 ```
 
 ### Dimensions
@@ -78,10 +78,10 @@ Manche en bois patiné d'origine, restauré.
 
 ### Livraison & Retours
 ```
-Livraison France et Europe : 3-5 jours ouvrés
-Emballage soigné avec protection renforcée
-Retour possible sous 14 jours (frais de retour à votre charge)
-Politique de retour complète disponible sur notre page dédiée
+• Livraison France et Europe : 3-5 jours ouvrés
+• Emballage soigné avec protection renforcée
+• Retour possible sous 14 jours (frais de retour à votre charge)
+• Politique de retour complète disponible sur notre page dédiée
 ```
 
 ### Entretien

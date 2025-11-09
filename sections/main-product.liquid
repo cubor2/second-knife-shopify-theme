@@ -148,8 +148,8 @@
                   <h1>
                     {%- assign title_parts = product.title | split: ' | ' -%}
                     {%- for part in title_parts -%}
-                      {{ part }}
-                      {%- unless forloop.last -%}<br>{%- endunless -%}
+                      {{ part -}}
+                      {%- unless forloop.last %}<br>{% endunless -%}
                     {%- endfor -%}
                   </h1>
                 </div>

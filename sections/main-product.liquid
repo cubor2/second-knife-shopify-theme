@@ -790,8 +790,29 @@
                 {{- 'icon-caret.svg' | inline_asset_content -}}
               </summary>
               <div class="product-accordion-content" id="ProductAccordion-{{ block.id }}-{{ section.id }}">
-                {{ block.settings.content }}
-                {{ block.settings.page.content }}
+                {%- liquid
+                  # Déterminer quel metafield utiliser en fonction du titre du tab
+                  assign content_to_display = nil
+                  assign heading_lower = block.settings.heading | downcase
+                  
+                  if heading_lower contains 'matériaux' or heading_lower contains 'materials'
+                    assign content_to_display = product.metafields.custom.materials.value
+                  elsif heading_lower contains 'dimensions' or heading_lower contains 'dimension'
+                    assign content_to_display = product.metafields.custom.dimensions.value
+                  elsif heading_lower contains 'livraison' or heading_lower contains 'retour' or heading_lower contains 'shipping'
+                    assign content_to_display = product.metafields.custom.shipping_returns.value
+                  elsif heading_lower contains 'entretien' or heading_lower contains 'care'
+                    assign content_to_display = product.metafields.custom.care_instructions.value
+                  endif
+                  
+                  # Afficher le metafield s'il existe, sinon afficher le contenu par défaut du block
+                  if content_to_display != blank
+                    echo content_to_display | newline_to_br
+                  else
+                    echo block.settings.content
+                    echo block.settings.page.content
+                  endif
+                -%}
               </div>
             </details>
           </div>

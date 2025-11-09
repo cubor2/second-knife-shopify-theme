@@ -152,7 +152,12 @@
                   </div>
 
                   <div class="sk-product-card__info">
-                    <h3 class="sk-product-card__title">{{ product.title | escape }}</h3>
+                    <h3 class="sk-product-card__title">
+                      {% assign title_parts = product.title | split: ' | ' %}
+                      {% for part in title_parts %}
+                        <span class="card-title-line">{{ part }}</span>
+                      {% endfor %}
+                    </h3>
                     <div class="sk-product-card__price">
                       {{ product.price | money }}
                       {%- if product.compare_at_price > product.price -%}

@@ -21,6 +21,15 @@
 - **Overrides CSS** ciblés sans casser Dawn
 - **Workflow de développement** documenté
 
+### 🆕 **Dernières Fonctionnalités** (Nov 2024)
+- ✅ **Metafields personnalisés** : Caractéristiques uniques par produit
+- ✅ **Titres multi-lignes** : Saut de ligne automatique avec séparateur `|`
+- ✅ **Hiérarchie typographique** : Tailles différenciées 1ère/2ème partie
+- ✅ **6 produits complets** : Descriptions SEO + métadonnées + metafields
+- ✅ **Template produit** : Format standardisé pour nouveaux produits
+
+📋 **[Voir le récapitulatif complet de la session du 9 Nov 2024](SESSION-09-NOV-2024-RECAP.md)**
+
 ---
 
 ## 🚀 **Installation**
@@ -127,6 +136,12 @@ Body, p    → IBM Plex Serif Regular (400)
 - `DAWN-CSS-OVERRIDE-GUIDE.md` : Overrides CSS
 - `GIT-TROUBLESHOOTING-GUIDE.md` : Dépannage Git
 - `MEMO-THEMES-SECOND-KNIFE.md` : Documentation projet
+- `GUIDE-METAFIELDS-PRODUITS.md` : Configuration metafields produits
+- `TEMPLATE-DESCRIPTION-PRODUIT.md` : Template fiches produits
+
+### **Sessions de Travail**
+- `SESSION-09-NOV-2024-RECAP.md` : Finalisation styles + 2 produits + metafields
+- `SESSION-08-NOV-2024-RECAP.md` : SEO, AISO, restauration, 4 produits
 
 ---
 

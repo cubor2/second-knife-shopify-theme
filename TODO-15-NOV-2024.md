@@ -70,9 +70,58 @@
 
 ---
 
-## ✅ TRAVAIL ACCOMPLI AUJOURD'HUI (15 Nov 2024) - SESSION MARATHON ! 🏆
+## ✅ TRAVAIL ACCOMPLI AUJOURD'HUI (15 Nov 2024) - SESSION MARATHON x2 ! 🏆🏆
 
-### Bugs Résolus ✅
+### 🎨 REFONTE COMPLÈTE PAGES CONTENU + LÉGALES (Session du soir - 19h-1h) ✅
+
+**4 pages contenu humanisées + 5 pages légales rechartées + 1 charte tone of voice**
+
+#### Pages Contenu Humanisées ✅
+1. **FAQ** : 8 nouveaux types couteaux, prix actualisés, aiguisage 18°, comparatif artisanal/industriel
+2. **Restauration** : Processus 5 étapes, tableau comparatif, tarifs, types acceptés/refusés
+3. **Entretien** : Guide nettoyage, affûtage pierre, stockage, réparation rouille, calendrier
+4. **Rénovés vs Neufs** : Tableau 10 critères, 5 avantages, 3 inconvénients, conclusion comparative
+
+#### Pages Légales Rechartées ✅
+5. **CGV** : 13 articles complets (identification, commande, paiement, livraison, rétractation, garantie)
+6. **Mentions Légales** : Éditeur, hébergeur, propriété intellectuelle, RGPD, médiation
+7. **Politique Confidentialité** : 8 sections (responsable, données, finalités, droits RGPD, cookies, sécurité)
+8. **Politique Retour** : Rétractation 14j, conditions, procédure 3 étapes, garantie 2 ans, cas particuliers
+9. **Politique Cookies** : Types cookies (essentiels, GA4, Meta Pixel, Shopify), choix utilisateur, gestion navigateur
+
+#### Corrections Design Appliquées ✅
+- ❌ Suppression TOUTES les couleurs (bleu, vert, orange, jaune, rouge)
+- ❌ Suppression TOUS les emojis (sauf ✓ si pertinent)
+- ✅ Bordures 2px → 1px (`var(--sk-border)`)
+- ✅ Headers tableaux noirs → gris légers
+- ✅ Rectangles conditionnels (uniquement si utilité claire)
+- ✅ Classes CSS cohérentes (`.page-*`, `.section-*`, `.highlight`, `.card`, `.step`)
+- ✅ Espacements standardisés (`var(--sk-space-*)`)
+- ✅ Responsive uniforme (mobile-first)
+- ✅ Sous-titres en minuscules (pas de majuscules à tous les mots)
+
+#### Nouveaux Fichiers Créés ✅
+- `CHARTE-TONE-OF-VOICE-SECOND-KNIFE.md` (guide rédactionnel complet)
+- `CONTENU-FAQ-HTML-HUMANISE.html`
+- `CONTENU-RESTAURATION-HTML-HUMANISE.html`
+- `CONTENU-ENTRETIEN-HTML-HUMANISE.html`
+- `CONTENU-RENOVES-VS-NEUFS-HTML-HUMANISE.html`
+- `PAGE-LEGALE-CGV-CHARTE.html`
+- `PAGE-LEGALE-MENTIONS-LEGALES-CHARTE.html`
+- `PAGE-LEGALE-POLITIQUE-CONFIDENTIALITE-CHARTE.html`
+- `PAGE-LEGALE-POLITIQUE-RETOUR-CHARTE.html`
+- `PAGE-LEGALE-COOKIES-CHARTE.html`
+
+**Statistiques commit session soir** :
+- 44 fichiers modifiés
+- 8315 lignes ajoutées
+- 545 lignes supprimées
+
+---
+
+### 🐛 BUGS RÉSOLUS (Session du matin - 8h-14h) ✅
+
+#### Bugs Techniques ✅
 1. **Serveur Local** : Setup complet avec documentation ultra-détaillée (`🚀-DEMARRAGE-SERVEUR-LOCAL.md`)
 2. **Pixel Offset Desktop** : Fix du décalage 1px sur les bordures verticales (border-right white trick)
 3. **Mobile Catalogue** : Uniformisation des bordures blanches (padding sur main#MainContent)
@@ -80,15 +129,20 @@
 5. **Padding Home/Catalogue** : Espacement mobile uniforme partout
 6. **Filtres Mobile Cachés** : Fix du "Deba caché" avec padding-top sur .mobile-facets__list
 
-### Méthodologie ✅
+#### Fonctionnalités Ajoutées ✅
+1. **Titres multi-lignes** : Séparateur `|` pour titre/sous-titre (Lora Bold 30px + IBM Plex Serif 16px)
+
+#### Méthodologie ✅
 - Debugging avec DevTools (inspection des éléments, calcul des largeurs)
 - Tests sur serveur local (`shopify theme dev`)
 - Solutions CSS propres (sans `!important` sauf nécessité)
 - Documentation exhaustive pour les futures sessions
+- Analyse et application Tone of Voice
 
-### Fichiers Modifiés 📝
-- `assets/sk-design-system.css.liquid` (nombreuses corrections responsive)
-- `Theme/dawn/TODO-15-NOV-2024.md` (cette doc !)
+#### Fichiers Modifiés Session Matin 📝
+- `assets/sk-design-system.css.liquid` (corrections responsive, styles titres multi-lignes)
+- `sections/main-page.liquid` (implémentation séparateur `|`)
+- `TODO-15-NOV-2024.md` (cette doc !)
 
 ---
 

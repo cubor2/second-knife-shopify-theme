@@ -1,0 +1,222 @@
+{% comment %}
+  Section : Module de consentement aux cookies
+  Conforme RGPD - Design SK minimaliste
+{% endcomment %}
+
+<style>
+  .sk-cookie-consent {
+    position: fixed;
+    bottom: 24px;
+    left: 24px;
+    max-width: 420px;
+    background: #121212;
+    color: white;
+    padding: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 9999;
+    font-family: system-ui, -apple-system, sans-serif;
+    display: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  .sk-cookie-consent.show {
+    display: block;
+  }
+
+  .sk-cookie-consent__title {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    line-height: 1.4;
+  }
+
+  .sk-cookie-consent__text {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 16px;
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  .sk-cookie-consent__text a {
+    color: white;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .sk-cookie-consent__text a:hover {
+    text-decoration: none;
+  }
+
+  .sk-cookie-consent__actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .sk-cookie-consent__button {
+    flex: 1;
+    min-width: 120px;
+    padding: 12px 24px;
+    font-size: 14px;
+    font-weight: 500;
+    border: 1px solid white;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: inherit;
+  }
+
+  .sk-cookie-consent__button:hover {
+    background: white;
+    color: #121212;
+  }
+
+  .sk-cookie-consent__button--primary {
+    background: white;
+    color: #121212;
+  }
+
+  .sk-cookie-consent__button--primary:hover {
+    background: rgba(255, 255, 255, 0.9);
+  }
+
+  @media (max-width: 640px) {
+    .sk-cookie-consent {
+      bottom: 12px;
+      left: 12px;
+      right: 12px;
+      max-width: none;
+      padding: 16px;
+    }
+
+    .sk-cookie-consent__actions {
+      flex-direction: column;
+    }
+
+    .sk-cookie-consent__button {
+      width: 100%;
+    }
+  }
+</style>
+
+<div id="sk-cookie-consent" class="sk-cookie-consent">
+  <div class="sk-cookie-consent__title">
+    Consentement aux cookies
+  </div>
+  <div class="sk-cookie-consent__text">
+    Nous utilisons des cookies pour améliorer votre expérience, analyser notre trafic et personnaliser les publicités. 
+    <a href="/pages/cookies" target="_blank">En savoir plus</a>
+  </div>
+  <div class="sk-cookie-consent__actions">
+    <button type="button" class="sk-cookie-consent__button" onclick="skCookieConsent.decline()">
+      Refuser
+    </button>
+    <button type="button" class="sk-cookie-consent__button sk-cookie-consent__button--primary" onclick="skCookieConsent.accept()">
+      Accepter tout
+    </button>
+  </div>
+</div>
+
+<script>
+  const skCookieConsent = {
+    cookieName: 'sk_cookie_consent',
+    cookieExpiry: 365,
+
+    init() {
+      const consent = this.getConsent();
+      if (consent === null) {
+        this.showBanner();
+      } else if (consent === 'accepted') {
+        this.loadAnalytics();
+      }
+    },
+
+    showBanner() {
+      const banner = document.getElementById('sk-cookie-consent');
+      if (banner) {
+        banner.classList.add('show');
+      }
+    },
+
+    hideBanner() {
+      const banner = document.getElementById('sk-cookie-consent');
+      if (banner) {
+        banner.classList.remove('show');
+      }
+    },
+
+    accept() {
+      this.setConsent('accepted');
+      this.hideBanner();
+      this.loadAnalytics();
+    },
+
+    decline() {
+      this.setConsent('declined');
+      this.hideBanner();
+    },
+
+    setConsent(value) {
+      const date = new Date();
+      date.setTime(date.getTime() + (this.cookieExpiry * 24 * 60 * 60 * 1000));
+      document.cookie = `${this.cookieName}=${value};expires=${date.toUTCString()};path=/;SameSite=Lax`;
+    },
+
+    getConsent() {
+      const name = this.cookieName + '=';
+      const decodedCookie = decodeURIComponent(document.cookie);
+      const cookieArray = decodedCookie.split(';');
+      for (let i = 0; i < cookieArray.length; i++) {
+        let cookie = cookieArray[i].trim();
+        if (cookie.indexOf(name) === 0) {
+          return cookie.substring(name.length, cookie.length);
+        }
+      }
+      return null;
+    },
+
+    loadAnalytics() {
+      {%- if settings.enable_ga4 and settings.ga4_measurement_id != blank -%}
+        const gaScript = document.createElement('script');
+        gaScript.async = true;
+        gaScript.src = 'https://www.googletagmanager.com/gtag/js?id={{ settings.ga4_measurement_id }}';
+        document.head.appendChild(gaScript);
+
+        gaScript.onload = function() {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', '{{ settings.ga4_measurement_id }}');
+        };
+      {%- endif -%}
+
+      {%- if settings.enable_meta_pixel and settings.meta_pixel_id != blank -%}
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '{{ settings.meta_pixel_id }}');
+        fbq('track', 'PageView');
+      {%- endif -%}
+    }
+  };
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => skCookieConsent.init());
+  } else {
+    skCookieConsent.init();
+  }
+</script>
+
+{% schema %}
+{
+  "name": "Cookie Consent",
+  "settings": []
+}
+{% endschema %}
+

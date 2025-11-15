@@ -103,6 +103,55 @@
     ]
   },
   {
+    "name": "Analytics & Tracking",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Google Analytics 4 (GA4)"
+      },
+      {
+        "type": "paragraph",
+        "content": "Installez Google Analytics 4 pour suivre les visites, conversions et comportements utilisateurs. Créez votre compte sur analytics.google.com"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_ga4",
+        "label": "Activer Google Analytics 4",
+        "default": false,
+        "info": "Activez pour charger le script de tracking GA4"
+      },
+      {
+        "type": "text",
+        "id": "ga4_measurement_id",
+        "label": "ID de mesure GA4",
+        "placeholder": "G-XXXXXXXXXX",
+        "info": "Format : G-XXXXXXXXXX (trouvez-le dans Admin > Flux de données)"
+      },
+      {
+        "type": "header",
+        "content": "Meta Pixel (Facebook)"
+      },
+      {
+        "type": "paragraph",
+        "content": "Installez le Meta Pixel pour suivre les conversions Facebook/Instagram et créer des audiences publicitaires. Créez votre pixel sur business.facebook.com"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_meta_pixel",
+        "label": "Activer Meta Pixel",
+        "default": false,
+        "info": "Activez pour charger le script Meta Pixel"
+      },
+      {
+        "type": "text",
+        "id": "meta_pixel_id",
+        "label": "ID du Pixel Meta",
+        "placeholder": "123456789012345",
+        "info": "Format : 15 chiffres (trouvez-le dans Events Manager > Pixels)"
+      }
+    ]
+  },
+  {
     "name": "t:settings_schema.logo.name",
     "settings": [
       {

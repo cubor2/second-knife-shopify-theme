@@ -9,8 +9,10 @@
  */
 {
   "current": {
-    "logo": "shopify://shop_images/2ND_KNIFE_fully_trimmed.png",
-    "logo_width": 70,
+    "enable_ga4": true,
+    "ga4_measurement_id": "G-XGPFYF685W",
+    "logo": "shopify://shop_images/logo-carre_5063ec24-71dd-44e5-ad65-bfadc6304f5e.png",
+    "logo_width": 80,
     "type_header_font": "assistant_n4",
     "heading_scale": 100,
     "type_body_font": "assistant_n4",

@@ -12,13 +12,6 @@
     "main": {
       "type": "main-product",
       "blocks": {
-        "vendor": {
-          "type": "text",
-          "settings": {
-            "text": "{{ product.vendor }}",
-            "text_style": "uppercase"
-          }
-        },
         "title": {
           "type": "title",
           "settings": {}
@@ -61,7 +54,7 @@
           "settings": {
             "heading": "Matériaux",
             "icon": "leather",
-            "content": "",
+            "content": "<ul><li>Acier : Construction sandwich (hagane) - acier haut carbone</li><li>Manche : Bois patiné (origine, restauré et poncé)</li></ul>",
             "page": ""
           }
         },
@@ -70,7 +63,7 @@
           "settings": {
             "heading": "Livraison & Retours",
             "icon": "return",
-            "content": "",
+            "content": "<ul><li>Livraison France et Europe : 3-5 jours ouvrés</li><li>Retour accepté sous 14 jours si non utilisé</li><li>Frais de retour à la charge du client</li></ul>",
             "page": ""
           }
         },
@@ -79,7 +72,7 @@
           "settings": {
             "heading": "Dimensions",
             "icon": "ruler",
-            "content": "",
+            "content": "<ul><li>Lame : 15.5 cm</li><li>Longueur totale : 30 cm</li><li>Poids : ~200g</li></ul>",
             "page": ""
           }
         },
@@ -88,7 +81,7 @@
           "settings": {
             "heading": "Entretien",
             "icon": "heart",
-            "content": "",
+            "content": "<ul><li>Nettoyage : Rincer à l'eau tiède, sécher immédiatement avec un chiffon doux</li><li>Affûtage : Pierre à eau grain 1000-3000, angle 15-20°</li><li>Stockage : Éviter l'humidité. Si stockage prolongé, appliquer huile minérale sur la lame</li><li>Éviter : Lave-vaisselle, planches en verre, découpe sur surfaces dures</li></ul>",
             "page": ""
           }
         },

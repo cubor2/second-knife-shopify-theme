@@ -1,0 +1,386 @@
+<!-- PAGE RESTAURATION - Service de Restauration de Couteaux Japonais -->
+<!-- Version humanisée (Tone of Voice Second Knife) + Charte Graphique SK -->
+<!-- À copier-coller dans Shopify Admin > Pages > Restauration (mode HTML) -->
+
+<style>
+/* Styles spécifiques Restauration - Respecte le Design System SK */
+.restauration-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--sk-space-4) var(--sk-space-3);
+  font-family: var(--sk-font-body);
+}
+
+.restauration-section {
+  margin-bottom: var(--sk-space-5);
+  padding-bottom: var(--sk-space-5);
+  border-bottom: var(--sk-border);
+}
+
+.restauration-section:last-of-type {
+  border-bottom: none;
+}
+
+.restauration-section h2 {
+  font-family: var(--sk-font-heading);
+  font-size: 3rem;
+  font-weight: 600;
+  margin-bottom: var(--sk-space-3);
+  color: rgb(var(--sk-border-color));
+  line-height: 1.2;
+}
+
+.restauration-section h3 {
+  font-family: var(--sk-font-heading);
+  font-size: 2rem;
+  font-weight: 600;
+  margin-top: var(--sk-space-4);
+  margin-bottom: var(--sk-space-2);
+  color: rgb(var(--sk-border-color));
+}
+
+.restauration-section p {
+  font-size: 1.4rem;
+  line-height: 1.6;
+  margin-bottom: var(--sk-space-2);
+  color: rgb(var(--sk-border-color));
+}
+
+.restauration-section ul, .restauration-section ol {
+  margin: var(--sk-space-3) 0;
+  padding-left: var(--sk-space-4);
+}
+
+.restauration-section li {
+  font-size: 1.4rem;
+  line-height: 1.6;
+  margin-bottom: var(--sk-space-2);
+  color: rgb(var(--sk-border-color));
+}
+
+.restauration-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: var(--sk-space-3) 0;
+  font-size: 1.4rem;
+}
+
+.restauration-table th, .restauration-table td {
+  border: var(--sk-border);
+  padding: var(--sk-space-2);
+  text-align: left;
+}
+
+.restauration-table th {
+  font-family: var(--sk-font-heading);
+  font-weight: 600;
+  background-color: rgba(var(--sk-border-color), 0.02);
+}
+
+.restauration-highlight {
+  padding: var(--sk-space-3);
+  border: var(--sk-border);
+  margin: var(--sk-space-3) 0;
+  background-color: rgba(var(--sk-border-color), 0.01);
+}
+
+.restauration-step {
+  border-left: 3px solid rgb(var(--sk-border-color));
+  padding-left: var(--sk-space-3);
+  margin-bottom: var(--sk-space-3);
+}
+
+.restauration-step h4 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: var(--sk-space-1);
+  font-family: var(--sk-font-heading);
+}
+
+.restauration-cta {
+  display: inline-block;
+  padding: var(--sk-space-2) var(--sk-space-3);
+  border: var(--sk-border);
+  text-decoration: none;
+  color: rgb(var(--sk-border-color));
+  font-family: var(--sk-font-body);
+  font-size: 1.4rem;
+  transition: var(--sk-transition);
+  margin-top: var(--sk-space-2);
+}
+
+.restauration-cta:hover {
+  background-color: rgb(var(--sk-border-color));
+  color: white;
+}
+
+.checkmark {
+  color: green;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 749px) {
+  .restauration-table {
+    font-size: 1.2rem;
+  }
+  
+  .restauration-table th, .restauration-table td {
+    padding: var(--sk-space-1);
+  }
+  
+  .restauration-section h2 {
+    font-size: 2.5rem;
+  }
+}
+</style>
+
+<div class="restauration-container">
+
+  <!-- Introduction -->
+  <div class="restauration-section">
+    <h2>Service de Restauration de Couteaux Japonais</h2>
+    
+    <p>Votre couteau japonais rouillé, oxydé ou émoussé mérite une seconde vie.</p>
+
+    <p>Notre atelier en Bourgogne restaure les lames anciennes forgées à la main (années 60-90) pour leur redonner un tranchant de rasoir. Chaque restauration préserve l'âme et l'histoire de la lame tout en lui offrant 20 années supplémentaires d'utilisation.</p>
+
+    <a href="#devis" class="restauration-cta">→ Demander un devis gratuit</a>
+  </div>
+
+  <!-- Le processus -->
+  <div class="restauration-section">
+    <h2>Le processus de restauration</h2>
+    
+    <p>Une restauration professionnelle en 5 étapes pour garantir un résultat équivalent au neuf.</p>
+
+    <h3>Les 5 étapes</h3>
+    
+    <div class="restauration-step">
+      <h4>1. Évaluation gratuite</h4>
+      <p>Analyse de l'état de la lame, du manche et de la faisabilité de restauration. Devis détaillé envoyé sous 48h.</p>
+    </div>
+    
+    <div class="restauration-step">
+      <h4>2. Réaffûtage complet</h4>
+      <p>Utilisation de pierres japonaises traditionnelles (grain 1000, 3000 et 8000) pour retrouver un tranchant exceptionnel.</p>
+    </div>
+    
+    <div class="restauration-step">
+      <h4>3. Polissage et finitions</h4>
+      <p>Retrait complet de l'oxydation et de la rouille. Polissage miroir de la lame et restauration de la brillance d'origine.</p>
+    </div>
+    
+    <div class="restauration-step">
+      <h4>4. Traitement anticorrosion</h4>
+      <p>Application d'une huile protectrice de qualité alimentaire pour préserver la lame sur le long terme.</p>
+    </div>
+    
+    <div class="restauration-step">
+      <h4>5. Refonte du manche (si nécessaire)</h4>
+      <p>Fabrication d'un nouveau manche en chêne du Morvan pour un équilibre parfait. Tarif sur devis selon complexité.</p>
+    </div>
+    
+    <div class="restauration-highlight">
+      <p><strong>Durée :</strong> 7-14 jours ouvrés | <strong>Prix :</strong> 40-90€ + manche sur devis | <strong>Réponse devis :</strong> Sous 48h</p>
+    </div>
+  </div>
+
+  <!-- Tableau Comparatif -->
+  <div class="restauration-section">
+    <h2>Pourquoi restaurer plutôt qu'acheter neuf ?</h2>
+    
+    <p>La restauration professionnelle offre des avantages économiques et écologiques, tout en préservant la qualité supérieure des lames vintage.</p>
+    
+    <table class="restauration-table">
+      <thead>
+        <tr>
+          <th>Critère</th>
+          <th>Restauration Second Knife</th>
+          <th>Achat neuf équivalent</th>
+          <th>DIY maison</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Prix</strong></td>
+          <td>40-90€ (+ manche sur devis)</td>
+          <td>200-400€</td>
+          <td>~15€ (pierres)</td>
+        </tr>
+        <tr>
+          <td><strong>Qualité finale</strong></td>
+          <td>Vintage haut de gamme</td>
+          <td>Variable selon marque</td>
+          <td>Risque d'abîmer la lame</td>
+        </tr>
+        <tr>
+          <td><strong>Durée de vie</strong></td>
+          <td>20+ ans supplémentaires</td>
+          <td>20+ ans</td>
+          <td>Dépend de la compétence</td>
+        </tr>
+        <tr>
+          <td><strong>Caractère unique</strong></td>
+          <td><span class="checkmark">✓</span> Histoire préservée</td>
+          <td>Production standard</td>
+          <td>Même pièce</td>
+        </tr>
+        <tr>
+          <td><strong>Artisan français</strong></td>
+          <td><span class="checkmark">✓</span> Savoir-faire local</td>
+          <td>Production industrielle</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td><strong>Délai</strong></td>
+          <td>7-14 jours ouvrés</td>
+          <td>Immédiat</td>
+          <td>2-4h (si expérimenté)</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Types de couteaux acceptés -->
+  <div class="restauration-section">
+    <h2>Quels couteaux sont restaurables ?</h2>
+    
+    <p>Environ 90% des couteaux japonais peuvent être restaurés si la lame n'est pas cassée ou fêlée. Voici ce que nous acceptons.</p>
+    
+    <h3>Types acceptés</h3>
+    <ul>
+      <li>Santoku, Gyuto, Nakiri, Deba anciens (années 60-90)</li>
+      <li>Lames rouillées ou fortement oxydées</li>
+      <li>Manches fissurés, abîmés ou détachés</li>
+      <li>Couteaux hérités de famille avec valeur sentimentale</li>
+      <li>Collections vintage japonaises nécessitant un entretien complet</li>
+      <li>Couteaux professionnels de chefs à remettre en état</li>
+    </ul>
+    
+    <h3>Cas refusés</h3>
+    <p>Lames cassées ou fêlées (faisabilité technique trop faible).</p>
+    
+    <p>Pour toute question sur votre cas particulier, contactez-nous avec des photos pour une évaluation gratuite sous 48h.</p>
+  </div>
+
+  <!-- Tarifs & Délais -->
+  <div class="restauration-section">
+    <h2>Tarifs et délais</h2>
+    
+    <p>Tarifs transparents établis en fonction de l'état initial du couteau. Chaque devis est personnalisé après évaluation.</p>
+    
+    <table class="restauration-table">
+      <thead>
+        <tr>
+          <th>Prestation</th>
+          <th>Prix</th>
+          <th>Délai</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Réaffûtage complet</strong><br>Pierres 1000/3000/8000, finition miroir</td>
+          <td>40-60€</td>
+          <td>7 jours ouvrés</td>
+        </tr>
+        <tr>
+          <td><strong>Réaffûtage + polissage</strong><br>Retrait oxydation, brillance restaurée</td>
+          <td>60-90€</td>
+          <td>10 jours ouvrés</td>
+        </tr>
+        <tr>
+          <td><strong>Restauration complète + manche</strong><br>Lame + manche neuf en chêne du Morvan</td>
+          <td>Sur devis</td>
+          <td>14 jours ouvrés</td>
+        </tr>
+        <tr>
+          <td><strong>Évaluation & devis personnalisé</strong><br>Envoyez-nous des photos</td>
+          <td>Gratuit</td>
+          <td>48h</td>
+        </tr>
+      </tbody>
+    </table>
+    
+    <p><strong>Note :</strong> Chaque restauration est unique et nécessite une évaluation personnalisée sous 48h. Frais de port aller et retour à la charge du client. Service disponible dans le monde entier.</p>
+  </div>
+
+  <!-- Questions fréquentes -->
+  <div class="restauration-section">
+    <h2>Questions fréquentes</h2>
+    
+    <h3>Tous les couteaux sont-ils restaurables ?</h3>
+    <p>Environ 90% des couteaux japonais peuvent être restaurés si la lame n'est pas cassée ou fêlée. Les lames oxydées, rouillées ou émoussées sont parfaitement restaurables.</p>
+    
+    <p>Seuls les cas de casse nette ou de fêlure profonde sont irréparables. Contactez-nous avec des photos pour une évaluation gratuite sous 48h. L'évaluation se fait sur photos, vous n'avez pas besoin d'expédier votre couteau avant le devis.</p>
+    
+    <h3>Combien de temps dure une restauration ?</h3>
+    <p>De 7 à 14 jours ouvrés selon la prestation choisie :</p>
+    <ul>
+      <li>Réaffûtage simple : 7 jours ouvrés</li>
+      <li>Réaffûtage + polissage : 10 jours ouvrés</li>
+      <li>Restauration complète avec manche : 14 jours ouvrés</li>
+    </ul>
+    
+    <p>Nous vous informons régulièrement de l'avancement et vous envoyons des photos avant retour.</p>
+    
+    <h3>Quel est le processus exact ?</h3>
+    <ol>
+      <li>Vous nous contactez via le formulaire ci-dessous avec des photos de votre couteau</li>
+      <li>Nous vous envoyons un devis personnalisé sous 48h</li>
+      <li>Après paiement du devis, vous nous expédiez le couteau (frais de port à votre charge)</li>
+      <li>Nous effectuons la restauration (7-14 jours ouvrés)</li>
+      <li>Nous vous renvoyons le couteau (frais de port à votre charge)</li>
+    </ol>
+    
+    <p><strong>Important :</strong> Ne nous envoyez pas votre couteau avant d'avoir reçu et validé le devis.</p>
+    
+    <h3>La restauration annule-t-elle la valeur vintage ?</h3>
+    <p>Au contraire. Une restauration professionnelle préserve et valorise votre couteau vintage.</p>
+    
+    <p>Nous respectons l'intégrité de la lame et ses caractéristiques d'origine. Pour les collectionneurs, nous proposons une restauration "conservatrice" qui préserve la patine historique tout en restaurant la fonctionnalité.</p>
+    
+    <h3>Livrez-vous à l'international ?</h3>
+    <p>Oui, notre service de restauration est disponible dans le monde entier.</p>
+    
+    <p>Les frais de port aller et retour sont à la charge du client. Nous recommandons d'assurer votre colis et de l'expédier en recommandé avec suivi. Les détails logistiques et recommandations d'assurance vous seront communiqués par email après validation du devis.</p>
+  </div>
+
+  <!-- Formulaire de contact -->
+  <div class="restauration-section" id="devis">
+    <h2>Donnez une seconde vie à votre couteau</h2>
+    <p>Envoyez-nous quelques photos et une description de l'état de votre couteau. Nous vous répondons sous 48h avec un devis personnalisé gratuit.</p>
+    
+    <div class="restauration-highlight" style="max-width: 600px; margin: var(--sk-space-4) auto;">
+      <form action="/contact#contact_form" method="post" id="contact_form" accept-charset="UTF-8" class="contact-form">
+        <input type="hidden" name="form_type" value="contact">
+        <input type="hidden" name="utf8" value="✓">
+        
+        <div style="margin-bottom: var(--sk-space-3);">
+          <label for="contact_name" style="display: block; margin-bottom: var(--sk-space-1); font-weight: 600;">Nom *</label>
+          <input type="text" id="contact_name" name="contact[name]" required style="width: 100%; padding: var(--sk-space-2); border: var(--sk-border); font-family: var(--sk-font-body);">
+        </div>
+        
+        <div style="margin-bottom: var(--sk-space-3);">
+          <label for="contact_email" style="display: block; margin-bottom: var(--sk-space-1); font-weight: 600;">Email *</label>
+          <input type="email" id="contact_email" name="contact[email]" required style="width: 100%; padding: var(--sk-space-2); border: var(--sk-border); font-family: var(--sk-font-body);">
+        </div>
+        
+        <div style="margin-bottom: var(--sk-space-3);">
+          <label for="contact_type" style="display: block; margin-bottom: var(--sk-space-1); font-weight: 600;">Type de couteau</label>
+          <input type="text" id="contact_type" name="contact[Type de couteau]" placeholder="Ex: Santoku, Gyuto, Nakiri..." style="width: 100%; padding: var(--sk-space-2); border: var(--sk-border); font-family: var(--sk-font-body);">
+        </div>
+        
+        <div style="margin-bottom: var(--sk-space-3);">
+          <label for="contact_message" style="display: block; margin-bottom: var(--sk-space-1); font-weight: 600;">Description de l'état *</label>
+          <textarea id="contact_message" name="contact[body]" required rows="5" placeholder="Décrivez l'état actuel de votre couteau (oxydation, manche abîmé, etc.). Vous pourrez nous envoyer des photos par email après ce premier contact." style="width: 100%; padding: var(--sk-space-2); border: var(--sk-border); font-family: var(--sk-font-body);"></textarea>
+        </div>
+        
+        <button type="submit" class="restauration-cta" style="width: 100%; text-align: center;">Demander mon devis gratuit</button>
+      </form>
+    </div>
+    
+    <p style="text-align: center; margin-top: var(--sk-space-3);"><strong>Ou contactez-nous directement :</strong> <a href="mailto:contact@secondknife.fr">contact@secondknife.fr</a> | <a href="/pages/contact">Page contact</a></p>
+  </div>
+
+</div>
+

@@ -1176,6 +1176,22 @@ h3.title {
   padding: 0 !important;
 }
 
+/* Gestion des titres de page multi-lignes (avec séparateur |) */
+.sk-title .title-line:nth-child(1) {
+  font-size: 3rem; /* 30px - Titre principal */
+  font-weight: 700;
+  display: block;
+}
+
+.sk-title .title-line:nth-child(2) {
+  font-size: 1.6rem; /* 16px - Sous-titre */
+  font-weight: 400;
+  font-family: var(--sk-font-body); /* IBM Plex Serif */
+  opacity: 0.8;
+  margin-top: 0.5rem;
+  display: block;
+}
+
 .sk-collection-description {
   text-align: center;
   margin-bottom: var(--sk-space-4);

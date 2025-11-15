@@ -2,7 +2,10 @@
 
 <div class="sk-title-block sk-title-block--with-border">
   <h1 class="sk-title">
-    {{ page.title | escape }}
+    {% assign title_parts = page.title | split: ' | ' %}
+    {% for part in title_parts %}
+      <span class="title-line">{{ part }}</span>
+    {% endfor %}
   </h1>
 </div>
 

@@ -119,6 +119,27 @@
           data-cascade
         {% endif %}
       >
+        <div class="loading__spinner hidden">
+          {% render 'icon-spinner' %}
+        </div>
+        
+        <div id="ProductCount" class="product-count light" role="status">
+          <h2 class="product-count__text text-body">
+            <span id="ProductCountText">
+              {%- if collection.results_count -%}
+                {{ 'templates.search.results_with_count' | t: terms: collection.terms, count: collection.results_count }}
+              {%- elsif collection.products_count == collection.all_products_count -%}
+                {{ 'products.facets.product_count_simple' | t: count: collection.products_count }}
+              {%- else -%}
+                {{ 'products.facets.product_count' | t: product_count: collection.products_count, count: collection.all_products_count }}
+              {%- endif -%}
+            </span>
+          </h2>
+          <div class="loading__spinner hidden">
+            {% render 'icon-spinner' %}
+          </div>
+        </div>
+        
         {%- if collection.products.size == 0 -%}
           <div class="sk-empty-collection">
             <h2 class="sk-empty-collection__title">
@@ -132,7 +153,11 @@
             </p>
           </div>
         {%- else -%}
-          <div class="sk-product-grid">
+          <div 
+            id="product-grid" 
+            data-id="{{ section.id }}"
+            class="collection sk-product-grid"
+          >
             {%- for product in collection.products -%}
               <div class="card-wrapper">
                 <a href="{{ product.url }}" class="sk-product-card">

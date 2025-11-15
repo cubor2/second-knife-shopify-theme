@@ -2,6 +2,26 @@
 
 Un thème Shopify minimaliste inspiré de l'esthétique **Bestmade**, basé sur Dawn pour la performance et la stabilité.
 
+---
+
+## 🚨 **AVANT TOUTE CHOSE : DÉMARRAGE SERVEUR LOCAL**
+
+**⚠️ SI TU VEUX DÉMARRER LE SERVEUR LOCAL, LIS D'ABORD CE FICHIER :**
+
+### 👉 **[🚀-DEMARRAGE-SERVEUR-LOCAL.md](./🚀-DEMARRAGE-SERVEUR-LOCAL.md)** 👈
+
+**Ce fichier contient la SEULE procédure qui fonctionne à 100%.**
+**On a eu ce bug 20 fois. La solution est là. Ne cherche pas ailleurs.**
+
+**3 étapes simples :**
+1. `cd Theme/dawn`
+2. `shopify theme pull --theme=183719133448` (is_background: false)
+3. `shopify theme dev --theme=183719133448` (is_background: true)
+
+**Si tu ne lis pas ce fichier, tu vas galérer. C'est une promesse. 😉**
+
+---
+
 ## 🎯 **INFORMATIONS THÈMES - IMPORTANT**
 
 ### Configuration des Thèmes Shopify

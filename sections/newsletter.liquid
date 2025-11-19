@@ -90,6 +90,25 @@
                     </span>
                   </button>
                 </div>
+                
+                {%- comment -%} RGPD Opt-in Checkbox (Mailjet compliance) {%- endcomment -%}
+                <div class="newsletter-consent" style="margin-top: 16px; text-align: left; max-width: 500px; margin-left: auto; margin-right: auto;">
+                  <label style="display: flex; align-items: flex-start; gap: 12px; cursor: pointer; font-size: 14px; line-height: 1.6;">
+                    <input 
+                      type="checkbox" 
+                      name="contact[accepts_marketing]" 
+                      id="NewsletterConsent--{{ section.id }}"
+                      value="1"
+                      required
+                      style="margin-top: 4px; min-width: 16px; cursor: pointer;"
+                    >
+                    <span style="flex: 1;">
+                      J'accepte de recevoir des emails marketing de Second Knife (nouvelles collections, offres exclusives, conseils d'entretien). 
+                      Vous pouvez vous désinscrire à tout moment via le lien présent dans chaque email. 
+                      <a href="/pages/politique-de-confidentialite" target="_blank" style="text-decoration: underline;">En savoir plus sur la gestion de vos données</a>.
+                    </span>
+                  </label>
+                </div>
                 {%- if form.errors -%}
                   <small class="newsletter-form__message form__message" id="Newsletter-error--{{ section.id }}">
                     <span class="svg-wrapper">

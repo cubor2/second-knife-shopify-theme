@@ -15,13 +15,13 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Nos couteaux japonais sont tous rénovés à la main"
+            "heading": "Couteaux  forgés par des maîtres artisans japonais ⛩️"
           }
         },
         "text": {
           "type": "text",
           "settings": {
-            "text": "<h4>Et forgés par des maîtres artisans ⛩️</h4>"
+            "text": "<h4>Et rénovés à la main en Bourgogne</h4>"
           }
         },
         "button": {
@@ -31,7 +31,7 @@
             "button_link_1": "/collections/all",
             "button_style_secondary_1": false,
             "button_label_2": "A propos",
-            "button_link_2": "/pages/about",
+            "button_link_2": "shopify://pages/a-propos",
             "button_style_secondary_2": true
           }
         }
@@ -42,8 +42,8 @@
         "button"
       ],
       "settings": {
-        "image": "shopify://shop_images/HERO2_1a990630-afdf-45c5-8645-7adbe0e3a0ca.jpg",
-        "gradient_opacity": 80,
+        "image": "shopify://shop_images/def2.png",
+        "gradient_opacity": 70,
         "text_color": "#ffffff"
       }
     },

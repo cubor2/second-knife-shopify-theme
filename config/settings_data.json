@@ -11,8 +11,8 @@
   "current": {
     "enable_ga4": true,
     "ga4_measurement_id": "G-XGPFYF685W",
-    "logo": "shopify://shop_images/logo-carre_5063ec24-71dd-44e5-ad65-bfadc6304f5e.png",
-    "logo_width": 80,
+    "logo": "shopify://shop_images/2NDKNIFE_LOGO_carre_1ddc30ad-8565-44df-a684-5fbc708dc710.png",
+    "logo_width": 90,
     "type_header_font": "assistant_n4",
     "heading_scale": 100,
     "type_body_font": "assistant_n4",
@@ -135,6 +135,10 @@
         "settings": {
           "color_scheme": "scheme-1"
         }
+      },
+      "cookie-consent": {
+        "type": "cookie-consent",
+        "settings": {}
       }
     },
     "content_for_index": [],

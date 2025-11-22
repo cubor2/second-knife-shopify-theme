@@ -60,6 +60,16 @@
         {%- if card_product.featured_media -%}
           <div class="card__media{% if image_shape and image_shape != 'default' %} shape--{{ image_shape }} color-{{ settings.card_color_scheme }} gradient{% endif %}">
             <div class="media media--transparent media--hover-effect">
+              
+              {%- if card_product.metafields.custom.sold == true -%}
+                <div class="sk-badge-sold">
+                  <span class="sk-badge-sold__text">Vendu !</span>
+                  {%- if card_product.metafields.custom.buyer_name != blank -%}
+                    <span class="sk-badge-sold__buyer">Adopté par {{ card_product.metafields.custom.buyer_name }}</span>
+                  {%- endif -%}
+                </div>
+              {%- endif -%}
+              
               {% comment %}theme-check-disable ImgLazyLoading{% endcomment %}
               <img
                 srcset="

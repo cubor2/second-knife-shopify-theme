@@ -162,6 +162,16 @@
               <div class="card-wrapper">
                 <a href="{{ product.url }}" class="sk-product-card">
                   <div class="sk-product-card__image-wrapper">
+                    
+                    {%- if product.metafields.custom.sold == true -%}
+                      <div class="sk-badge-sold">
+                        <span class="sk-badge-sold__text">Vendu !</span>
+                        {%- if product.metafields.custom.buyer_name != blank -%}
+                          <span class="sk-badge-sold__buyer">Adopté par {{ product.metafields.custom.buyer_name }}</span>
+                        {%- endif -%}
+                      </div>
+                    {%- endif -%}
+                    
                     {%- if product.featured_media -%}
                       <img
                         src="{{ product.featured_media | image_url: width: 400 }}"

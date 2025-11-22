@@ -238,6 +238,13 @@ shopify theme push --store=second-knife.myshopify.com --theme=183719133448
 - **Work Sans** pour les textes de contenu
 - Échelle typographique cohérente et responsive
 
+### Badge "Vendu !" pour Produits
+- **Affichage élégant** : Badge minimaliste au coin supérieur droit des images produits
+- **Personnalisation** : Affiche le nom de l'acheteur ("Adopté par [Prénom]")
+- **Gestion via Metafields** : Configuration simple dans l'admin Shopify
+- **Valorisation** : Garde les produits vendus visibles dans le catalogue
+- **Documentation complète** : Voir `GUIDE-METAFIELDS-PRODUITS-VENDUS.md`
+
 ### Système de Variables CSS
 Variables personnalisables depuis l'éditeur Shopify :
 - Épaisseur des bordures (`--sk-border-width`)

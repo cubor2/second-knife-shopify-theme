@@ -24,14 +24,6 @@
 
 <div class="sk-content-block">
   <div class="sk-page-content">
-    {%- comment -%} Texte d'introduction standardisé {%- endcomment -%}
-    <div class="contact__intro rte{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
-      <p>
-        Nous serions ravis de vous entendre. Remplissez le formulaire ci-dessous et nous vous répondrons dans les plus
-        brefs délais.
-      </p>
-    </div>
-
     {%- liquid
       assign contact_form_class = 'isolate'
       if settings.animations_reveal_on_scroll
@@ -40,10 +32,13 @@
     -%}
     {%- form 'contact', id: 'ContactForm', class: contact_form_class -%}
       {%- if form.posted_successfully? -%}
-        <h2 class="form-status form-status-list form__message" tabindex="-1" autofocus>
-          {{- 'icon-success.svg' | inline_asset_content -}}
-          {{ 'templates.contact.form.post_success' | t }}
-        </h2>
+        {%- comment -%} Message de succès simplifié {%- endcomment -%}
+        <div class="contact__intro rte" style="text-align: center; padding: var(--sk-space-5) 0;">
+          <p>
+            Merci de nous avoir contactés.<br>
+            Nous vous répondrons dès que possible !
+          </p>
+        </div>
       {%- elsif form.errors -%}
         <div class="form__message">
           <h2 class="form-status caption-large text-body" role="alert" tabindex="-1" autofocus>
@@ -60,6 +55,16 @@
           </li>
         </ul>
       {%- endif -%}
+      
+      {%- unless form.posted_successfully? -%}
+      {%- comment -%} Texte d'introduction (caché après envoi réussi) {%- endcomment -%}
+      <div class="contact__intro rte{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+        <p>
+          Une question ? Une interrogation ? Envie de papoter ?<br>
+          Remplissez le formulaire ci-dessous et je vous répondrai au plus vite.
+        </p>
+      </div>
+      
       <div class="contact__fields">
         <div class="field">
           <input
@@ -140,6 +145,7 @@
           {{ 'templates.contact.form.send' | t }}
         </button>
       </div>
+      {%- endunless -%}
     {%- endform -%}
   </div>
 </div>
